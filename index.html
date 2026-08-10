@@ -400,22 +400,31 @@
     flex-shrink:0;margin:0 3px}
   @media print{ .cover-logos img{opacity:.92} }
 
-  /* ── 교재·자료 링크 카드 ── */
-  .linkcard{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
-    text-align:center;gap:13px;padding:32px 26px;background:var(--card);
-    text-decoration:none;color:inherit;transition:transform .18s ease,box-shadow .18s ease}
-  .linkcard:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(22,32,45,.09)}
-  .linkcard .ic{width:50px;height:50px;color:var(--clay)}
-  .linkcard .ic svg{width:100%;height:100%}
-  .linkcard .lbl{font-size:clamp(20px,2.1vw,26px);font-weight:800;color:var(--ink);letter-spacing:-.01em}
-  .linkcard .desc{font-size:15px;color:var(--body);line-height:1.6;max-width:300px}
-  .linkcard .url{margin-top:2px;font-family:'JetBrains Mono',monospace;font-size:12.5px;
-    line-height:1.55;color:var(--clay);word-break:break-all;max-width:320px;
-    border-top:1px solid var(--clay-line);padding-top:11px}
-  .slide.dense .linkcard{padding:22px 20px;gap:10px}
-  .slide.dense .linkcard .ic{width:40px;height:40px}
-  .slide.dense .linkcard .desc{font-size:14px}
-  .slide.dense .linkcard .url{font-size:11.5px;padding-top:9px}
+  /* ── 교재·자료 링크 카드 (URL을 직접 타이핑할 수 있게 크게) ── */
+  .linkrow{display:flex;flex-direction:column;gap:12px;padding:18px 26px;
+    background:var(--card);text-decoration:none;color:inherit;
+    transition:transform .18s ease,box-shadow .18s ease}
+  .linkrow:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(22,32,45,.09)}
+  .linkrow .top{display:flex;align-items:center;gap:14px;text-align:left}
+  .linkrow .ic{width:36px;height:36px;color:var(--clay);flex-shrink:0}
+  .linkrow .ic svg{width:100%;height:100%}
+  .linkrow .lbl{font-size:21px;font-weight:800;color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+  .linkrow .desc{font-size:14.5px;color:var(--body);line-height:1.5;margin-top:2px}
+  .linkrow .url{display:block;width:100%;text-align:center;
+    font-family:'JetBrains Mono',monospace;font-weight:700;
+    font-size:clamp(18px,2.05vw,27px);letter-spacing:-.015em;line-height:1.4;
+    color:var(--ink);background:var(--paper2);
+    border:1.5px solid var(--clay-line);border-radius:9px;
+    padding:13px 14px;word-break:break-all}
+  .linkrow .url .sch{color:var(--muted);font-weight:400}
+  #s-links .cover-logos{margin-top:14px}
+  .linkrow .url.long{font-size:clamp(15px,1.6vw,21px)}
+  .slide.dense .linkrow{padding:16px 20px;gap:10px}
+  .slide.dense .linkrow .ic{width:30px;height:30px}
+  .slide.dense .linkrow .lbl{font-size:18px}
+  .slide.dense .linkrow .desc{font-size:13.5px}
+  .slide.dense .linkrow .url{font-size:clamp(16px,1.75vw,23px);padding:11px 12px}
+  .slide.dense .linkrow .url.long{font-size:clamp(13.5px,1.4vw,18px)}
 
   /* ── E.O.D 마감 장표 ── */
   #s-eod .eod-mark{font-family:'JetBrains Mono',monospace;font-weight:700;
@@ -465,20 +474,22 @@
   <div class="head" style="margin-bottom:0">
     <div class="eyebrow">교재 · 자료</div>
     <h1 class="s-title" style="font-size:clamp(34px,4.6vw,58px)">수업에 쓰는 <span class="clay">두 개의 링크</span></h1>
-    <p class="s-sub" style="max-width:660px;margin:16px auto 0">수업 중에도, 끝난 뒤에도 <strong style="color:var(--ink)">계속 열어두고</strong> 쓰는 자료입니다</p>
+    <p class="s-sub" style="max-width:660px;margin:12px auto 0">수업 중에도, 끝난 뒤에도 <strong style="color:var(--ink)">계속 열어두고</strong> 쓰는 자료입니다</p>
   </div>
-  <div class="grid g2" style="width:100%;max-width:880px;margin:34px auto 0;gap:20px">
-    <a class="frame clay linkcard" href="https://aibridge-leo.github.io/AID30REVIVE/" target="_blank" rel="noopener">
-      <div class="ic" data-ic="book"></div>
-      <div class="lbl">교재</div>
-      <div class="desc">지금 보고 있는 이 슬라이드 — 웹에서 상시 열람</div>
-      <div class="url">aibridge-leo.github.io/AID30REVIVE/</div>
+  <div style="display:flex;flex-direction:column;gap:14px;width:100%;max-width:900px;margin:16px auto 0">
+    <a class="frame clay linkrow" href="https://aibridge-leo.github.io/AID30REVIVE/" target="_blank" rel="noopener">
+      <div class="top">
+        <div class="ic" data-ic="book"></div>
+        <div><div class="lbl">교재</div><div class="desc">지금 보고 있는 이 슬라이드 — 웹에서 상시 열람</div></div>
+      </div>
+      <div class="url"><span class="sch">https://</span>aibridge-leo.github.io/AID30REVIVE/</div>
     </a>
-    <a class="frame clay linkcard" href="https://drive.google.com/drive/folders/1EHft6z6Qo0WLu1_UTSiWl0OymDBKroF0" target="_blank" rel="noopener">
-      <div class="ic" data-ic="drive"></div>
-      <div class="lbl">자료</div>
-      <div class="desc">실습 데이터 · 샘플 문서 · 프롬프트 (Google Drive)</div>
-      <div class="url">drive.google.com/drive/folders/<br>1EHft6z6Qo0WLu1_UTSiWl0OymDBKroF0</div>
+    <a class="frame clay linkrow" href="https://drive.google.com/drive/folders/1EHft6z6Qo0WLu1_UTSiWl0OymDBKroF0" target="_blank" rel="noopener">
+      <div class="top">
+        <div class="ic" data-ic="drive"></div>
+        <div><div class="lbl">자료</div><div class="desc">실습 데이터 · 샘플 문서 · 프롬프트 (Google Drive)</div></div>
+      </div>
+      <div class="url long"><span class="sch">https://</span>drive.google.com/drive/folders/<wbr>1EHft6z6Qo0WLu1_UTSiWl0OymDBKroF0</div>
     </a>
   </div>
   <div class="cover-logos" data-clone-logos></div>
