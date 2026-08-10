@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>R.E.VIBE 트랙 2 · AI 데이터 매니지먼트 — 실무 완성 과정</title>
+<title>R.E.VIBE 트랙 2 · AI 데이터 매니지먼트 + 트랙 1 · AI 파이낸셜 인텔리전스 — 실무 완성 과정</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" rel="stylesheet">
@@ -437,6 +437,39 @@
     margin-top:16px}
   #s-eod .eod-line{width:56px;height:2px;background:var(--clay);
     margin:24px auto 0;border-radius:2px}
+</style>
+
+<style>
+  /* ══ 트랙 1 (AI 파이낸셜 인텔리전스) 전용 ══
+     강조색을 슬라이드 단위로 되돌려 각 트랙 고유 톤을 유지한다. */
+  .slide.t1{
+    --clay:#BF5B3D;
+    --clay-soft:#C9624A;
+    --clay-tint:rgba(191,91,61,0.09);
+    --clay-line:rgba(191,91,61,0.30);
+    /* 트랙1 원본의 .warn 은 clay 톤을 그대로 썼다 — 변수로 흡수 */
+    --warn-tint:rgba(191,91,61,0.09);
+    --warn-line:rgba(191,91,61,0.30);
+  }
+
+  /* 트랙 1에만 있는 규칙 */
+  table.tbl td.num{font-family:'JetBrains Mono',monospace;font-variant-numeric:tabular-nums}
+  .cmd-card{position:relative;padding:18px 20px}
+  .cmd-card .top{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+  .cmd-card .tok{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:17px; color:var(--clay);background:var(--clay-tint);border:1px solid var(--clay-line); border-radius:7px;padding:5px 12px}
+  .cmd-card .cap{font-size:14px;color:var(--muted);font-weight:600}
+  .cmd-card .d{font-size:15px;color:var(--body);line-height:1.7}
+  .cmd-card .d code{font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--clay); background:var(--clay-tint);padding:1px 5px;border-radius:4px}
+  .cmd-card .d strong{color:var(--ink)}
+  .dgm{max-width:1140px;margin:0 auto;width:100%}
+  .dgm svg{width:100%;height:auto;max-height:60vh;display:block; font-family:'Pretendard',-apple-system,sans-serif}
+  .slide.dense .dgm svg{max-height:57vh}
+  .slide.dense2 .dgm svg{max-height:54vh}
+  .dgm-cap{text-align:center;font-size:13.5px;color:var(--muted);margin-top:12px;line-height:1.5}
+  #t1-s-eod .eod-mark{font-family:'JetBrains Mono',monospace;font-weight:700; font-size:clamp(52px,8vw,104px);letter-spacing:.06em;line-height:1; color:var(--ink);margin:0}
+  #t1-s-eod .eod-mark span{color:var(--clay)}
+  #t1-s-eod .eod-full{font-family:'JetBrains Mono',monospace;font-size:12.5px; letter-spacing:.34em;text-transform:uppercase;color:var(--muted); margin-top:16px}
+  #t1-s-eod .eod-line{width:56px;height:2px;background:var(--clay); margin:24px auto 0;border-radius:2px}
 </style>
 </head>
 <body>
@@ -2664,6 +2697,2230 @@ Supabase 데이터를 실시간으로 읽어서 표시한다.
     </div>
   </div>
 </div>
+
+
+<!-- ══════════ 트랙 1 · AI 파이낸셜 인텔리전스 ══════════ -->
+
+<div class="slide center t1" id="t1-s-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">2026 재직자 AI·D 30+ 집중캠프 · R.E.VIBE</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.6vw,70px)">트랙 1 · <span class="clay">AI 파이낸셜 인텔리전스</span></h1>
+    <p class="s-sub" style="max-width:680px;margin:18px auto 0">AI와 <strong style="color:var(--ink)">Claude를 제대로</strong> 익혀,<br>사업성 검토 · 투자 분석 · 수익성 계산을 <strong style="color:var(--ink)">스스로 자동화</strong>합니다</p>
+  </div>
+  <div class="stats">
+    <div class="frame stat"><div class="v">오프라인</div><div class="k">1·2회차 실습 중심</div></div>
+    <div class="frame stat"><div class="v">개념 → 실습</div><div class="k">Claude 심화 후 도메인 적용</div></div>
+    <div class="frame stat"><div class="v">배포 URL</div><div class="k">수익률 계산 웹앱</div></div>
+  </div>
+  <p style="margin-top:26px;font-size:13.5px;color:var(--muted);text-align:center;max-width:780px;line-height:1.6">
+    명지대학교 미래융합대학 AID 30+ 사업단 주관 · 한국프롭테크포럼 · 한국부동산마케팅협회 협력 · 강사 진용성 (AI BRIDGE)<br>
+    <span style="font-size:12.5px">※ 온라인 3시간(LMS 사전학습)은 별도 진행됩니다. 이 자료는 <strong style="color:var(--body)">오프라인 1·2회차(각 3시간)</strong> 수업용입니다.</span></p>
+  <div class="cover-logos" data-clone-logos></div>
+</div>
+
+<div class="slide t1" id="t1-s-goal">
+  <div class="head"><div class="eyebrow">오늘의 약속</div><h2 class="s-title">이 과정이 끝나면 <span class="clay">이것</span>을 가져갑니다</h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="text-align:center;margin-bottom:20px">
+      <div style="font-size:clamp(18px,2.1vw,25px);font-weight:800;color:var(--ink);line-height:1.45">
+        AI가 <span class="clay">사업계획서를 읽고</span>, 수익률과 민감도를 <span class="clay">계산</span>하며,<br>
+        그 계산이 <span class="clay">실제 웹앱</span>으로 배포되어 팀 누구나 씁니다</div>
+    </div>
+    <div class="grid g4" style="gap:14px">
+      <div class="frame feat sm"><div class="ic" data-ic="chart"></div><div class="lbl">재무분석 자동화</div><div class="desc">PF 해석 · IRR·DSCR·NOI · 민감도</div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="terminal"></div><div class="lbl">수익률 계산 웹앱</div><div class="desc">Claude Code로 만들어 실제 배포</div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="doc"></div><div class="lbl">투자보고서 프롬프트</div><div class="desc">반복 검토를 Skill로 자산화</div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="shield"></div><div class="lbl">검증하는 습관</div><div class="desc">AI 숫자를 믿지 않고 대조하는 법</div></div>
+    </div>
+    <div class="note" style="margin-top:20px"><strong>가장 중요한 것:</strong> 오늘의 진짜 목표는 웹앱 하나가 아니라 — <strong>AI·Claude를 내 도구로 완전히 체득</strong>하는 것입니다. 도구를 제대로 알면, 오늘 만든 것 너머 어떤 업무 자동화든 스스로 해낼 수 있습니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-s-toc">
+  <div class="head"><div class="eyebrow plain">커리큘럼</div><h2 class="s-title">오늘 배울 내용</h2></div>
+  <div class="body">
+    <div class="toc" style="grid-template-columns:repeat(3,1fr);gap:12px">
+      <div class="frame it on"><div class="num">PART 1</div><div class="lab">AI &amp; Claude 이해</div><div class="sub">LLM · 할루시네이션 · 에이전트 · Chat/Cowork/Code · 모델 선택</div></div>
+      <div class="frame it on"><div class="num">PART 2</div><div class="lab">컨텍스트 엔지니어링</div><div class="sub">토큰 · 컨텍스트 윈도우 · 5가지 레버 · 좋은 프롬프트</div></div>
+      <div class="frame it on"><div class="num">PART 3</div><div class="lab">컴퓨터 &amp; 웹개발 기초</div><div class="sub">CLI · 경로 · 런타임 · 프론트/백 · API · Git</div></div>
+      <div class="frame it" style="background:#fff"><div class="num" style="color:var(--clay)">실습 A · 1회차</div><div class="lab">Claude로 재무분석</div><div class="sub">PF 해석 · 분양가 적정성 · IRR·DSCR · 민감도 · 검증</div></div>
+      <div class="frame it" style="background:#fff"><div class="num" style="color:var(--clay)">실습 B · 2회차</div><div class="lab">Claude Code로 도구 제작</div><div class="sub">수익률 계산 웹앱 · GitHub · Vercel 배포 · 기능 확장</div></div>
+      <div class="frame it" style="background:var(--clay-tint)"><div class="num" style="color:var(--clay)">부록</div><div class="lab">프롬프트·정답지</div><div class="sub">복붙용 프롬프트 · 전역/프로젝트 지침 · 정답지</div></div>
+    </div>
+    <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:14px">PART 1~3은 <strong style="color:var(--clay)">AI·Claude 심화(메인)</strong> · 실습 A·B는 <strong style="color:var(--clay)">부동산 금융 실무 적용</strong>입니다. 부록에 복붙용 프롬프트·정답지가 있습니다.</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-s-ready">
+  <div class="head"><div class="eyebrow">시작 전 점검</div><h2 class="s-title">실습 준비물 <span class="clay">체크리스트</span></h2></div>
+  <div class="body grid g3" style="gap:18px 26px">
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="users"></span>계정</div>
+      <ul class="chk">
+        <li><strong>Claude</strong> — 유료 플랜(Pro 이상). 실습 범위는 Pro로 충분</li>
+        <li><strong>GitHub</strong> — github.com</li>
+        <li><strong>Vercel</strong> — "Continue with GitHub"로 가입</li>
+      </ul>
+      <div class="note" style="margin-top:12px;font-size:14.5px">계정 자부담 여부는 사업단 일괄 구독 지원 방침에 따릅니다.</div>
+    </div>
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="pkg"></span>설치</div>
+      <ul class="chk">
+        <li><strong>Claude 데스크탑 앱</strong> — claude.com/download</li>
+        <li><strong>Node.js LTS</strong> — nodejs.org (Claude Code 실행 환경)</li>
+        <li><strong>Git</strong> — Windows는 별도 설치</li>
+      </ul>
+      <div class="note" style="margin-top:12px;font-size:14.5px">Windows는 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">winget install Git.Git</code> 한 줄이면 됩니다.</div>
+    </div>
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="drive"></span>실습 데이터</div>
+      <ul class="chk">
+        <li>LMS에서 배포하는 <strong>data set / 트랙1</strong> 폴더</li>
+        <li>사업계획서 PDF · 사업수지표 · 분양계획표 · 현금흐름표 · 실거래가 · 임대차현황표 · 보유자산 · 광고집행</li>
+        <li>모두 가상 사업장 <strong>「센텀 리버뷰」</strong> 합성 데이터</li>
+      </ul>
+      <div class="warn" style="margin-top:12px"><strong>원칙:</strong> 실제 사업장 재무자료는 반입하지 않습니다. 가상·마스킹 데이터로만 실습합니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-roles">
+  <div class="head"><div class="eyebrow">과정 안내</div><h2 class="s-title">연계 직군 <span class="clay">5분류</span> <small>— 슬라이드의 직군 태그 읽는 법</small></h2></div>
+  <div class="body">
+    <div class="grid g3" style="gap:14px 20px">
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)">A · 개발 · 상품기획</div><p>토지·상품 기획, 사업 구조 설계. <strong>이 트랙의 핵심 직군.</strong><br><span style="color:var(--muted);font-size:14px">AI 활용: 사업성 변수 분석·SWOT·리스크·민감도</span></p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)">B · 금융 · 투자</div><p>PF·대출 심사, 투자 검토. <strong>이 트랙의 핵심 직군.</strong><br><span style="color:var(--muted);font-size:14px">AI 활용: IRR·DSCR·LTV 해석, 수익률 계산기</span></p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)">D · 자산 · 운영</div><p>보유 자산 운영·수익 관리.<br><span style="color:var(--muted);font-size:14px">AI 활용: NOI·Cap Rate, 포트폴리오 비교</span></p></div>
+      <div class="frame panel"><div class="ttl">C · 분양 · 중개세일즈</div><p>분양·중개 현장 영업.<br><span style="color:var(--muted);font-size:14px">이 트랙에선 분양성·시세 비교에 연계</span></p></div>
+      <div class="frame panel"><div class="ttl">E · 디지털 · 고객관리 · 마케팅</div><p>광고·리드·성과 분석.<br><span style="color:var(--muted);font-size:14px">이 트랙에선 광고 성과·투자보고서 자동화</span></p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="target"></span>태그 읽는 법</div><p>각 실습 모듈에 <strong>관련 직군</strong>이 표시됩니다. 본인 직군만이 아니라 <strong>옆 직군 것도</strong> 해보면 협업이 빨라집니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:16px">이 5분류는 <strong>「2026 재직자 AI·D 30+ 집중캠프」 트랙 1 계획안</strong>의 연계 직군 구분을 따릅니다. 트랙 1은 <strong>A·B·D</strong>를 중심으로, C·E는 접점 위주로 다룹니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-case-global">
+  <div class="head"><div class="eyebrow">왜 지금인가 — 국외 사례</div><h2 class="s-title">이미 <span class="clay">현장</span>에서 일하고 있습니다</h2></div>
+  <div class="body">
+    <div class="grid g2" style="gap:14px 20px">
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="shield"></span>AIG — 보험 인수심사</div><p>Claude 도입 후 <strong>인수심사 검토 시간 5배 이상 단축</strong>, 데이터 정확도 <strong>75% → 90%+</strong>로 개선했다고 발표. 긴 서류를 읽고 핵심을 뽑는 <strong>문서 분석</strong>의 대표 사례입니다.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="coin"></span>Anthropic — 금융 솔루션</div><p>2025년 <strong>Claude for Financial Services</strong> 출시. <strong>밸류에이션 검토 · 신용 인수심사 · IB 자료(pitch book) · KYC · 월마감</strong>을 수행하는 에이전트 템플릿을 제공합니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="sheet"></span>Claude for Excel</div><p>엑셀 사이드바에서 <strong>DCF·비교기업분석(comps)</strong> 등 재무 모델을 만들고 감사. 2026년 1월 <strong>Pro 플랜에 개방</strong>. 뒤에서 자세히 다룹니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="doc"></span>JLL GPT · CBRE</div><p><strong>JLL</strong>은 CRE 특화 LLM 'JLL GPT'로 임대차 계약서를 자동 요약·분류(2023.8). <strong>CBRE</strong>는 ML로 임대 처리 수작업을 <strong>25% 감소</strong>시켰다고 밝혔습니다.</p></div>
+    </div>
+    <p style="margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center">출처: Anthropic(anthropic.com/news) · AIG 사례 보도 · JLL Newsroom · CBRE. 수치는 각 사 발표·보도 기준이며 조건에 따라 달라질 수 있습니다.</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-case-korea">
+  <div class="head"><div class="eyebrow">왜 지금인가 — 국내 사례</div><h2 class="s-title">국내 <span class="clay">부동산·프롭테크</span>도 빠르게</h2></div>
+  <div class="body">
+    <div class="grid g2" style="gap:14px 20px">
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="chart"></span>밸류맵 — AI 가치평가</div><p>자체 <strong>AVM(자동가치평가모형)</strong>으로 토지·빌딩·상가 가치를 산정. 개별성이 높아 거래가 드문 <strong>토지·건물의 담보채권 평가 자동화(ABR)</strong>에 AI를 활용한다고 밝혔습니다.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="database"></span>직방 — 데이터 인프라</div><p>전국 <strong>단지·세대 단위 구조화 데이터 + 가격 예측 모델</strong>을 축적. 'AI중개사'를 전 주거유형으로 확장하며 "검색 플랫폼에서 <strong>AI 의사결정 인프라</strong>로" 전환을 표방합니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="globe"></span>리치고 · 호갱노노 · 부동산플래닛</div><p><strong>AI 시세 예측·지역 분석</strong>을 소비자에게 제공. 거래 사례가 많은 지역일수록 AI 지표의 정확도가 높아지는 경향이 보고됩니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="book"></span>학계 · 공공</div><p><strong>KCI 논문</strong> — "AI 기반 프롭테크 서비스 사례연구: 부동산 개발사업의 <strong>사업성 평가</strong> 중심". 국토부 실거래가·한국부동산원 통계 등 <strong>공공데이터 개방</strong>이 토대입니다.</p></div>
+    </div>
+    <p style="margin-top:16px;font-size:12.5px;color:var(--muted);text-align:center">출처: 딜사이트·한국금융신문·인공지능신문 보도, KCI·DBpia 논문. 서비스 명칭·수치는 보도 시점 기준입니다.</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-case-lesson">
+  <div class="head"><div class="eyebrow">사례가 주는 교훈</div><h2 class="s-title">공통점 <span class="clay">4가지</span> — 우리도 그대로 합니다</h2></div>
+  <div class="body">
+    <div class="grid g4" style="gap:14px">
+      <div class="frame feat sm"><div class="ic" data-ic="shield"></div><div class="lbl">① 사람이 최종 검증</div><div class="desc">AIG도 정확도를 <strong style="color:var(--ink)">사람 검증과 함께</strong> 끌어올렸습니다. AI는 초안, 판단은 사람. <strong style="color:var(--ink)">1회차 검증법</strong>이 그것입니다.</div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="database"></div><div class="lbl">② 데이터 품질이 정확도</div><div class="desc">깨끗한 데이터가 있어야 결과가 정확합니다. <strong style="color:var(--ink)">근거·단위·기간을 맞추는 습관</strong>이 실무의 절반입니다.</div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="loop"></div><div class="lbl">③ 반복은 템플릿·Skill로</div><div class="desc">Anthropic 금융 솔루션도 <strong style="color:var(--ink)">에이전트 템플릿</strong>으로 반복 업무를 자산화합니다. 우리도 <strong style="color:var(--ink)">Skill</strong>을 만듭니다.</div></div>
+      <div class="frame clay feat sm"><div class="ic" data-ic="rocket"></div><div class="lbl">④ 분석 → 도구 → 배포</div><div class="desc">한 번 만든 계산을 <strong style="color:var(--ink)">시스템으로 굳혀</strong> 팀이 공유. 오늘 2회차에 <strong style="color:var(--ink)">직접</strong> 그 파이프라인을 만듭니다.</div></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>핵심 메시지:</strong> 저 회사들이 특별한 게 아닙니다. <strong>같은 도구(Claude)</strong>를 여러분이 오늘 손에 넣습니다. 차이는 "누가 먼저 자기 업무에 붙이느냐"일 뿐입니다.</div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-p1-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">PART 1</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)"><span class="clay">AI</span> &amp; Claude 이해</h1>
+    <p class="s-sub" style="max-width:560px;margin:18px auto 0">전체 구조를 알아야 흔들리지 않습니다<br>LLM · 할루시네이션 · 에이전트 · Chat / Cowork / Code / Design / Chrome</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-structure">
+  <div class="head">
+    <div class="eyebrow">PART 1 — AI 기초</div>
+    <h2 class="s-title">AI의 전체 구조</h2>
+  </div>
+  <div class="body grid g2" style="align-items:center">
+    <div class="pyr">
+      <div class="frame row" style="width:100%">인공지능 (AI)<span>이미지생성 · 음성인식 · 추천 · 자율주행…</span></div>
+      <div class="arr">▼</div>
+      <div class="frame row" style="width:86%">생성형 AI<span>글 · 이미지 · 영상 · 코드를 직접 생성</span></div>
+      <div class="arr">▼</div>
+      <div class="frame row clay" style="width:72%">LLM (대규모 언어 모델)<span style="color:var(--clay);opacity:.7">언어 이해 · 생성에 특화</span></div>
+      <div class="arr">▼</div>
+      <div class="frame row fill" style="width:58%">Claude · GPT · Gemini</div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:16px">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="cpu"></span>인공지능 (AI)</div><p>컴퓨터가 인간처럼 학습·판단·문제해결하도록 만드는 기술 전체</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="sparkle"></span>생성형 AI</div><p>데이터를 '분류'하는 것을 넘어 새로운 콘텐츠를 <strong>직접 만들어내는</strong> AI</p></div>
+      <div class="frame clay panel"><div class="ttl"><span class="ic" data-ic="book"></span>LLM — Large Language Model</div><p>방대한 텍스트를 학습해 사람처럼 문장을 이해·생성. <strong>Claude는 LLM</strong>입니다.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-engine">
+  <div class="head">
+    <div class="eyebrow">PART 1 — AI 기초</div>
+    <h2 class="s-title">LLM은 <span class="clay">엔진</span>, 서비스는 <span class="clay">완성차</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay"><span class="ic" data-ic="gear" style="width:16px;height:16px"></span>LLM (엔진)</div>
+      <div class="frame clay panel" style="margin-bottom:14px"><div class="ttl" style="color:var(--clay)">Claude (Anthropic)</div><p>GPT (OpenAI) · Gemini (Google)<br>핵심 언어 처리 엔진</p></div>
+      <div class="note">엔진은 자동차에만 쓰이지 않습니다. 비행기·열차 등 다양한 곳에 쓰이듯, LLM도 여러 서비스 속에 들어갑니다. <strong>우리가 쓰는 Claude Code·Cowork도 같은 엔진을 다른 환경에서 부리는 것</strong>입니다.</div>
+    </div>
+    <div>
+      <div class="clabel"><span class="ic" data-ic="globe" style="width:16px;height:16px"></span>서비스 (완성차)</div>
+      <div class="frame panel" style="margin-bottom:14px"><div class="ttl">Claude.ai · ChatGPT</div><p>일반인이 바로 탑승 가능한 대화형 AI 서비스. LLM을 감싼 인터페이스</p></div>
+      <div class="warn"><strong>핵심:</strong> "Claude"는 엔진(LLM)이자 서비스 이름이자 모델 이름입니다. 맥락에 따라 의미가 달라집니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-halluc">
+  <div class="head">
+    <div class="eyebrow">PART 1 — AI 기초</div>
+    <h2 class="s-title">할루시네이션 <small>(Hallucination)</small></h2>
+  </div>
+  <div class="body">
+    <div class="warn" style="margin-bottom:20px;text-align:center"><strong style="font-size:18px">AI가 없는 사실을 있는 것처럼 말하는 현상</strong><br>지어낸 분양가 · 없는 PF 조건 · 존재하지 않는 실거래</div>
+    <div class="grid g3" style="gap:16px 22px">
+      <div class="frame feat sm" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="alert"></div><div class="lbl">왜 생길까?</div><div class="desc">AI는 "정답을 아는 것"이 아니라 <strong style="color:var(--ink)">"그럴듯한 다음 단어를 예측"</strong>하는 방식으로 작동하기 때문입니다.</div></div>
+      <div class="frame feat sm" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="check"></div><div class="lbl">일반적 대응</div><div class="desc">금액·면적·날짜·법률은 <strong style="color:var(--ink)">원본 출처를 반드시 대조</strong>. AI 숫자를 그대로 보고서에 넣지 않기.</div></div>
+      <div class="frame clay feat sm" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="shield" style="color:var(--clay)"></div><div class="lbl" style="color:var(--clay)">이 과정의 해법 → 검증</div><div class="desc"><strong style="color:var(--ink)">근거 위치를 함께 요구</strong>하고, <strong style="color:var(--ink)">표본·합계·역산</strong>으로 대조합니다. "자료에 없으면 자료 없음"을 프롬프트에 넣습니다. <strong style="color:var(--ink)">1회차</strong>에서 훈련합니다.</div></div>
+    </div>
+    <div class="note" style="margin-top:18px">사업성 검토에서 할루시네이션은 <strong>단순 실수가 아니라 의사결정 리스크</strong>입니다. 지어낸 분양가·IRR로 투자보고서를 쓰면 회사가 책임집니다. 그래서 <strong>검증 습관</strong>이 필요합니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-agent">
+  <div class="head">
+    <div class="eyebrow">PART 1 — AI 기초</div>
+    <h2 class="s-title">AI Agent <small>— 스스로 계획하고 실행하는 AI</small></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel">기존 AI 챗봇</div>
+      <div class="frame panel" style="text-align:center">
+        <div style="font-size:16.5px;font-weight:700;color:var(--ink);padding:10px 0">사람이 질문</div>
+        <div class="arr" style="color:var(--muted)">▼</div>
+        <div style="font-size:16.5px;font-weight:700;color:var(--ink);padding:10px 0">AI가 답변</div>
+        <div style="font-size:14.5px;color:var(--muted);margin-top:8px">✕ 실행은 내 몫</div>
+      </div>
+    </div>
+    <div>
+      <div class="clabel clay">AI Agent</div>
+      <div class="frame clay panel" style="text-align:center">
+        <div style="font-size:16.5px;font-weight:700;color:var(--ink);padding:10px 0">목표만 제시</div>
+        <div class="arr" style="color:var(--clay)">▼</div>
+        <div style="font-size:16.5px;font-weight:800;color:var(--clay);padding:6px 0">AI Agent<span style="display:block;font-size:13.5px;font-weight:400;color:var(--muted);margin-top:4px">계획 → 도구 활용 → 실행 → 검토 → 완료</span></div>
+        <div style="font-size:14.5px;color:var(--ok);margin-top:8px">✓ 결과물 완성</div>
+      </div>
+    </div>
+  </div>
+  <div class="note" style="max-width:1260px;margin:20px auto 0"><strong>오늘의 예시:</strong> "이 폴더의 사업수지 엑셀을 읽고, 현금흐름표·IRR·민감도를 계산해 투자검토 의견서 초안을 만들어줘" → Claude가 자료 파악 → 계산 → 표 작성 → 자기검토까지 <strong>스스로</strong> 수행합니다. 2회차에는 이 계산을 <strong>웹앱으로</strong> 굳힙니다.</div>
+</div>
+
+<div class="slide t1" id="t1-p1-3stage">
+  <div class="head">
+    <div class="eyebrow">PART 1 — AI 기초</div>
+    <h2 class="s-title">AI를 다루는 <span class="clay">3단계</span> 엔지니어링</h2>
+  </div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:16px;text-align:center;padding:16px 24px">
+      <div style="font-size:19px;font-weight:800;color:var(--ink)"><span class="clay">프롬프트</span> → <span class="clay">콘텍스트</span> → <span class="clay">하네스</span> 엔지니어링</div>
+      <p style="margin-top:8px;font-size:15px">초점이 <strong>'무엇을 말하나' → '무엇을 보여주나' → '어떻게 실행하나'</strong>로 확장됩니다. 뒤 단계가 앞을 대체하는 게 아니라 <strong>바깥에서 감싸는 구조</strong>입니다.</p>
+    </div>
+    <div class="grid g3" style="gap:14px 30px">
+      <div class="frame feat sm"><div class="ic" data-ic="pen"></div><div class="lbl">① 프롬프트</div><div class="desc">"무엇을 말하나"<br>지시·역할·형식·예시 설계<br><span style="color:var(--muted)">메시지 단위</span></div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="layers"></div><div class="lbl">② 콘텍스트</div><div class="desc">"무엇을 보여주나"<br>컨텍스트 창에 담을 정보 설계<br><span style="color:var(--muted)">세션 단위</span></div></div>
+      <div class="frame feat sm"><div class="ic" data-ic="tools"></div><div class="lbl">③ 하네스</div><div class="desc">"어떻게 실행하나"<br>모델을 감싼 실행 시스템 설계<br><span style="color:var(--muted)">시스템 단위</span></div></div>
+    </div>
+    <div class="note" style="margin-top:16px"><strong>오늘 실습에 대입하면:</strong> 프롬프트 = 검토에 준 <strong>분석 규칙</strong>(대주단 관점·근거 요구) · 콘텍스트 = 참고할 <strong>사업장 자료</strong>(PF·실거래·수지) · 하네스 = 값을 넣으면 계산되는 <strong>수익률 웹앱 전체</strong>. 오늘 셋을 다 다룹니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-claude">
+  <div class="head">
+    <div class="eyebrow">PART 1 — Claude</div>
+    <h2 class="s-title">Claude &amp; Anthropic이란?</h2>
+  </div>
+  <div class="body">
+    <p class="lead" style="margin-bottom:18px"><strong>Anthropic</strong>이 개발한 LLM 기반 생성형 AI — 하나의 이름이 <strong>서비스이자 브랜드이자 모델 이름</strong>으로 쓰입니다.</p>
+    <div class="grid g3" style="gap:16px 24px">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="users"></span>Anthropic (회사)</div><p>전 OpenAI 연구원들이 <strong>2021년 창립</strong>한 <strong>AI 안전(safety)</strong> 중심의 연구·제품 회사</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="layers"></span>세 가지 의미</div><p><strong>엔진</strong>(LLM) · <strong>서비스</strong>(Claude.ai) · <strong>모델 이름</strong>(Opus · Sonnet · Haiku) — 맥락으로 구분합니다</p></div>
+      <div class="frame clay panel"><div class="ttl"><span class="ic" data-ic="window"></span>같은 엔진, 다른 환경</div><p>웹 채팅 · Cowork · Code · Design · Chrome — <strong>모두 같은 Claude</strong>가 다른 옷을 입은 것입니다</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>왜 부동산 금융 실무에서 Claude인가:</strong> 긴 문서(사업계획서·PF 검토보고서) 처리와 표·수식 계산, 코드 생성에 고루 강하고, <strong>파일을 직접 만들고 고치는 에이전트</strong>가 있어 분석에서 <strong>배포 가능한 도구</strong>까지 이어집니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-five">
+  <div class="head"><div class="eyebrow">PART 1 — 오늘 쓸 도구</div><h2 class="s-title">이 과정에서 쓸 <span class="clay">Claude</span> <small>+ 알아둘 것</small></h2></div>
+  <div class="body">
+    <div class="grid g3" style="gap:14px 20px">
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="chat"></span>Claude Chat <span class="kbadge">1회차</span></div><p><strong>생각 파트너.</strong> 지표 해석·의사결정·리서치. 답을 주지만 <strong>실행은 내가</strong> 한다. 빠르고 저렴.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="folder"></span>Claude Cowork <span class="kbadge">1회차</span></div><p><strong>일 파트너.</strong> 사업계획서 PDF·엑셀 더미를 <strong>직접 읽고 계산·정리·보고서</strong>까지 실행. 오늘 재무분석의 주역.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="terminal"></span>Claude Code <span class="kbadge">2회차</span></div><p><strong>빌드 파트너.</strong> 계산기·대시보드 같은 <strong>도구 자체</strong>를 만들어 배포. 오늘 <strong>수익률 계산 웹앱</strong>을 여기서 만듭니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="sheet"></span>Claude in Excel <small style="font-size:12px;color:var(--muted)">(알아둘 것)</small></div><p>엑셀 안에서 바로 수식·분석을 돕는 확장. 재무 모델을 자주 다루면 유용합니다. 플랜·지역에 따라 순차 제공.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="palette"></span>Design · <span class="ic" data-ic="browser" style="width:18px;height:18px"></span>Chrome <small style="font-size:12px;color:var(--muted)">(알아둘 것)</small></div><p>대화로 화면 제작(Design), 브라우저 자동 조작·검증(Chrome). 오늘 필수는 아니지만 존재를 알아두면 확장이 쉽습니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="layers"></span>핵심 한 줄</div><p>여러 개가 <strong>다른 AI가 아닙니다.</strong> <strong>같은 Claude</strong>가 채팅창·터미널·엑셀이라는 다른 작업 환경에 들어가 있을 뿐입니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>도구 선택의 기준:</strong> 지표 하나가 궁금하면 <strong>Chat</strong>, 자료 뭉치를 분석하면 <strong>Cowork</strong>, 같은 계산을 매번 반복하게 되면 <strong>Code로 도구를</strong> 만듭니다. 다음 장에서 자세히.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-when">
+  <div class="head"><div class="eyebrow">PART 1 — 도구 선택</div><h2 class="s-title">언제 무엇을 쓰나</h2></div>
+  <div class="body">
+    <div class="frame panel" style="padding:8px 20px">
+      <table class="tbl">
+        <tr><th>상황</th><th>도구</th><th>이유</th></tr>
+        <tr><td><strong>"DSCR 1.2가 무슨 뜻이지?" 개념·해석</strong></td><td>Claude Chat</td><td>빠르고 저렴. 답을 보고 내가 판단</td></tr>
+        <tr><td><strong>사업계획서 PDF 30장 읽고 리스크 뽑기</strong></td><td>Claude Cowork</td><td>파일을 직접 읽고 표·보고서로 정리</td></tr>
+        <tr><td><strong>사업수지 엑셀로 IRR·민감도 계산</strong></td><td>Claude Cowork</td><td>엑셀을 그대로 올려 계산·검증</td></tr>
+        <tr><td><strong>같은 계산을 매번 반복 → 계산기 제작</strong></td><td>Claude Code</td><td>도구를 만들어 배포, 팀이 공유</td></tr>
+        <tr><td><strong>배포된 웹앱을 사람처럼 클릭·검증</strong></td><td>Claude in Chrome</td><td>브라우저를 직접 조작(선택)</td></tr>
+      </table>
+    </div>
+    <div class="warn" style="margin-top:18px"><strong>비용 감각:</strong> 단순 질문을 Cowork·Code로 하면 사용량이 크게 낭비됩니다. <strong>"파일을 읽거나 만들어야 할 때만"</strong> 에이전트를 쓰고, 나머지는 Chat에서 하세요.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-tools1">
+  <div class="head"><div class="eyebrow">PART 1 — 도구 분업 ①</div><h2 class="s-title">무슨 일을 <span class="clay">어떤 도구</span>로</h2></div>
+  <div class="body">
+    <div class="frame panel" style="padding:8px 20px">
+      <table class="tbl">
+        <tr><th>하려는 일</th><th>주 도구</th><th>구체 예시 (트랙 1)</th></tr>
+        <tr><td><strong>개념·지표 이해, 브레인스토밍</strong></td><td>Claude <strong>Chat</strong></td><td>"DSCR과 이자보상배율의 차이를 PF 실무 예로 설명해줘"</td></tr>
+        <tr><td><strong>긴 문서 분석·리스크 추출</strong></td><td>Claude <strong>Cowork</strong></td><td>"이 사업계획서 PDF에서 상환 리스크 5개를 근거 페이지와 함께"</td></tr>
+        <tr><td><strong>엑셀 수익성 모델 계산·감사</strong></td><td>Claude in <strong>Excel</strong></td><td>"이 수지표의 IRR 수식을 설명하고, 합계 안 맞는 셀을 찾아줘"</td></tr>
+        <tr><td><strong>반복 계산을 도구로 (계산기)</strong></td><td>Claude <strong>Code</strong></td><td>"IRR·민감도 계산 웹앱을 만들어 배포해줘"</td></tr>
+        <tr><td><strong>배포한 웹앱 검증 (선택)</strong></td><td>Claude in <strong>Chrome</strong></td><td>"이 URL에 값을 넣고 결과가 엑셀과 같은지 확인해줘"</td></tr>
+        <tr><td><strong>외부 도구 연동·자동화 (선택)</strong></td><td>Cowork <strong>+ 커넥터</strong></td><td>공공데이터·Notion·Slack 등 필요한 것만 연결</td></tr>
+      </table>
+    </div>
+    <div class="grid g3" style="gap:12px;margin-top:16px">
+      <div class="frame panel" style="padding:14px 18px"><div class="ttl" style="font-size:15.5px"><span class="ic" data-ic="chat"></span>Chat = 생각</div><p style="font-size:14px">답을 주면 <strong>내가 실행</strong>. 가장 빠르고 저렴.</p></div>
+      <div class="frame panel" style="padding:14px 18px"><div class="ttl" style="font-size:15.5px"><span class="ic" data-ic="folder"></span>Cowork/Excel = 실행</div><p style="font-size:14px">파일을 <strong>직접 읽고 계산·정리</strong>.</p></div>
+      <div class="frame clay panel" style="padding:14px 18px"><div class="ttl" style="font-size:15.5px;color:var(--clay)"><span class="ic" data-ic="terminal"></span>Code = 제작</div><p style="font-size:14px"><strong>도구 자체</strong>를 만들어 배포.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-tools2">
+  <div class="head"><div class="eyebrow">PART 1 — 도구 분업 ②</div><h2 class="s-title">Claude in <span class="clay">Excel</span> · Cowork 심화</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay"><span class="ic" data-ic="sheet" style="width:16px;height:16px"></span>Claude in Excel — 재무 실무의 무기</div>
+      <div class="frame clay panel" style="margin-bottom:12px">
+        <p style="margin-bottom:8px">엑셀 <strong>사이드바</strong>에서 워크북을 읽고·분석·수정·생성합니다.</p>
+        <ul class="chk">
+          <li><strong>수식 설명</strong> — 남이 만든 셀이 왜 그 값인지 되짚기</li>
+          <li><strong>시나리오 테스트</strong> — 의존성 안 깨고 값 바꿔보기</li>
+          <li><strong>오류 추적</strong> — 합계 안 맞는 원인 셀 찾기</li>
+          <li><strong>6대 금융 스킬</strong> — 비교기업분석 · DCF(FCF+WACC) · 실사 데이터팩 · 기업프로필 · 실적분석 · 커버리지</li>
+        </ul>
+        <p style="margin-top:8px;font-size:14px;color:var(--muted)">실시간 데이터(Moody's·LSEG·Aiera) 연동. <strong>2026년 1월 Pro 플랜 개방.</strong></p>
+      </div>
+      <div class="warn"><strong>아직 안 되는 것:</strong> 피벗테이블 · 조건부서식 · <strong>데이터테이블(2축 What-if)</strong> · 매크로/VBA. 그래서 <strong>2차원 민감도 표는 2회차에 웹앱으로</strong> 만듭니다. (엑셀의 한계를 도구 제작으로 넘는 것)</div>
+    </div>
+    <div>
+      <div class="clabel clay"><span class="ic" data-ic="folder" style="width:16px;height:16px"></span>Cowork — 긴 문서·연동의 무기</div>
+      <div class="frame panel" style="margin-bottom:12px">
+        <ul class="chk">
+          <li><strong>대용량 컨텍스트</strong> — 계약서 전체·긴 검토보고서를 한 번에 읽고 비교</li>
+          <li><strong>커넥터(MCP)</strong> — 내부 DB·API·문서관리 시스템을 <strong>권한·로깅과 함께</strong> 연결</li>
+          <li><strong>컴퓨터 사용</strong> — 공개 API가 없는 낡은 시스템도 화면을 조작해 처리(RPA의 확장)</li>
+          <li><strong>파일 산출</strong> — 분석 결과를 표·문서 파일로 바로 저장</li>
+        </ul>
+      </div>
+      <div class="note"><strong>실무 조합:</strong> 문서 뭉치는 <strong>Cowork</strong>로 읽어 구조를 잡고 → 숫자 모델은 <strong>Excel</strong>에서 다듬고 → 반복될 계산은 <strong>Code</strong>로 웹앱화. 오늘 이 흐름을 그대로 걷습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-dgm-tools">
+  <div class="head"><div class="eyebrow">도식 · 도구 선택</div><h2 class="s-title">한눈에 보는 <span class="clay">도구 선택 흐름</span></h2></div>
+  <div class="body">
+    <div class="dgm">
+      <svg viewBox="0 0 1000 470" role="img" aria-label="도구 선택 흐름도">
+        <defs><marker id="t1-ah1" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="var(--clay)"/></marker></defs>
+        <rect x="360" y="12" width="280" height="52" rx="12" fill="var(--ink)"/>
+        <text x="500" y="44" text-anchor="middle" fill="#F4F0E8" font-size="20" font-weight="800">지금 뭘 하려 하나?</text>
+        <line x1="500" y1="64" x2="500" y2="92" stroke="var(--muted)" stroke-width="2"/>
+        <!-- lanes -->
+        <g>
+          <rect x="70" y="100" width="420" height="66" rx="10" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="90" y="130" fill="var(--ink)" font-size="17" font-weight="700">빠른 질문 · 개념 · 지표 해석</text>
+          <text x="90" y="152" fill="var(--muted)" font-size="13.5">"DSCR이 뭐야?" · 답을 보고 내가 판단</text>
+          <line x1="490" y1="133" x2="556" y2="133" stroke="var(--clay)" stroke-width="2.4" marker-end="url(#t1-ah1)"/>
+          <rect x="560" y="100" width="370" height="66" rx="10" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/>
+          <text x="580" y="140" fill="var(--clay)" font-size="19" font-weight="800">Claude Chat</text>
+        </g>
+        <g>
+          <rect x="70" y="180" width="420" height="66" rx="10" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="90" y="210" fill="var(--ink)" font-size="17" font-weight="700">자료(파일)를 읽고 분석</text>
+          <text x="90" y="232" fill="var(--muted)" font-size="13.5">사업계획서 PDF · 사업수지 엑셀에서 리스크·수치</text>
+          <line x1="490" y1="213" x2="556" y2="213" stroke="var(--clay)" stroke-width="2.4" marker-end="url(#t1-ah1)"/>
+          <rect x="560" y="180" width="370" height="66" rx="10" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/>
+          <text x="580" y="212" fill="var(--clay)" font-size="19" font-weight="800">Claude Cowork</text>
+          <text x="580" y="233" fill="var(--body)" font-size="13">엑셀 계산은 Claude in Excel</text>
+        </g>
+        <g>
+          <rect x="70" y="260" width="420" height="66" rx="10" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="90" y="290" fill="var(--ink)" font-size="17" font-weight="700">반복될 계산을 도구로</text>
+          <text x="90" y="312" fill="var(--muted)" font-size="13.5">"IRR·민감도 계산기를 만들어 배포"</text>
+          <line x1="490" y1="293" x2="556" y2="293" stroke="var(--clay)" stroke-width="2.4" marker-end="url(#t1-ah1)"/>
+          <rect x="560" y="260" width="370" height="66" rx="10" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.6"/>
+          <text x="580" y="300" fill="#F4F0E8" font-size="19" font-weight="800">Claude Code</text>
+        </g>
+        <g>
+          <rect x="70" y="340" width="420" height="66" rx="10" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="90" y="370" fill="var(--ink)" font-size="17" font-weight="700">배포한 웹앱을 검증 · 외부 연동</text>
+          <text x="90" y="392" fill="var(--muted)" font-size="13.5">브라우저 자동 조작 · 커넥터(선택)</text>
+          <line x1="490" y1="373" x2="556" y2="373" stroke="var(--muted)" stroke-width="2.4" marker-end="url(#t1-ah1)"/>
+          <rect x="560" y="340" width="370" height="66" rx="10" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="580" y="380" fill="var(--ink)" font-size="18" font-weight="800">Chrome · 커넥터</text>
+        </g>
+      </svg>
+    </div>
+    <div class="dgm-cap">공통 원칙: <strong style="color:var(--body)">"파일을 읽거나 만들어야 할 때만"</strong> 에이전트(Cowork·Code)를 쓰고, 나머지는 Chat에서 — 사용량을 아끼는 핵심입니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-loop">
+  <div class="head">
+    <div class="eyebrow">PART 1 — 작동 원리</div>
+    <h2 class="s-title">에이전트 루프 &amp; <span class="clay">서브에이전트</span></h2>
+  </div>
+  <div class="body">
+    <div class="clabel clay">에이전트 루프 — 챗봇이 하지 않는 것</div>
+    <div class="pipe" style="margin-bottom:20px">
+      <div class="frame step"><div class="si" data-ic="target"></div><div class="st">계획</div><div class="sd">무엇이 필요한지 파악</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="bolt"></div><div class="st">실행</div><div class="sd">파일 편집 · 명령 실행</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="check"></div><div class="st">자기 검토</div><div class="sd">작업이 맞는지 스스로 확인</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="loop"></div><div class="st">다음 결정</div><div class="sd">반복 · 재시도 · 다음 단계</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="share"></span>서브에이전트 — 병렬 실행</div><p>"인근 경쟁 사업장 5곳의 분양가·미분양을 조사" → 순차로 하면 뒤로 갈수록 품질이 떨어집니다. 서브에이전트는 <strong>자기 자신을 5개 복제</strong>해 동시에 처리합니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="check"></span>왜 결과가 더 좋은가</div><ul class="chk"><li>훨씬 <strong>빠르고</strong> 각 결과 품질이 고름</li><li>2번 조사가 1번 결과에 <strong>편향되지 않음</strong></li><li>각자 별도 컨텍스트에서 일하고 <strong>요약만 보고</strong></li></ul></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-plan">
+  <div class="head">
+    <div class="eyebrow">PART 1 — 시작하기</div>
+    <h2 class="s-title">요금제 &amp; 설치 <small>2026년 9월 기준</small></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">오늘 실습은 유료 플랜 필요</div>
+      <div class="frame panel" style="padding:8px 20px;margin-bottom:14px">
+        <table class="tbl">
+          <tr><th>플랜</th><th>가격(월)</th><th>비고</th></tr>
+          <tr><td>Free</td><td>$0</td><td>Code · Design · Cowork 미포함</td></tr>
+          <tr><td><strong>Pro</strong> <span class="kbadge">권장</span></td><td><strong>$20</strong> · 연 $17</td><td>오늘 실습에 필요한 전부 포함</td></tr>
+          <tr><td>Max</td><td>$100 / $200</td><td>사용량 5x / 20x</td></tr>
+          <tr><td>Team</td><td>$25 / $100 · 좌석</td><td>Standard / Premium</td></tr>
+          <tr><td>Enterprise</td><td>문의</td><td>거버넌스 · 보안</td></tr>
+        </table>
+      </div>
+      <div class="warn">요금·포함 범위는 자주 바뀝니다. 결제 전 <strong>claude.com/pricing</strong>에서 최종 확인하세요. 조직 플랜은 관리자가 기능을 먼저 켜야 할 수 있습니다.</div>
+    </div>
+    <div>
+      <div class="clabel">설치 4단계</div>
+      <div class="flow">
+        <div class="item"><div class="n clay">1</div><div class="tx"><strong>Pro 이상 가입</strong><span>claude.ai → Upgrade</span></div></div>
+        <div class="item"><div class="n">2</div><div class="tx"><strong>데스크탑 앱 설치</strong><span>claude.com/download — Code 탭이 여기 있습니다</span></div></div>
+        <div class="item"><div class="n">3</div><div class="tx"><strong>Node.js LTS 설치</strong><span>nodejs.org — 2회차 웹앱 로컬 미리보기용</span></div></div>
+        <div class="item"><div class="n">4</div><div class="tx"><strong>Chrome 확장 설치</strong><span>Chrome 웹스토어 → "Claude in Chrome"</span></div></div>
+      </div>
+      <div class="note" style="margin-top:16px">Claude Design은 <strong>claude.ai/design</strong> 또는 데스크탑 앱 사이드바에서 바로 열 수 있습니다. 별도 설치가 필요 없습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p1-model">
+  <div class="head">
+    <div class="eyebrow">PART 1 — 모델 선택</div>
+    <h2 class="s-title">어떤 <span class="clay">모델</span>을 고를까</h2>
+  </div>
+  <div class="body">
+    <div class="grid g3" style="gap:14px 22px;margin-bottom:18px">
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)">Opus</div><p>가장 똑똑한 모델. <strong>복잡한 다단계 추론·설계·디버깅</strong>에 사용. 오늘 <strong>Design과 Code에서 기본</strong>으로 쓰세요.</p></div>
+      <div class="frame panel"><div class="ttl">Sonnet</div><p>속도와 품질의 균형. <strong>일상적인 문서 작성·수정</strong>에 충분. 사용량을 아끼고 싶을 때.</p></div>
+      <div class="frame panel"><div class="ttl">Haiku</div><p>가장 빠르고 가벼움. <strong>단순 분류·요약·반복 작업</strong>에 적합.</p></div>
+    </div>
+    <div class="grid g2">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="target"></span>실습 권장</div><ul class="chk"><li>재무 분석·민감도 — <strong>Opus</strong> (숫자·논리 정확도)</li><li>계산 웹앱 제작 — <strong>Opus</strong>, 사용량 부족 시 Sonnet</li><li>문서 요약·표 정리 — <strong>Sonnet</strong></li><li>단순 반복·형식 변환 — <strong>Haiku</strong></li></ul></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="alert"></span>혼동하지 마세요</div><p>모델 이름·세대는 자주 바뀝니다. 이름을 외우기보다 <strong>"가장 똑똑한 것 / 균형 / 가장 빠른 것"</strong> 세 칸으로 기억하세요. 사업성 검토처럼 <strong>숫자·논리가 중요한 작업은 가장 똑똑한 모델</strong>을 쓰는 편이 안전합니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:16px">모델 이름과 세대는 몇 달 단위로 바뀝니다. <strong>이름을 외우지 말고 "가장 똑똑한 것 / 균형 / 가장 빠른 것" 세 칸</strong>으로 기억하세요.</div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-p2-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">PART 2</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">컨텍스트 <span class="clay">엔지니어링</span></h1>
+    <p class="s-sub" style="max-width:560px;margin:18px auto 0">평범한 결과와 탁월한 결과를 가르는 것<br>이제는 프롬프트가 아니라 컨텍스트입니다</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p2-token">
+  <div class="head">
+    <div class="eyebrow">PART 2 — 기본 개념</div>
+    <h2 class="s-title">토큰 · 컨텍스트 · <span class="clay">컨텍스트 윈도우</span></h2>
+  </div>
+  <div class="body grid g3" style="gap:16px 24px">
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="coin"></span>토큰 (Token)</div>
+      <p>AI가 텍스트를 처리하는 <strong>기본 단위</strong>. 단어 하나일 수도, 더 작은 조각일 수도 있습니다. (영어 1단어 ≈ 1~2토큰, <strong>한글은 더 잘게 쪼개집니다</strong>)</p>
+      <div class="note" style="margin-top:12px;font-size:14.5px"><strong>비용과 직결:</strong> 입력·출력 토큰 양에 따라 사용량이 차감됩니다.</div>
+    </div>
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="layers"></span>컨텍스트 (Context)</div>
+      <p>AI가 지금 대화에서 <strong>참고하는 정보의 범위</strong>. "아까 그거"라고만 해도 알아듣는 이유입니다.</p>
+      <div class="note" style="margin-top:12px;font-size:14.5px">첨부한 파일, 마운트한 폴더, 연결한 도구가 모두 컨텍스트에 들어갑니다.</div>
+    </div>
+    <div class="frame clay panel">
+      <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="window"></span>컨텍스트 윈도우</div>
+      <p>모델이 답을 만들 때 <strong>한 번에 볼 수 있는 정보 상자</strong>의 크기. 단위는 토큰입니다.</p>
+      <div class="bignum" style="margin-top:12px"><span class="n">100만</span><span class="u">토큰 ≈ 소설 9~10권</span></div>
+      <p style="margin-top:8px;font-size:14.5px;color:var(--muted)">비어 있는 새 대화도 시스템 프롬프트 등으로 이미 수만 토큰을 씁니다.</p>
+    </div>
+  </div>
+  <div class="note" style="max-width:1260px;margin:20px auto 0"><strong>한 줄 정리:</strong> <strong>토큰</strong> = 처리·비용의 단위, <strong>컨텍스트</strong> = AI가 참고하는 정보 범위, <strong>컨텍스트 윈도우</strong> = 그 정보가 들어가는 상자의 크기.</div>
+</div>
+
+<div class="slide t1" id="t1-p2-rot">
+  <div class="head">
+    <div class="eyebrow">PART 2 — 부작용</div>
+    <h2 class="s-title">컨텍스트가 <span class="clay">너무 많으면</span></h2>
+  </div>
+  <div class="body grid g4" style="gap:14px 20px">
+    <div class="frame feat sm"><div class="ic" data-ic="alert"></div><div class="lbl">컨텍스트 로트</div><div class="desc">정보가 많아질수록 답이 나빠집니다. 앞서 한 말을 잊고 추론 품질이 떨어집니다.</div></div>
+    <div class="frame feat sm"><div class="ic" data-ic="tools"></div><div class="lbl">툴 혼동</div><div class="desc">연결한 도구가 많을수록 비슷한 이름끼리 경쟁 — 어떤 툴을 쓸지 헷갈립니다.</div></div>
+    <div class="frame feat sm"><div class="ic" data-ic="clock"></div><div class="lbl">느린 응답</div><div class="desc">매 메시지마다 전체 컨텍스트를 다시 처리 — 클수록 오래 걸립니다.</div></div>
+    <div class="frame clay feat sm"><div class="ic" data-ic="coin" style="color:var(--clay)"></div><div class="lbl" style="color:var(--clay)">사용량 폭증</div><div class="desc">가장 큰 문제. 컨텍스트가 클수록 세션·주간 한도를 훨씬 빨리 소진합니다.</div></div>
+  </div>
+  <div class="warn" style="max-width:1260px;margin:22px auto 0"><strong>실습 중 자주 생기는 일:</strong> 한 대화창에서 A사업장 분석 → B사업장 분석까지 이어가다 숫자가 섞이고 사용량이 바닥납니다. <strong>사업장·작업이 바뀌면 새 대화(새 태스크)로</strong> 시작하세요.</div>
+</div>
+
+<div class="slide t1" id="t1-p2-levers">
+  <div class="head">
+    <div class="eyebrow">PART 2 — 핵심</div>
+    <h2 class="s-title">컨텍스트 엔지니어의 <span class="clay">5가지 레버</span></h2>
+  </div>
+  <div class="body">
+    <div class="flow">
+      <div class="item"><div class="n clay">1</div><div class="tx"><strong>대화 (Conversation)</strong> — 내가 보내는 프롬프트와 첨부<span>지금 이 작업에 꼭 필요한 정보만 전달하기</span></div></div>
+      <div class="item"><div class="n">2</div><div class="tx"><strong>워킹 폴더</strong> — Claude가 읽고 쓸 수 있는 폴더<span>필요한 폴더만 마운트 · 원본은 복사본으로 작업</span></div></div>
+      <div class="item"><div class="n">3</div><div class="tx"><strong>커넥터 (MCP)</strong> — 외부 도구에서 데이터를 가져오고 동작 수행<span>예: 공공데이터 · Notion · Slack 등 필요한 것만 연결</span></div></div>
+      <div class="item"><div class="n">4</div><div class="tx"><strong>스킬</strong> — 반복 워크플로를 저장해둔 지시 묶음<span>같은 지시를 매번 붙여넣지 않기</span></div></div>
+      <div class="item"><div class="n">5</div><div class="tx"><strong>인스트럭션</strong> — 모든 작업 전에 항상 먼저 읽히는 저장된 지침<span>전역 / 프로젝트 / 폴더(CLAUDE.md) 단위</span></div></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>오늘 실습에서 다 씁니다:</strong> ① 프롬프트·자료 첨부 · ② 사업장별 폴더 열기 · ⑤ 전역 지침·CLAUDE.md에 단위·검토 규칙 저장. 그리고 ④ <strong>사업성 검토 프롬프트를 Skill로</strong> 저장해 다음 사업장에 재사용합니다(부록 A2).</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p2-instr">
+  <div class="head"><div class="eyebrow">PART 2 — 인스트럭션 &amp; 메모리</div><h2 class="s-title">항상 먼저 읽히는 <span class="clay">지침</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">인스트럭션 계층</div>
+      <div class="frame panel" style="padding:8px 20px;margin-bottom:14px">
+        <table class="tbl">
+          <tr><th>범위</th><th>위치</th><th>용도</th></tr>
+          <tr><td><strong>전역</strong></td><td>설정 → 프로필</td><td>내 직무·회사·단위 규칙</td></tr>
+          <tr><td><strong>프로젝트</strong></td><td>프로젝트 지침</td><td>사업성 검토 표준 목차·산출물</td></tr>
+          <tr><td><strong>폴더</strong></td><td>CLAUDE.md</td><td>이 사업장 기본정보·금지사항</td></tr>
+        </table>
+      </div>
+      <div class="note"><strong>메모리:</strong> 켜두면 Claude가 나에 대해 기억해 자동 반영합니다. 월 1회 정도 검토·편집을 권장합니다.</div>
+    </div>
+    <div>
+      <div class="clabel">실습용 CLAUDE.md 예시</div>
+      <div class="code sm"><span class="cm"># 사업장 규칙</span>
+
+<span class="kw">## 이 폴더는</span>
+가상 사업장 「센텀 리버뷰」 사업성 검토
+
+<span class="kw">## 반드시 지킬 것</span>
+- 금액은 <span class="st">억원</span> 기준, 천단위 콤마
+- 면적은 <span class="st">㎡와 평 병기</span> (평 = ㎡ ÷ 3.3058)
+- VAT 포함/제외를 반드시 명시
+- 계산 결과에는 <span class="st">사용한 수식</span>을 함께
+- 자료에 없는 값은 추정 말고 "자료 없음"
+
+<span class="kw">## 금지</span>
+- 업계 평균치로 빈칸을 채우지 말 것</div>
+      <div class="warn" style="margin-top:14px">CLAUDE.md는 <strong>사업장 폴더 최상단</strong>에 두면 Claude Code가 매 작업 전에 자동으로 읽습니다. 2회차에서 만들어 볼 파일입니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p2-prompt">
+  <div class="head"><div class="eyebrow">PART 2 — 실전</div><h2 class="s-title">좋은 프롬프트는 <span class="clay">무엇이 다른가</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">나쁜 예 → 좋은 예</div>
+      <div class="frame panel" style="margin-bottom:14px">
+        <p style="color:var(--muted)"><strong style="color:var(--warn)">✕</strong> "이 사업 괜찮아?"</p>
+      </div>
+      <div class="code sm"><span class="cm">[맥락]</span>
+너는 대주단 심사역이다. 첨부한 사업장 자료를
+근거로만 검토한다. 자료에 없는 값은 "자료 없음".
+
+<span class="cm">[대상·목적]</span>
+대출 심의에 올릴 검토 의견. 상환 가능성 관점.
+
+<span class="cm">[담을 내용]</span>
+사업 구조 요약 / 자금 구조 / 리스크 3가지
+(심각도 순) / 내가 추가로 요구할 자료
+
+<span class="cm">[형식]</span>
+표로. 모든 숫자에 근거 위치를 병기.
+결론에는 반대 논거도 함께.</div>
+    </div>
+    <div>
+      <div class="clabel">좋은 프롬프트의 4요소</div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="users"></span><div><strong>맥락 (Who)</strong> — 누구의 관점으로 보나<br><span style="color:var(--muted);font-size:14.5px">→ "대주단"과 "시행사"는 다른 리스크를 봅니다</span></div></li>
+        <li><span class="bic" data-ic="target"></span><div><strong>대상·목적 (Why)</strong> — 누가 읽고 무엇을 결정하나<br><span style="color:var(--muted);font-size:14.5px">→ 강조점이 달라집니다</span></div></li>
+        <li><span class="bic" data-ic="scroll"></span><div><strong>구체적 내용 (What)</strong> — 담을 항목을 나열<br><span style="color:var(--muted);font-size:14.5px">→ 추측 대신 정확한 구성</span></div></li>
+        <li><span class="bic" data-ic="doc"></span><div><strong>출력 형식 (How)</strong> — 표·근거 병기·반대 논거<br><span style="color:var(--muted);font-size:14.5px">→ 지어낸 숫자를 걸러내기 쉬워집니다</span></div></li>
+      </ul>
+      <div class="note" style="margin-top:16px"><strong>실전 요령:</strong> 처음부터 완벽하게 쓰려 말고 <strong>짧게 시키고 결과를 보며 조건을 추가</strong>하세요. 잘 다듬은 프롬프트는 그대로 <strong>Skill로</strong> 저장합니다(부록 A2).</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-p3-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">PART 3</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">컴퓨터 &amp; <span class="clay">웹개발</span> 기초</h1>
+    <p class="s-sub" style="max-width:600px;margin:18px auto 0">외울 필요 없습니다 — "이런 게 있구나" 정도면 충분합니다<br>다만 이걸 알면 <strong style="color:var(--ink)">Claude가 하는 말을 알아듣게</strong> 됩니다</p>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-guicli">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 컴퓨터 기초</div>
+    <h2 class="s-title">GUI vs <span class="clay">CLI</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="frame panel" style="margin-bottom:14px">
+        <div class="ttl"><span class="ic" data-ic="window"></span>GUI — Graphical User Interface</div>
+        <p>마우스와 화면으로 조작. 버튼 클릭 → 좌표 파악 → 기능 실행이라는 복잡한 과정이 뒤에서 일어납니다.</p>
+        <p style="margin-top:8px;font-size:14.5px;color:var(--muted)"><strong>예시:</strong> 윈도우 탐색기, 크롬 브라우저, 한글</p>
+      </div>
+      <div class="frame clay panel">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="terminal"></span>CLI — Command Line Interface</div>
+        <p>명령어를 글자로 입력. 컴퓨터에겐 더 직관적·효율적이고 <strong>자동화에 유리</strong>합니다(저장해두고 반복 실행).</p>
+        <p style="margin-top:8px;font-size:14.5px;color:var(--muted)"><strong>터미널</strong> — CLI로 소통하는 검은 화면 앱</p>
+      </div>
+    </div>
+    <div>
+      <div class="clabel">내 컴퓨터에서 터미널 열기</div>
+      <div class="frame panel" style="padding:8px 20px;margin-bottom:14px">
+        <table class="tbl">
+          <tr><th>OS</th><th>여는 법</th></tr>
+          <tr><td><strong>Windows 11</strong></td><td>시작 메뉴 → "터미널" 검색 (기본 내장)</td></tr>
+          <tr><td><strong>Windows 10</strong></td><td>MS Store에서 <strong>Windows Terminal</strong> 설치</td></tr>
+          <tr><td><strong>macOS</strong></td><td>Spotlight(⌘+Space) → "터미널"</td></tr>
+        </table>
+      </div>
+      <div class="note"><strong>좋은 소식:</strong> 오늘 터미널에 직접 입력할 명령은 <strong>5개 남짓</strong>입니다. 나머지는 Claude Code가 대신 실행합니다. 터미널은 "Claude Code가 사는 집"이라고 생각하세요.</div>
+      <div class="code sm" style="margin-top:14px"><span class="cm"># 오늘 쓸 명령은 사실상 이것뿐</span>
+<span class="cmd">cd</span> 프로젝트폴더경로   <span class="cm"># 폴더로 이동</span>
+<span class="cmd">claude</span>                <span class="cm"># Claude Code 실행</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-local">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 컴퓨터 기초</div>
+    <h2 class="s-title">로컬 vs <span class="clay">클라우드</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="frame panel" style="margin-bottom:14px"><div class="ttl"><span class="ic" data-ic="cpu"></span>로컬 (Local) = 내 컴퓨터</div><p>"로컬에서 실행한다" = 내 컴퓨터에서 실행. 파일이 내 하드디스크에 저장됩니다. <strong>나만 볼 수 있습니다.</strong></p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="cloud"></span>클라우드 (Cloud) = 인터넷 어딘가의 서버</div><p>구글 드라이브·네이버 클라우드가 대표적. 내 파일이 회사 서버 컴퓨터에 저장됩니다. <strong>주소만 알면 누구나 접속</strong>할 수 있습니다.</p></div>
+    </div>
+    <div>
+      <div class="clabel clay">오늘 실습에 대입하면</div>
+      <div class="flow">
+        <div class="item"><div class="n ol">1</div><div class="tx"><strong>내 컴퓨터 폴더</strong>에 웹사이트 파일을 만든다<span>= 로컬. 아직 나만 봄</span></div></div>
+        <div class="item"><div class="n ol">2</div><div class="tx"><strong>GitHub</strong>에 올린다<span>= 클라우드에 코드를 보관</span></div></div>
+        <div class="item"><div class="n clay">3</div><div class="tx"><strong>Vercel</strong>이 그 코드를 웹사이트로 띄운다<span>= 이제 전 세계 누구나 접속 가능</span></div></div>
+      </div>
+      <div class="note" style="margin-top:16px"><strong>Claude Code는 로컬 + 클라우드 조합입니다.</strong> AI 두뇌는 클라우드(Anthropic 서버)에서 빌려오고, 내 컴퓨터 파일을 직접 읽고 쓰죠. 그래서 강력하지만, <strong>잘못 시키면 내 파일이 지워질 수도</strong> 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-path">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 컴퓨터 기초</div>
+    <h2 class="s-title">파일 · 폴더 · <span class="clay">경로</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel">폴더 &amp; 경로 (Path)</div>
+      <p style="font-size:16px;color:var(--body);line-height:1.7;margin-bottom:12px"><strong>폴더(디렉터리)</strong>는 파일을 담는 상자, <strong>경로</strong>는 파일이 있는 위치의 주소입니다.</p>
+      <div class="code sm"><span class="cm"># 절대경로 — 최상위부터 전체 주소</span>
+C:\Users\me\revibe\<span class="cmd">index.html</span>
+/Users/me/revibe/<span class="cmd">index.html</span>
+
+<span class="cm"># 상대경로 — 지금 있는 폴더 기준</span>
+./data/<span class="cmd">사업수지.csv</span></div>
+      <div class="note" style="margin-top:14px">Claude Code는 <strong>작업 폴더(working directory)</strong> 안에서 실행되고, 경로로 파일을 지정합니다. "data 폴더의 사업수지.csv를 읽어줘"가 통하는 이유죠.</div>
+    </div>
+    <div>
+      <div class="clabel clay">확장자 — 파일의 종류</div>
+      <div class="frame panel" style="padding:8px 20px">
+        <table class="tbl">
+          <tr><th>확장자</th><th>정체</th><th>오늘 어디에</th></tr>
+          <tr><td><strong>.md</strong></td><td>마크다운 문서</td><td>지침·분석 메모</td></tr>
+          <tr><td><strong>.html</strong></td><td>웹 페이지 뼈대</td><td>홈페이지 본체</td></tr>
+          <tr><td><strong>.css</strong></td><td>디자인</td><td>색·폰트·레이아웃</td></tr>
+          <tr><td><strong>.js</strong></td><td>JavaScript 코드</td><td>계산 로직 (2회차)</td></tr>
+          <tr><td><strong>.json</strong></td><td>설정·데이터</td><td>패키지 목록</td></tr>
+          <tr><td><strong>.env</strong></td><td>환경변수(비밀값)</td><td>API 키 보관</td></tr>
+        </table>
+      </div>
+      <div class="warn" style="margin-top:14px">윈도우는 기본적으로 확장자를 숨깁니다. <strong>탐색기 → 보기 → 파일 확장명 체크</strong>를 켜두면 실습이 훨씬 수월합니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-runtime">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 컴퓨터 기초</div>
+    <h2 class="s-title">프로그래밍 언어 &amp; <span class="clay">런타임</span></h2>
+  </div>
+  <div class="body">
+    <div class="pipe" style="margin-bottom:22px">
+      <div class="frame step"><div class="si" data-ic="code"></div><div class="st">코드</div><div class="sd">사람이 쓴 명령 (언어)</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="cpu"></div><div class="st">런타임</div><div class="sd">코드를 실행하는 환경</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="bolt"></div><div class="st">실행 결과</div><div class="sd">동작하는 프로그램</div></div>
+    </div>
+    <div class="grid g2">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="scroll"></span>프로그래밍 언어 = 레시피(글)</div><p>컴퓨터에 일을 시키는 언어. <strong>JavaScript · Python</strong> 등. 사람이 읽고 쓰는 <strong>레시피</strong>에 해당합니다. 글만 있으면 요리는 안 되죠.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="gear"></span>런타임 = 주방</div><p>코드를 실제로 <strong>실행</strong>해주는 환경. <strong>Node.js</strong>는 브라우저 밖에서 JavaScript를 실행합니다. <strong>오늘 Node.js를 설치하는 이유</strong>입니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>실전 연결:</strong> Claude Code도, 2회차에 만들 수익률 계산 웹앱도 <strong>Node.js 위에서</strong> 돌아갑니다. Node.js를 설치하면 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">npm</code>이라는 패키지 설치 도구도 함께 들어옵니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-frontback">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 웹 개발</div>
+    <h2 class="s-title">프론트엔드 vs <span class="clay">백엔드</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="frame panel" style="margin-bottom:14px"><div class="ttl"><span class="ic" data-ic="window"></span>프론트엔드 (Frontend)</div><p><strong>눈에 보이는 모든 것</strong> — 버튼·이미지·색상·레이아웃·텍스트</p><p style="margin-top:6px;font-size:14.5px;color:var(--muted)">식당 비유: <strong>손님 홀 · 메뉴판 · 인테리어</strong></p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="server"></span>백엔드 (Backend)</div><p><strong>눈에 보이지 않는 처리</strong> — 로그인 확인·데이터 저장·API 호출</p><p style="margin-top:6px;font-size:14.5px;color:var(--muted)">식당 비유: <strong>주방 · 재료 창고 · 주문 시스템</strong></p></div>
+    </div>
+    <div>
+      <div class="clabel">프론트엔드 3대 요소</div>
+      <div class="frame panel" style="padding:8px 20px;margin-bottom:14px">
+        <table class="tbl">
+          <tr><th>기술</th><th>역할</th><th>집에 비유하면</th></tr>
+          <tr><td><strong>HTML</strong></td><td>뼈대 — 제목·버튼·이미지 위치</td><td>기둥과 벽</td></tr>
+          <tr><td><strong>CSS</strong></td><td>디자인 — 색상·크기·폰트</td><td>페인트칠·인테리어</td></tr>
+          <tr><td><strong>JavaScript</strong></td><td>동작 — 클릭·애니메이션</td><td>조명 스위치·자동문</td></tr>
+        </table>
+      </div>
+      <div class="warn"><strong>트랙 1의 수익률 계산기는 대부분 프론트엔드입니다.</strong> 값을 넣으면 그 자리에서 계산해 보여주면 되니까요. 데이터를 <strong>계속 쌓아야</strong> 할 때(트랙 2의 CRM)만 백엔드가 필요합니다. 단, 공공데이터 API 키를 쓴다면 그 키는 <strong>서버에만</strong> 둡니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-howweb">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 웹 개발</div>
+    <h2 class="s-title">웹사이트는 <span class="clay">어떻게</span> 인터넷에 뜨나</h2>
+  </div>
+  <div class="body">
+    <div class="pipe" style="margin-bottom:20px">
+      <div class="frame step"><div class="si" data-ic="folder"></div><div class="st">내 컴퓨터</div><div class="sd">HTML 파일 작성</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="github"></div><div class="st">GitHub</div><div class="sd">코드 저장소에 업로드</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="cloud"></div><div class="st">호스팅 (Vercel)</div><div class="sd">서버에 올려 24시간 대기</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="globe"></div><div class="st">도메인 / URL</div><div class="sd">주소를 알면 누구나 접속</div></div>
+    </div>
+    <div class="grid g3" style="gap:14px 22px">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="server"></span>호스팅 (Hosting)</div><p>웹사이트 파일을 <strong>24시간 켜져 있는 서버 컴퓨터</strong>에 올려두는 것. 내 PC를 끄면 사이트가 사라지면 안 되니까요.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="pin"></span>도메인 (Domain)</div><p><code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">my-invest.co.kr</code> 같은 <strong>사람이 읽는 주소</strong>. 실제로는 숫자 IP 주소를 가리킵니다. 연 1~2만원대에 구입 가능.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="rocket"></span>배포 (Deploy)</div><p>완성한 코드를 <strong>서버에 올려 실제로 동작시키는 것</strong>. 오늘은 Vercel이 이걸 자동으로 해줍니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>Vercel을 쓰는 이유:</strong> 서버 세팅·보안·인증서를 몰라도 됩니다. <strong>GitHub 저장소를 연결하면 끝</strong>이고, 이후 코드를 수정해 올릴 때마다 <strong>자동으로 재배포</strong>됩니다. 무료 플랜으로 충분합니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-api">
+  <div class="head"><div class="eyebrow">PART 3 — 웹 개발</div><h2 class="s-title">API <small>— Application Programming Interface</small></h2></div>
+  <div class="body">
+    <div class="pipe" style="margin-bottom:20px">
+      <div class="frame step"><div class="si" data-ic="robot"></div><div class="st">내 프로그램</div><div class="sd">"서울 실거래가 줘"</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="plug"></div><div class="st">API</div><div class="sd">약속된 요청·응답 규칙</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="cloud"></div><div class="st">국토부 서버</div><div class="sd">"이런 데이터입니다"</div></div>
+    </div>
+    <div class="grid g3" style="gap:14px 22px">
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="share"></span>API란</div><p>프로그램끼리 <strong>서로 소통하는 방법</strong>. 손님(내 앱)과 주방(외부 서비스) 사이의 <strong>주문서 양식</strong>이라고 보면 됩니다.</p></div>
+      <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="key"></span>API 키 (Key)</div><p>API를 쓰기 위한 <strong>비밀번호</strong>. 긴 문자열이며 <strong>절대 노출 금지</strong>. 공공데이터포털 인증키가 대표적입니다.</p></div>
+      <div class="frame panel"><div class="ttl"><span class="ic" data-ic="plug"></span>MCP</div><p><strong>Model Context Protocol.</strong> AI가 외부 도구를 쓸 때의 <strong>표준 규약</strong>. Claude의 "커넥터"가 이 위에 서 있습니다. 필요한 데이터원을 붙일 때 씁니다.</p></div>
+    </div>
+    <div class="note" style="margin-top:16px"><strong>이 과정에서:</strong> 실거래가는 <strong>rt.molit.go.kr에서 CSV 직접 다운로드</strong>가 기본입니다(인증키 불필요, 현장에서 안 막힘). 자동 수집이 필요하면 공공데이터포털 OpenAPI 인증키를 발급받아 <strong>.env</strong>에 보관합니다(심화).</div>
+    <div class="warn" style="margin-top:14px"><strong>키 사고는 실제로 자주 납니다.</strong> 키를 채팅창·스크린샷·깃허브에 올리면 수집당합니다. 노출됐다면 <strong>즉시 폐기·재발급</strong>하세요.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-env">
+  <div class="head"><div class="eyebrow">PART 3 — 웹 개발</div><h2 class="s-title">환경변수 &amp; <span class="clay">패키지</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">환경변수 (.env)</div>
+      <p style="font-size:16px;color:var(--body);line-height:1.7;margin-bottom:12px">API 키 같은 <strong>비밀 값·설정</strong>을 코드에 직접 쓰지 않고 <strong>.env 파일</strong>에 따로 두고 불러옵니다.</p>
+      <div class="code sm"><span class="cm"># 공공데이터를 자동 수집할 때만 필요</span>
+DATA_GO_KR_KEY<span class="kw">=</span><span class="st">발급받은인증키</span></div>
+      <div class="warn" style="margin-top:14px"><strong>.gitignore</strong>에 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">.env</code>를 적어두면 깃에 절대 올라가지 않습니다. Claude Code가 자동으로 만들어 주지만 <strong>반드시 직접 확인</strong>하세요.</div>
+    </div>
+    <div>
+      <div class="clabel">패키지 (Package)</div>
+      <p style="font-size:16px;color:var(--body);line-height:1.7;margin-bottom:12px">남이 만들어 둔 <strong>코드 묶음(라이브러리)</strong>. 직접 만들 필요 없이 가져다 씁니다.</p>
+      <div class="code sm"><span class="cm"># 설치 → node_modules/ 폴더에 저장됨</span>
+<span class="cmd">npm install</span> 패키지이름</div>
+      <div class="note" style="margin-top:14px"><strong>package.json</strong>에 설치 목록이 기록됩니다. <strong>node_modules</strong>는 용량이 크고 자동 복원되므로 깃에서 제외합니다.</div>
+      <div class="frame panel" style="margin-top:14px"><div class="ttl"><span class="ic" data-ic="check"></span>기억할 것은 하나</div><p>이 명령들은 <strong>Claude Code가 알아서 실행</strong>합니다. 여러분은 "설치해도 될까요?"라고 물을 때 <strong>승인</strong>만 하면 됩니다.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-git">
+  <div class="head">
+    <div class="eyebrow">PART 3 — 버전 관리</div>
+    <h2 class="s-title">Git &amp; <span class="clay">GitHub</span></h2>
+  </div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel">Git — 변경 이력 기록 도구</div>
+      <p style="font-size:16px;color:var(--body);line-height:1.7;margin-bottom:12px">"제안서_v1 · 최종 · 진짜최종 · 최종수정본"으로 관리해본 적 있으시죠? <strong>Git은 이걸 자동으로</strong> 해줍니다.</p>
+      <ul class="chk">
+        <li>언제 무엇을 바꿨는지 <strong>전부 기록</strong></li>
+        <li>이전 버전으로 <strong>즉시 복구</strong></li>
+        <li>팀원과 <strong>동시 작업</strong> 가능</li>
+      </ul>
+      <div class="frame panel" style="margin-top:14px;padding:16px 20px">
+        <div class="dl">
+          <div class="row2"><b>커밋 (commit)</b> 변경사항을 하나의 기록으로 저장</div>
+          <div class="row2"><b>푸시 (push)</b> 로컬 기록을 GitHub로 올림</div>
+          <div class="row2"><b>레포 (repository)</b> 프로젝트 하나에 대응하는 저장소</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="clabel clay">GitHub — 코드의 구글 드라이브</div>
+      <p style="font-size:16px;color:var(--body);line-height:1.7;margin-bottom:12px">Git으로 관리하는 코드를 <strong>인터넷에 저장</strong>하는 서비스. 오늘은 <strong>Vercel이 코드를 가져가는 창구</strong> 역할을 합니다.</p>
+      <div class="code sm"><span class="cm"># Windows: Git 별도 설치 필요</span>
+<span class="cmd">winget install</span> Git.Git
+
+<span class="cm"># GitHub 공식 CLI (2회차 배포에서 사용)</span>
+<span class="cmd">winget install</span> GitHub.cli    <span class="cm"># Windows</span>
+<span class="cmd">brew install</span> gh              <span class="cm"># macOS</span></div>
+      <div class="note" style="margin-top:14px">Git 설치 시 <strong>Git Bash</strong>와 <strong>Git Credential Manager</strong>(로그인 정보 저장)가 함께 들어옵니다. macOS는 Git이 대부분 이미 설치돼 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-p3-cheat">
+  <div class="head"><div class="eyebrow">PART 3 — 정리</div><h2 class="s-title">오늘 나올 <span class="clay">용어 한 장 요약</span></h2></div>
+  <div class="body grid g3" style="gap:14px 26px">
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="cpu"></span>컴퓨터</div>
+      <div class="dl">
+        <div class="row2"><b>CLI / 터미널</b> 글자로 명령하는 화면</div>
+        <div class="row2"><b>로컬</b> 내 컴퓨터</div>
+        <div class="row2"><b>클라우드</b> 인터넷 서버</div>
+        <div class="row2"><b>경로</b> 파일 위치 주소</div>
+        <div class="row2"><b>런타임</b> 코드 실행 환경 (Node.js)</div>
+        <div class="row2"><b>패키지</b> 남이 만든 코드 묶음</div>
+      </div>
+    </div>
+    <div class="frame panel">
+      <div class="ttl"><span class="ic" data-ic="globe"></span>웹</div>
+      <div class="dl">
+        <div class="row2"><b>프론트엔드</b> 보이는 화면</div>
+        <div class="row2"><b>백엔드</b> 보이지 않는 처리</div>
+        <div class="row2"><b>HTML/CSS/JS</b> 뼈대/디자인/동작</div>
+        <div class="row2"><b>API</b> 프로그램 간 소통 규칙</div>
+        <div class="row2"><b>API 키</b> 그 소통을 위한 비밀번호</div>
+        <div class="row2"><b>배포</b> 인터넷에 공개하기</div>
+      </div>
+    </div>
+    <div class="frame clay panel">
+      <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="chart"></span>AI · 재무</div>
+      <div class="dl">
+        <div class="row2"><b>LLM</b> 언어 생성 AI 엔진</div>
+        <div class="row2"><b>토큰</b> 처리·비용의 단위</div>
+        <div class="row2"><b>컨텍스트</b> AI가 참고하는 정보</div>
+        <div class="row2"><b>에이전트</b> 계획·실행·검토를 스스로</div>
+        <div class="row2"><b>IRR / DSCR</b> 수익률 / 상환능력 지표</div>
+        <div class="row2"><b>민감도</b> 가정이 흔들릴 때의 변화</div>
+      </div>
+    </div>
+  </div>
+  <div class="note" style="max-width:1260px;margin:20px auto 0"><strong>모르는 용어가 나오면 Claude에게 그냥 물어보세요.</strong> <strong>"지금 상황에서 이게 무슨 뜻인지, 부동산 금융 실무에 비유해서 설명해줘"</strong>가 가장 좋은 학습 프롬프트입니다.</div>
+</div>
+
+<div class="slide center t1" id="t1-w-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">실전 워크플로우 · 자동화</div>
+    <h1 class="s-title" style="font-size:clamp(34px,5vw,60px)">도구에서 <span class="clay">업무 환경</span>으로</h1>
+    <p class="s-sub" style="max-width:640px;margin:18px auto 0">한 번 잘 세팅하면 <strong style="color:var(--ink)">매번 처음부터 시작하지 않습니다</strong><br>프로젝트 · 스케줄 · 커넥터 · 스킬 · Excel을 하나로 엮는 법</p>
+  </div>
+  <div class="note" style="max-width:820px;margin:30px auto 0"><strong>이 섹션의 관점:</strong> 지금까지가 "Claude에게 <strong>물어보는</strong> 법"이었다면, 여기서는 "Claude를 내 <strong>반복 업무가 도는 환경</strong>으로 만드는" 법입니다. 실무에서 매달·매주 돌아오는 사업성 검토·자금 대사·리포트가 대상입니다.</div>
+</div>
+
+<div class="slide t1" id="t1-w-project">
+  <div class="head"><div class="eyebrow">워크플로우 ① 프로젝트</div><h2 class="s-title">프로젝트 = <span class="clay">작업 환경</span> <small>— 데이터 · 지침 · 대화가 한곳에</small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">만드는 법 — "사업장 포트폴리오 마감·분석" 예시</div>
+      <div class="flow">
+        <div class="item"><div class="n clay">1</div><div class="tx"><strong>프로젝트 생성 · 이름</strong><span>예: "사업장 포트폴리오 마감·분석"</span></div></div>
+        <div class="item"><div class="n clay">2</div><div class="tx"><strong>지침(standing rules) 입력</strong><span>"부동산 재무분석가로 행동 · 첨부 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">.md</code> 지침을 엄격히 따를 것 · <strong>없는 데이터를 가정하지 말 것</strong>"</span></div></div>
+        <div class="item"><div class="n clay">3</div><div class="tx"><strong>워크플로우 MD 파일 업로드</strong><span>지표 계산법·변동 판정 기준·최종 산출물 형태를 정의</span></div></div>
+        <div class="item"><div class="n clay">4</div><div class="tx"><strong>데이터 폴더 연결</strong><span>사업장 자료가 모두 있는 폴더를 프로젝트에 연결</span></div></div>
+      </div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="target"></span>그 다음엔 프롬프트 한 줄</div>
+        <p>"포트폴리오 요약을 만들어줘" 한 줄이면 — 폴더·지침·규칙을 <strong>이미 알고 있으므로</strong> 데이터 검증 → 지표 계산 → 사업장 비교 → <strong>데이터 공백을 명시</strong> → 경영 보고용 리포트까지 나옵니다.</p>
+      </div>
+      <div class="note"><strong>도구를 쓰는 것과 환경을 갖는 것의 차이:</strong> 매번 "너는 누구고, 규칙은 이렇고, 파일은 여기 있고…"를 반복하지 않습니다. 프로젝트가 그 맥락을 <strong>기억</strong>합니다. 월마감·정기 리포트·자금 대사처럼 <strong>반복되는 재무 업무</strong>일수록 효과가 큽니다.</p></div>
+      <div class="warn" style="margin-top:14px">지침에 <strong>"없는 데이터를 가정하지 말 것"</strong>을 반드시 넣으세요. 이 한 줄이 리포트를 경영진 앞에 내놓을 수 있게 만듭니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-w-automate">
+  <div class="head"><div class="eyebrow">워크플로우 ② 자동화</div><h2 class="s-title">내가 안 눌러도 도는 <span class="clay">4가지</span></h2></div>
+  <div class="body grid g2" style="gap:16px 22px">
+    <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="calendar"></span>스케줄 태스크</div><p>정해진 주기로 자동 실행. 예: <strong>매주 월 9시 사업장 포트폴리오 리뷰</strong>. 폴더에 <strong>새 데이터를 넣어두면</strong> 다음 실행이 알아서 반영합니다.</p></div>
+    <div class="frame clay panel"><div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="chart"></span>라이브 아티팩트</div><p>연결된 데이터로 <strong>스스로 갱신되는 결과물</strong>. 자금 포지션·KPI 요약을 한 번 만들어두면 매번 다시 묻지 않아도 <strong>최신 상태로 유지</strong>됩니다.</p></div>
+    <div class="frame panel"><div class="ttl"><span class="ic" data-ic="dispatch"></span>디스패치</div><p>Claude가 <strong>백그라운드에서 실행</strong>하는 동안 다른 일을 합니다. 자금흐름 파일 검토·요약처럼 몇 분 걸리는 작업을 걸어두고 <strong>휴대폰으로 진행·결과 확인</strong>. (내 PC에서 돌고, 원격 모니터만)</p></div>
+    <div class="frame panel"><div class="ttl"><span class="ic" data-ic="plug"></span>커넥터</div><p>파일을 매번 올리지 않고 <strong>원천 시스템을 직접 읽기</strong>. Airtable·Snowflake·BigQuery·Gmail 등. 항상 <strong>최신 데이터</strong>로 작업하고, 권한을 주면 <strong>되쓰기</strong>(상태 갱신)도 가능합니다.</p></div>
+  </div>
+  <div class="note" style="margin-top:16px"><strong>핵심:</strong> 업로드→분석→다운로드의 반복이 사라집니다. "정기적으로 도는 일"은 <strong>스케줄+커넥터</strong>로, "계속 보는 지표"는 <strong>라이브 아티팩트</strong>로 넘기세요. <span style="color:var(--muted)">※ 제공 기능·명칭은 플랜·지역·시점에 따라 다릅니다.</span></div>
+</div>
+
+<div class="slide t1" id="t1-w-skill">
+  <div class="head"><div class="eyebrow">워크플로우 ③ 플러그인 &amp; 스킬</div><h2 class="s-title">매번 설명 vs <span class="clay">이미 아는 절차</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel">프롬프트에만 의존하면</div>
+      <div class="frame panel" style="margin-bottom:14px"><p>출력 품질이 <strong>매번 얼마나 잘 물었는지에 좌우</strong>됩니다. 같은 검토라도 사람마다·날마다 결과가 다릅니다.</p></div>
+      <div class="clabel clay">스킬을 쓰면</div>
+      <div class="frame clay panel"><p>절차가 <strong>안에 내장</strong>돼 있습니다. 예를 들어 <strong>대사(reconciliation) 스킬</strong>은 거래를 매칭하고 차이를 <strong>시점 차이 / 조정 항목 / 조사 필요</strong>로 분류해 잔액을 맞추는 과정을 <strong>이미 알고</strong> 있습니다. 설명하지 않고 <strong>실행</strong>만 합니다.</p></div>
+    </div>
+    <div>
+      <div class="frame panel" style="margin-bottom:14px">
+        <div class="ttl"><span class="ic" data-ic="puzzle"></span>플러그인 = 스킬 묶음</div>
+        <p><strong>Finance 플러그인</strong>에는 재무제표·변동 분석 등 회계·재무 워크플로우가 묶여 있습니다. 한 번 설치하면 모든 프로젝트·대화에서 쓰입니다. <strong>플러그인·스킬은 추가 비용이 없습니다</strong>(쓰던 플랜에서 동작).</p>
+      </div>
+      <div class="frame clay panel">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="loop"></span>우리 과정에 대입</div>
+        <p>1회차에서 만든 <strong>사업성 검토 프롬프트</strong>를 다듬어 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">/사업성검토</code> 스킬로 저장하면, 다음 사업장부터는 <strong>한 줄 호출</strong>로 9장 구조 검토서가 나옵니다. "매번 프롬프트"에서 "이미 아는 시스템"으로 넘어가는 순간입니다.</p>
+      </div>
+      <div class="note" style="margin-top:14px">제작 순서는 그대로: <strong>함께 한 번 해보고 → 맞을 때까지 대화로 → 스킬로 저장 → 새 태스크에서 테스트</strong>(부록 A2).</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-w-excel2">
+  <div class="head"><div class="eyebrow">워크플로우 ④ Claude in Excel</div><h2 class="s-title">엑셀 안의 <span class="clay">두 번째 눈</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">엑셀을 떠나지 않고</div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <p style="margin-bottom:8px">워크북을 연 채 사이드바에서 시트·수식·데이터를 읽고 함께 작업합니다.</p>
+        <ul class="chk">
+          <li><strong>계산 검증</strong> — 합계·수식이 맞는지 재계산</li>
+          <li><strong>탭 재구성</strong> — 지저분한 수지표를 정리</li>
+          <li><strong>분개 생성</strong> — 항목 리스트에서 저널 엔트리</li>
+          <li><strong>변동 요약</strong> — 예산 대비 실적 차이 표</li>
+          <li><strong>불일치 플래그</strong> — 이상한 셀을 짚어줌</li>
+        </ul>
+      </div>
+      <div class="note" style="font-size:14.5px"><strong>2026년 1월 Pro 플랜 개방.</strong> 단, 피벗테이블·데이터테이블(2축)·매크로/VBA는 아직 미지원 → 그래서 <strong>2축 민감도는 2회차 웹앱</strong>으로 만듭니다.</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="shield"></span>왜 중요한가 — 검증 레이어</div>
+        <p>출력을 <strong>Claude가 만들었다고 그냥 믿지 않습니다.</strong> 파일을 열고, 숫자를 확인하고, 반박합니다. Claude in Excel은 <strong>결재 올리기 직전</strong> 재계산·재구성으로 <strong>사인오프 준비된 파일</strong>을 만드는 단계입니다.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="coin"></span>모델 선택 (실무 감각)</div>
+        <table class="tbl tight" style="margin-top:6px">
+          <tr><td style="width:32%"><strong>Opus</strong></td><td>복잡한 분석·대사·설계 (숫자·논리 중요)</td></tr>
+          <tr><td><strong>Sonnet</strong></td><td>일상적 검토·문서 정리</td></tr>
+          <tr><td><strong>Haiku</strong></td><td>단순·빠른 응답</td></tr>
+        </table>
+        <p style="margin-top:8px;font-size:14px;color:var(--muted)">이름·세대는 자주 바뀝니다(현재 세대 예: Opus 5·Sonnet 5·Haiku 4.5). <strong>"가장 똑똑 / 균형 / 빠름"</strong> 세 칸으로 기억하세요.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-w-oneshot">
+  <div class="head"><div class="eyebrow">워크플로우 ⑤ 통합</div><h2 class="s-title">한 태스크에 <span class="clay">전부</span> — 실전 자금 대사</h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:16px;text-align:center">
+      <p class="lead" style="font-size:17px">"우리 사업장 <strong>자금 계정을 회사 시스템의 정정 데이터와 대사</strong>해줘" — 이 한 작업이 <strong>프로젝트 · 커넥터 · 스킬 · Claude in Excel</strong>을 한 번에 씁니다.</p>
+    </div>
+    <div class="pipe" style="margin-bottom:16px">
+      <div class="frame step"><div class="si" data-ic="folder"></div><div class="st">프로젝트</div><div class="sd">사업장 폴더의 원장(GL)</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="plug"></div><div class="st">커넥터</div><div class="sd">시스템의 정정 데이터</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="puzzle"></div><div class="st">스킬</div><div class="sd">/대사 — 매칭·분류</div></div>
+      <div class="sep">›</div>
+      <div class="frame clay step"><div class="si" data-ic="sheet"></div><div class="st">Excel</div><div class="sd">사인오프 준비 파일</div></div>
+    </div>
+    <div class="grid g2" style="gap:16px">
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="terminal"></span>실제 실행 순서</div>
+        <p style="font-size:15px">새 태스크 → <strong>프로젝트에서 작업</strong> 선택 → 폴더 접근 확인 → 모델 <strong>Opus</strong> 선택 → 프롬프트에 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">/대사</code> 한 줄. 나머지는 스킬이 절차대로 수행합니다.</p>
+      </div>
+      <div class="warn"><strong>이것이 이 섹션의 결론입니다.</strong> 개념(PART 1~3)과 실습(1·2회차)이 여기서 만나, <strong>여러 도구가 하나의 업무 파이프라인</strong>이 됩니다. 오늘 배운 조각들이 실무에서 이렇게 합쳐집니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-dgm-arch">
+  <div class="head"><div class="eyebrow">도식 · 통합 아키텍처</div><h2 class="s-title">한 태스크에 <span class="clay">여러 도구</span>가 합쳐지는 구조</h2></div>
+  <div class="body">
+    <div class="dgm">
+      <svg viewBox="0 0 1000 400" role="img" aria-label="프로젝트 통합 아키텍처">
+        <defs><marker id="t1-ah3" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="var(--clay)"/></marker></defs>
+        <!-- 프로젝트 컨테이너 -->
+        <rect x="40" y="60" width="920" height="300" rx="16" fill="none" stroke="var(--clay)" stroke-width="2" stroke-dasharray="8 5"/>
+        <text x="60" y="52" fill="var(--clay)" font-size="15" font-weight="800">프로젝트 (작업 환경) — 지침 · 규칙 · 폴더를 기억</text>
+        <!-- 입력 3종 -->
+        <text x="80" y="98" fill="var(--muted)" font-size="13" font-weight="700">입력</text>
+        <rect x="80" y="108" width="200" height="52" rx="9" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/><text x="100" y="140" fill="var(--ink)" font-size="15" font-weight="700">📁 데이터 폴더</text>
+        <rect x="80" y="170" width="200" height="52" rx="9" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/><text x="100" y="202" fill="var(--ink)" font-size="15" font-weight="700">🔌 커넥터 (원천)</text>
+        <rect x="80" y="232" width="200" height="52" rx="9" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/><text x="100" y="264" fill="var(--ink)" font-size="15" font-weight="700">🧩 스킬 /사업성검토</text>
+        <!-- 중앙 Claude -->
+        <line x1="284" y1="196" x2="380" y2="196" stroke="var(--clay)" stroke-width="2.4" marker-end="url(#t1-ah3)"/>
+        <rect x="384" y="150" width="232" height="94" rx="12" fill="var(--ink)"/>
+        <text x="500" y="188" text-anchor="middle" fill="#F4F0E8" font-size="20" font-weight="800">Claude</text>
+        <text x="500" y="214" text-anchor="middle" fill="#D9CFC0" font-size="13">계획 → 실행 → 자기검토</text>
+        <text x="500" y="232" text-anchor="middle" fill="#D9CFC0" font-size="13">모델: Opus (복잡분석)</text>
+        <!-- 출력 -->
+        <line x1="620" y1="196" x2="716" y2="196" stroke="var(--clay)" stroke-width="2.4" marker-end="url(#t1-ah3)"/>
+        <text x="740" y="98" fill="var(--muted)" font-size="13" font-weight="700">산출</text>
+        <rect x="720" y="108" width="200" height="52" rx="9" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/><text x="740" y="140" fill="var(--clay)" font-size="15" font-weight="800">📊 검토 의견서</text>
+        <rect x="720" y="170" width="200" height="52" rx="9" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/><text x="740" y="202" fill="var(--clay)" font-size="15" font-weight="800">📑 민감도 표</text>
+        <rect x="720" y="232" width="200" height="52" rx="9" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/><text x="740" y="264" fill="var(--clay)" font-size="15" font-weight="800">📗 Excel 검증본</text>
+        <!-- 자동화 하단 -->
+        <rect x="80" y="300" width="840" height="44" rx="9" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.3"/>
+        <text x="500" y="327" text-anchor="middle" fill="var(--body)" font-size="14"><tspan font-weight="800" fill="var(--ink)">스케줄 태스크</tspan> · 매주 자동 실행  |  <tspan font-weight="800" fill="var(--ink)">라이브 아티팩트</tspan> · 자동 갱신  |  <tspan font-weight="800" fill="var(--ink)">디스패치</tspan> · 백그라운드</text>
+      </svg>
+    </div>
+    <div class="dgm-cap">개념(PART 1~3) → 실습(1·2회차) → <strong style="color:var(--body)">이 그림</strong>: 여러 도구가 하나의 업무 파이프라인이 됩니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-w-team">
+  <div class="head"><div class="eyebrow">워크플로우 ⑥ 확장</div><h2 class="s-title">AI <span class="clay">재무팀</span> — 폴더로 만드는 오케스트레이션</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">공유 컨텍스트 — 모두가 같은 기준</div>
+      <div class="frame clay panel" style="margin-bottom:12px">
+        <div class="code sm"><span class="cm"># shared/ 폴더</span>
+company_context.md   <span class="cm"># 사업 개요·구조</span>
+assumptions.md       <span class="cm"># 성장률·비용 가정</span>
+calendar.csv         <span class="cm"># 기간 기준 통일</span></div>
+        <p style="margin-top:9px;font-size:14.5px">시나리오를 바꾸려면 <strong>assumptions.md 한 파일만</strong> 고치면 다음 분석부터 반영됩니다.</p>
+      </div>
+      <div class="note" style="font-size:14.5px">각 역할은 판단이 필요할 때 <strong>같은 공유 파일</strong>을 참조하므로, 여러 역할이 <strong>따로 일해도 서로 어긋나지 않습니다.</strong></div>
+    </div>
+    <div>
+      <div class="clabel clay">역할 폴더 — 파일이 곧 역할</div>
+      <div class="frame panel" style="margin-bottom:12px">
+        <p style="margin-bottom:8px">각 역할 폴더에 <code style="font-family:'JetBrains Mono',monospace;color:var(--clay)">역할.md</code> + <strong>inputs/ · outputs/</strong>.</p>
+        <div class="code sm"><span class="cm"># revenue_ops.md 가 정의하는 것</span>
+- 무엇을 책임지는가
+- 어떤 입력 파일을 쓰는가
+- 어떤 계산을 하는가
+- 출력 형태 · 저장 위치</div>
+        <p style="margin-top:9px;font-size:14.5px">한 역할의 출력이 <strong>다음 역할의 inputs/ 폴더</strong>에도 저장돼 파이프라인이 됩니다. (수익 분석 → FP&A → 리포트 → 발표)</p>
+      </div>
+      <div class="warn"><strong>부동산 응용:</strong> "사업성 분석가 → 자금수지 담당 → 리스크 검토 → 보고서 작성"을 역할 폴더로 나누면, <strong>여러 사업장을 병렬로</strong> 돌리는 팀이 됩니다. (서브에이전트·오케스트레이션의 실전형)</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-w-report">
+  <div class="head"><div class="eyebrow">워크플로우 ⑦ 원칙</div><h2 class="s-title">경영 보고 <span class="clay">표준</span> &amp; 절대 원칙</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">보고 표준을 프롬프트에 고정</div>
+      <div class="frame panel">
+        <p style="margin-bottom:8px">잘 만든 재무 에이전트는 <strong>매번 같은 모양</strong>의 리포트를 냅니다:</p>
+        <ul class="chk">
+          <li><strong>제목 줄</strong> — 고정 형식</li>
+          <li><strong>실행 요약</strong> — 5문장 이내</li>
+          <li><strong>핵심 재무 변화</strong> — 무엇이 얼마나</li>
+          <li><strong>운영 KPI 분석</strong></li>
+          <li><strong>리스크 — 심각도 순 정렬</strong></li>
+          <li><strong>권고 조치</strong></li>
+          <li><strong>총평(이사회 관점)</strong></li>
+        </ul>
+        <p style="margin-top:9px;font-size:14.5px;color:var(--muted)">형식이 일정해야 경영진이 <strong>어디에 뭐가 있는지</strong> 바로 압니다 — 분석이 맞아도 매번 모양이 다르면 신뢰를 잃습니다.</p>
+      </div>
+    </div>
+    <div>
+      <div class="warn" style="margin-bottom:14px;text-align:center">
+        <strong style="font-size:18px">없는 숫자를 지어내지 말 것</strong><br>
+        불확실·불완전·모순되면 <strong>추측으로 채우지 말고 모호함을 표시</strong>하게 하세요.<br>
+        <span style="font-size:.92em">숫자를 자신 있게 지어내는 재무 시스템은 <strong>차라리 없느니만 못합니다.</strong></span>
+      </div>
+      <div class="frame clay panel">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="check"></span>우리 과정의 검증과 같은 이야기</div>
+        <p>이 원칙이 곧 <strong>1회차 검증법</strong>입니다 — "자료에 없으면 자료 없음", 표본·합계·역산 대조. 톤도 지정하세요: <strong>간결·전문가 어조, 홍보성·추측성 표현 금지.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-mod1">
+  <div class="head"><div class="eyebrow">실습 A · 1회차 (3시간)</div><h2 class="s-title">Claude로 <span class="clay">재무분석</span>하기 <small>— 모듈 개요</small></h2></div>
+  <div class="body">
+    <div class="frame panel" style="padding:8px 20px">
+      <table class="tbl">
+        <tr><th style="width:9%">시간</th><th>모듈</th><th style="width:12%">관련 직군</th><th style="width:20%">주 사용 도구</th></tr>
+        <tr><td class="mono">0.5h</td><td>환경·계정 점검 · 실습 데이터/PART 1~3 개념 확인</td><td>공통</td><td>—</td></tr>
+        <tr><td class="mono">1.0h</td><td><strong>부동산 문서 분석</strong> — PF 자료 해석, 실거래가 공개데이터 대비 분양가 적정성 점검</td><td><strong>A · B</strong></td><td>Cowork · Chat</td></tr>
+        <tr><td class="mono">1.0h</td><td><strong>Excel 수익률·민감도 분석</strong> — IRR·DSCR·LTV / NOI·Cap Rate</td><td><strong>B · D</strong></td><td>Claude in Excel · Cowork</td></tr>
+        <tr><td class="mono">0.5h</td><td><strong>사업성 검토 자동화</strong> — SWOT·리스크·투자의견 자동 생성 및 결과 검증법</td><td><strong>A</strong></td><td>Chat · Cowork</td></tr>
+      </table>
+    </div>
+    <div class="grid g2" style="gap:16px;margin-top:16px">
+      <div class="note"><strong>산출물:</strong> 검토 의견서 초안 · 민감도 표 · 리스크 매트릭스. 잘 다듬은 프롬프트는 <strong>Skill로</strong> 저장해 다음 사업장에 재사용합니다.</div>
+      <div class="warn"><strong>전 과정 원칙:</strong> 가상 사업장 「센텀 리버뷰」 데이터로만 실습합니다. 실제 사업장 재무자료는 반입하지 않습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-d1-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">오프라인 1회차 · 3시간</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">Claude로 <span class="clay">재무분석</span>하기</h1>
+    <p class="s-sub" style="max-width:600px;margin:18px auto 0">PF 자료 해석 · 분양가 적정성 · 수익률과 민감도 · 사업성 검토 자동화</p>
+  </div>
+  <div class="body" style="margin-top:34px;max-width:1100px">
+    <div class="rail">
+      <div class="frame seg on" style="flex:0.5"><div class="h">0.5h</div><div class="l">환경·계정 점검<br>PART 1~3 개념 확인</div></div>
+      <div class="frame seg" style="flex:1"><div class="h">1.0h</div><div class="l">부동산 문서 분석<br>PF 해석 · 분양가 적정성</div></div>
+      <div class="frame seg" style="flex:1"><div class="h">1.0h</div><div class="l">Excel 수익률·민감도<br>IRR·DSCR·LTV / NOI·Cap Rate</div></div>
+      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">사업성 검토 자동화<br>SWOT·리스크·결과 검증법</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-feas">
+  <div class="head"><div class="eyebrow">1회차 — 도메인</div><h2 class="s-title">사업성 검토 보고서는 <span class="clay">이렇게 생겼습니다</span></h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:16px;text-align:center">
+      <p class="lead" style="font-size:17px">신용평가사·회계법인이 쓰는 <strong>사업타당성 검토보고서</strong>의 표준 목차입니다.<br>
+      <strong>AI에게 이 목차를 주는 순간</strong>, 결과물의 수준이 달라집니다.</p>
+    </div>
+    <div class="grid g3" style="gap:14px 20px">
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">1 · 계획사업의 개요</div><p style="font-size:14.5px">사업개요 · 토지매입현황 · 분양개요 · 사업추진구조 · 사업주체</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">2 · 시공사 분석</div><p style="font-size:14.5px">시공능력 · 재무안정성 · <strong>책임준공 이행능력</strong></p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">3 · 소요자금 및 재원조달</div><p style="font-size:14.5px">토지비 · 직접/간접공사비 · 금융비용 / 차입금 · 분양수입</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">4 · 사업환경분석</div><p style="font-size:14.5px">입지 · 인문사회환경 · 경기동향 · 부동산 시장동향</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">5 · 산업분석</div><p style="font-size:14.5px">주변 아파트시장 · 기입주/분양권 현황 · <strong>미분양</strong> · 공급예정물량</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">6 · 분양성 검토</div><p style="font-size:14.5px">상품 경쟁력 · 근린상가 경쟁력 · 분양성 종합의견</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px">7 · 분양수입 추정</div><p style="font-size:14.5px">적용 분양률 · 적용 분양가격 · <strong>분양대금 유입 추정</strong></p></div>
+      <div class="frame clay panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px;color:var(--clay)">8 · 원리금 상환가능성</div><p style="font-size:14.5px">추정 월별 자금수지 · 추정 재무제표 · 상환 스케줄</p></div>
+      <div class="frame clay panel" style="padding:18px 20px"><div class="ttl" style="font-size:16.5px;color:var(--clay)">9 · 민감도 분석</div><p style="font-size:14.5px"><strong>분양률</strong>에 따른 민감도 · <strong>분양가</strong>에 따른 민감도</p></div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>왜 목차부터 보나:</strong> "이 사업 괜찮아?"라고 물으면 감상문이 옵니다. <strong>"8장 원리금 상환가능성 관점에서 검토해줘"</strong>라고 물으면 심사역의 답이 옵니다. <strong>목차가 곧 프롬프트의 뼈대</strong>입니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-pf">
+  <div class="head"><div class="eyebrow">1회차 — 도메인</div><h2 class="s-title">부동산 <span class="clay">PF</span> 최소 구조</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="coin"></span>PF는 "아직 없는 담보"에 빌려주는 것</div>
+        <p>나대지에 <strong>앞으로 지어질 건물</strong>과 그 건물을 <strong>분양·임대해 생길 현금흐름</strong>을 보고 대출을 실행합니다. 그래서 PF는 두 가지만 봅니다.</p>
+        <p style="margin-top:9px"><strong>① 건물이 진짜 세워지는가</strong> → 책임준공<br><strong>② 분양이 되어 현금이 들어오는가</strong> → 분양성</p>
+      </div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="shield"></span><div><strong>책임준공</strong><br>시공사가 "어떤 일이 있어도 준공은 시킨다"고 확약하는 것. 담보물 자체를 만들어내는 약속이라 <strong>PF에서 가장 중요하게 봅니다.</strong></div></li>
+        <li><span class="bic" data-ic="layers"></span><div><strong>선순위 / 후순위</strong><br>선순위는 <strong>안정성</strong> 위주라 금리가 낮고, 후순위는 <strong>수익성</strong> 위주라 금리가 높습니다. 상환도 선순위가 먼저입니다.</div></li>
+        <li><span class="bic" data-ic="key"></span><div><strong>기표 선행조건</strong><br>대출 실행 전 "최소 이만큼은 청약을 받아오라"는 조건. 분양성 리스크를 미리 걸러내는 장치입니다.</div></li>
+        <li><span class="bic" data-ic="alert"></span><div><strong>분양률 트리거</strong><br>분양 개시 후 일정 기간(보통 6개월) 내 목표 분양률에 못 미치면 <strong>할인 분양 등을 강제</strong>하는 약정.</div></li>
+      </ul>
+    </div>
+    <div>
+      <div class="clabel clay">핵심 지표 — 이 네 개는 외우고 갑니다</div>
+      <table class="tbl">
+        <thead><tr><th style="width:18%">지표</th><th>뜻</th><th style="width:26%">읽는 법</th></tr></thead>
+        <tr><td><strong>LTV</strong></td><td>대출금 ÷ 담보(분양매출) 가치<br><span style="color:var(--muted);font-size:14px">Loan To Value</span></td><td>200억 ÷ 400억 = <strong>50%</strong><br><span style="color:var(--muted);font-size:14px">낮을수록 안전</span></td></tr>
+        <tr><td><strong>DSCR</strong></td><td>영업현금흐름 ÷ 원리금 상환액<br><span style="color:var(--muted);font-size:14px">Debt Service Coverage Ratio</span></td><td><strong>1.0 미만이면 못 갚는다</strong><br><span style="color:var(--muted);font-size:14px">통상 1.2~1.3 이상 요구</span></td></tr>
+        <tr><td><strong>IRR</strong></td><td>투자안의 내부수익률<br><span style="color:var(--muted);font-size:14px">Internal Rate of Return</span></td><td>요구수익률보다 높으면 <strong>투자 적격</strong><br><span style="color:var(--muted);font-size:14px">시간가치를 반영</span></td></tr>
+        <tr><td><strong>NOI<br>Cap Rate</strong></td><td>순영업소득 / 순영업소득 ÷ 자산가치<br><span style="color:var(--muted);font-size:14px">임대형 자산의 수익률</span></td><td>Cap Rate 5% = <strong>20년치</strong><br><span style="color:var(--muted);font-size:14px">자산·운영 직군의 언어</span></td></tr>
+      </table>
+      <div class="warn" style="margin-top:14px"><strong>AI에게 지표를 물을 때:</strong> "IRR 계산해줘"가 아니라 <strong>"현금흐름 표를 먼저 만들고, 그 표를 근거로 IRR을 계산하고, 계산에 쓴 수식을 함께 보여줘"</strong>라고 하세요. 중간 과정이 보여야 <strong>검증할 수 있습니다.</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-dgm-pf">
+  <div class="head"><div class="eyebrow">도식 · PF 구조</div><h2 class="s-title">PF 자금구조와 <span class="clay">상환 워터폴</span></h2></div>
+  <div class="body">
+    <div class="dgm">
+      <svg viewBox="0 0 1000 430" role="img" aria-label="PF 자금구조와 상환 워터폴">
+        <defs><marker id="t1-ah2" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="var(--clay)"/></marker></defs>
+        <!-- 좌: 조달 스택 -->
+        <text x="60" y="34" fill="var(--muted)" font-size="14" font-weight="700" letter-spacing="1">① 조달 (Sources)</text>
+        <rect x="60" y="48" width="300" height="70" rx="8" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/>
+        <text x="76" y="80" fill="var(--clay)" font-size="17" font-weight="800">선순위 Tr-A · 360억</text>
+        <text x="76" y="102" fill="var(--body)" font-size="13">금리 낮음 · 상환 1순위 · 안정성</text>
+        <rect x="60" y="126" width="230" height="58" rx="8" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+        <text x="76" y="152" fill="var(--ink)" font-size="16" font-weight="800">후순위 Tr-B · 80억</text>
+        <text x="76" y="172" fill="var(--body)" font-size="12.5">금리 높음 · 상환 2순위 · 수익성</text>
+        <rect x="60" y="192" width="300" height="58" rx="8" fill="var(--ink)" stroke="var(--ink)" stroke-width="1.5"/>
+        <text x="76" y="218" fill="#F4F0E8" font-size="16" font-weight="800">분양수입 (핵심 상환재원)</text>
+        <text x="76" y="238" fill="#D9CFC0" font-size="12.5">조합분 200 + 일반분 202세대 + 상가</text>
+        <text x="60" y="286" fill="var(--muted)" font-size="13">기표 선행조건: 일반분양 청약률 30%+ · </text>
+        <text x="60" y="306" fill="var(--muted)" font-size="13">분양률 트리거: 6개월 내 50% 미달 시 할인 강제</text>
+        <!-- 화살표 -->
+        <line x1="372" y1="150" x2="440" y2="150" stroke="var(--clay)" stroke-width="2.6" marker-end="url(#t1-ah2)"/>
+        <text x="378" y="140" fill="var(--muted)" font-size="12">유입</text>
+        <!-- 우: 상환 워터폴 -->
+        <text x="470" y="34" fill="var(--muted)" font-size="14" font-weight="700" letter-spacing="1">② 상환 순서 (Waterfall)</text>
+        <g font-size="15.5" font-weight="700">
+          <rect x="470" y="48" width="470" height="52" rx="8" fill="var(--card)" stroke="var(--ok)" stroke-width="1.8"/>
+          <text x="488" y="79" fill="var(--ink)">1 · 선순위(Tr-A) 원리금</text>
+          <text x="928" y="79" text-anchor="end" fill="var(--ok)" font-weight="800">최우선</text>
+          <rect x="470" y="108" width="470" height="52" rx="8" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="488" y="139" fill="var(--ink)">2 · 후순위(Tr-B) 원리금</text>
+          <rect x="470" y="168" width="470" height="52" rx="8" fill="var(--card)" stroke="var(--ink2)" stroke-width="1.5"/>
+          <text x="488" y="199" fill="var(--ink)">3 · 공사비 · 대행수수료 (유보 가능분)</text>
+          <rect x="470" y="228" width="470" height="52" rx="8" fill="var(--clay-tint)" stroke="var(--clay)" stroke-width="1.6"/>
+          <text x="488" y="259" fill="var(--clay)">4 · 사업이익 (남으면)</text>
+          <text x="928" y="259" text-anchor="end" fill="var(--clay)" font-weight="800">후순위</text>
+        </g>
+        <path d="M705 100 L705 108 M705 160 L705 168 M705 220 L705 228" stroke="var(--muted)" stroke-width="2" marker-end="url(#t1-ah2)"/>
+        <rect x="470" y="298" width="470" height="72" rx="8" fill="var(--warn-tint,rgba(178,91,60,0.09))" stroke="var(--warn)" stroke-width="1.4"/>
+        <text x="488" y="325" fill="var(--warn)" font-size="14.5" font-weight="800">대주단이 보는 것은 딱 두 가지</text>
+        <text x="488" y="348" fill="var(--body)" font-size="13.5">① 건물이 세워지는가(책임준공) ② 분양이 되는가(분양성)</text>
+      </svg>
+    </div>
+    <div class="dgm-cap">분양수입이 위에서 아래로 흘러내리며 순서대로 갚습니다. <strong style="color:var(--body)">아래로 갈수록 못 받을 위험이 큽니다</strong> — 그래서 후순위 금리가 높습니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-lab1">
+  <div class="head"><div class="eyebrow">1회차 — 1.0h</div><h2 class="s-title"><span class="lab-badge">실습 1</span> &nbsp;PF 자료 해석</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">붙여넣을 프롬프트</div>
+      <div class="code" style="font-size:13.5px">너는 <span class="kw">대주단 심사역</span>이다.
+첨부한 <span class="st">가상 사업장 자료</span>를 근거로만 검토한다.
+자료에 없는 값은 "자료 없음"이라고 쓴다.
+
+<span class="cm">[1] 사업 구조 요약</span>
+| 항목 | 내용 | 근거 위치 |
+사업개요 / 시행 · 시공 / 사업면적 / 세대수 /
+총사업비 / 조달구조(선·후순위)
+
+<span class="cm">[2] 자금 구조</span>
+- 소요자금을 토지비 · 직접공사비 · 간접공사비 ·
+  금융비용으로 분해
+- 조달재원(차입금 / 분양수입) 대비 부족액 계산
+
+<span class="cm">[3] 리스크 3가지</span>
+심각도 순으로. 각 리스크마다
+(a) 근거 숫자 (b) 어떤 조건에서 현실화되는지
+(c) 완화 방안
+
+<span class="cm">[4] 확인이 필요한 항목</span>
+내가 사업자에게 추가로 요구해야 할 자료 목록</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="target"></span>이 프롬프트의 설계 의도</div>
+        <p><strong>"자료에 없는 값은 자료 없음이라고 쓴다"</strong> — 할루시네이션을 구조적으로 막는 한 줄입니다. 이게 없으면 AI가 업계 평균치를 슬쩍 채워 넣습니다.</p>
+        <p style="margin-top:9px"><strong>[4] 추가 요구 자료 목록</strong> — 실무에서 가장 값어치 있는 출력입니다. "무엇을 모르는지"를 정리해주는 것이 검토의 절반입니다.</p>
+      </div>
+      <div class="clabel">이어서 물어볼 것 — 대화를 끊지 마세요</div>
+      <div class="code" style="font-size:13.5px">[3]의 첫 번째 리스크에 대해,
+어떤 숫자가 얼마나 나빠지면
+원리금 상환이 불가능해지는지
+<span class="kw">한계값</span>을 계산해줘.</div>
+      <div class="note" style="margin-top:14px"><strong>강사 시연 → 개별 실습 → 짝 검토</strong> 순으로 진행합니다. 옆 사람과 <strong>같은 자료·다른 프롬프트</strong>의 결과를 비교해 보세요. 프롬프트가 결과를 얼마나 바꾸는지 바로 보입니다.</div>
+      <div class="warn" style="margin-top:14px"><strong>가상 데이터로 진행합니다.</strong> 본인 회사의 실제 PF 자료는 반입하지 마세요. 구조를 익히면 회사에 돌아가 같은 프롬프트를 쓰실 수 있습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-lab2">
+  <div class="head"><div class="eyebrow">1회차 — 1.0h</div><h2 class="s-title"><span class="lab-badge">실습 2</span> &nbsp;실거래가 대비 <span class="clay">분양가 적정성</span></h2></div>
+  <div class="body">
+    <div class="grid g2" style="margin-bottom:16px">
+      <div>
+        <div class="clabel clay">데이터 확보 — 공개 자료만 씁니다</div>
+        <div class="frame panel" style="margin-bottom:12px">
+          <div class="ttl" style="font-size:17px"><span class="ic" data-ic="drive"></span>국토교통부 실거래가 공개시스템</div>
+          <p><strong>rt.molit.go.kr</strong> → 조건 검색 → <strong>CSV 다운로드</strong><br>
+          <span style="color:var(--muted)">이번 실습은 이 방식으로 진행합니다. 별도 인증키가 필요 없어 현장에서 막히지 않습니다.</span></p>
+        </div>
+        <div class="frame panel">
+          <div class="ttl" style="font-size:17px"><span class="ic" data-ic="plug"></span>공공데이터포털 OpenAPI</div>
+          <p><strong>data.go.kr</strong> → 활용신청 → 인증키 발급 → <strong>.env에 보관</strong><br>
+          <span style="color:var(--muted)">자동화용. 인증키 활성화에 시간이 걸리므로 <strong style="color:var(--ink)">심화 과제</strong>로 안내합니다.</span></p>
+        </div>
+      </div>
+      <div>
+        <div class="clabel">프롬프트</div>
+        <div class="code" style="font-size:13.5px">첨부한 <span class="st">실거래가 CSV</span>와
+<span class="st">가상 사업장의 분양 계획표</span>를 비교해줘.
+
+1. CSV에서 준공 5년 이내 · 전용 84㎡ 거래만
+   필터링하고, 최근 12개월 <span class="kw">3.3㎡당 평균 단가</span>를
+   분기별로 표로 만들어줘.
+2. 계획 분양가와의 차이를 %로 계산.
+3. 이 격차가 정당화되려면 어떤 조건이
+   충족되어야 하는지 3가지.
+4. 표에 쓴 데이터의 <span class="kw">건수와 이상치 제외 기준</span>을
+   함께 명시할 것.</div>
+      </div>
+    </div>
+    <div class="grid g3" style="gap:14px">
+      <div class="frame clay panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px;color:var(--clay)">4번이 핵심입니다</div><p style="font-size:14.5px"><strong>"건수와 이상치 제외 기준을 명시"</strong> — 거래 3건으로 낸 평균과 300건으로 낸 평균은 전혀 다른 근거입니다. 이걸 안 물으면 AI는 그냥 평균만 줍니다.</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px">비교 축을 바꿔보세요</div><p style="font-size:14.5px">동일 생활권 / 동일 준공연차 / 동일 평형 — 세 축 중 무엇을 고르냐에 따라 결론이 뒤집힙니다. <strong>AI에게 세 축 모두 시켜보고 직접 고르세요.</strong></p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px">직군별 응용</div><p style="font-size:14.5px"><strong>A 개발·상품기획</strong> 분양가 전략 / <strong>B 금융·투자</strong> 대출 심사 근거 / <strong>C 분양·중개</strong> 고객 설득 자료</p></div>
+    </div>
+    <div class="warn" style="margin-top:16px"><strong>공개데이터 원칙:</strong> 정식 활용신청을 거친 OpenAPI 또는 공개 다운로드 자료만 활용합니다. <strong>크롤링 차단 우회, 로그인이 필요한 사이트의 자동화는 이 과정에서 다루지 않습니다.</strong></div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-excel">
+  <div class="head"><div class="eyebrow">1회차 — 1.0h</div><h2 class="s-title">Excel 업로드 <span class="clay">수익률 분석</span></h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:16px;text-align:center">
+      <p class="lead" style="font-size:17px">엑셀 파일을 <strong>그대로 올리면</strong> 됩니다. 수식을 다시 짜거나 CSV로 변환할 필요 없습니다.</p>
+    </div>
+    <div class="grid g2">
+      <div>
+        <div class="clabel clay">B 금융·투자 — 사업 수지 관점</div>
+        <div class="code" style="font-size:13.5px">첨부한 <span class="st">사업수지표</span>를 근거로:
+
+1. 연도별 <span class="kw">현금흐름표</span>를 먼저 만들어줘.
+   (총수입 / 총지출 / 순현금흐름 / 누적)
+2. 그 표를 근거로 <span class="kw">사업 IRR</span>을 계산하고,
+   사용한 수식을 함께 보여줘.
+3. PF 차입금 기준 연도별 <span class="kw">DSCR</span>과
+   최저 DSCR 시점을 표시.
+4. 대출금 대비 <span class="kw">LTV</span>를 분양매출 기준으로.
+5. 마지막에 <span class="kw">검증용 요약</span>:
+   "이 계산이 틀렸다면 어느 가정 때문인지"
+   가정 3개를 나열.</div>
+      </div>
+      <div>
+        <div class="clabel">D 자산·운영 — 보유 자산 관점</div>
+        <div class="code" style="font-size:13.5px">첨부한 <span class="st">임대차 현황표</span>를 근거로:
+
+1. 연간 <span class="kw">NOI</span>를 계산해줘.
+   (임대수입 − 공실손실 − 운영비용)
+   각 항목의 산출 근거를 표로.
+2. 취득가 기준 <span class="kw">Cap Rate</span>를 계산.
+3. 공실률 5% / 10% / 15% 시나리오별
+   NOI와 Cap Rate 변화를 표로.
+4. 이 자산을 계속 보유할지 매각할지
+   판단에 필요한 <span class="kw">추가 정보</span>를 알려줘.</div>
+        <div class="note" style="margin-top:14px"><strong>자기 지표로 확장하기:</strong> 본인 업무에서 쓰는 <strong>수익성 지표 1개</strong>를 위 프롬프트에 끼워 넣어 돌려보세요. 내 업무 지표가 AI로 계산되는 순간이 이 과정의 전환점입니다.</div>
+      </div>
+    </div>
+    <div class="grid g3" style="margin-top:16px;gap:14px">
+      <div class="frame panel" style="padding:16px 18px"><div class="ttl" style="font-size:15.5px">항상 "표 먼저"</div><p style="font-size:14px">결론부터 시키면 검증이 불가능합니다. <strong>중간 표를 먼저</strong> 만들게 하고 그 표를 근거로 계산시키세요.</p></div>
+      <div class="frame panel" style="padding:16px 18px"><div class="ttl" style="font-size:15.5px">항상 "수식 공개"</div><p style="font-size:14px">"사용한 수식을 보여줘" 한 줄이 <strong>계산 오류의 90%</strong>를 잡아냅니다.</p></div>
+      <div class="frame clay panel" style="padding:16px 18px"><div class="ttl" style="font-size:15.5px;color:var(--clay)">항상 "가정 나열"</div><p style="font-size:14px">틀릴 수 있는 가정을 <strong>AI가 스스로 자백하게</strong> 만드세요. 이게 실무 리스크를 줄입니다.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-dgm-cashflow">
+  <div class="head"><div class="eyebrow">도식 · 현금흐름</div><h2 class="s-title">연도별 <span class="clay">현금흐름</span>과 누적곡선</h2></div>
+  <div class="body">
+    <div class="dgm">
+      <svg viewBox="0 0 1000 430" role="img" aria-label="연도별 현금흐름과 누적 곡선">
+        <!-- 축 -->
+        <line x1="90" y1="300" x2="950" y2="300" stroke="var(--ink2)" stroke-width="1.5"/>
+        <line x1="90" y1="60" x2="90" y2="360" stroke="var(--ink2)" stroke-width="1.5"/>
+        <text x="70" y="66" text-anchor="end" fill="var(--muted)" font-size="12">억원</text>
+        <!-- 연도별 바: 수입(위,clay) / 지출(아래,ink) -->
+        <g font-size="13" text-anchor="middle">
+          <!-- 2026 -->
+          <rect x="150" y="235" width="60" height="65" fill="var(--clay)" opacity="0.85"/>
+          <rect x="215" y="300" width="60" height="120" fill="var(--ink2)" opacity="0.55"/>
+          <text x="210" y="380" fill="var(--body)">2026</text>
+          <!-- 2027 -->
+          <rect x="330" y="150" width="60" height="150" fill="var(--clay)" opacity="0.85"/>
+          <rect x="395" y="300" width="60" height="95" fill="var(--ink2)" opacity="0.55"/>
+          <text x="390" y="380" fill="var(--body)">2027</text>
+          <!-- 2028 -->
+          <rect x="510" y="120" width="60" height="180" fill="var(--clay)" opacity="0.85"/>
+          <rect x="575" y="300" width="60" height="70" fill="var(--ink2)" opacity="0.55"/>
+          <text x="570" y="380" fill="var(--body)">2028</text>
+          <!-- 2029 -->
+          <rect x="690" y="175" width="60" height="125" fill="var(--clay)" opacity="0.85"/>
+          <rect x="755" y="300" width="60" height="55" fill="var(--ink2)" opacity="0.55"/>
+          <text x="750" y="380" fill="var(--body)">2029</text>
+        </g>
+        <!-- 누적 곡선 -->
+        <polyline points="180,290 390,250 570,150 750,120" fill="none" stroke="var(--ok)" stroke-width="3"/>
+        <circle cx="180" cy="290" r="5" fill="var(--ok)"/><circle cx="390" cy="250" r="5" fill="var(--ok)"/>
+        <circle cx="570" cy="150" r="5" fill="var(--ok)"/><circle cx="750" cy="120" r="5" fill="var(--ok)"/>
+        <text x="770" y="118" fill="var(--ok)" font-size="14" font-weight="800">누적현금</text>
+        <!-- 범례 -->
+        <rect x="600" y="55" width="16" height="16" fill="var(--clay)" opacity="0.85"/><text x="622" y="68" fill="var(--body)" font-size="14">총수입</text>
+        <rect x="710" y="55" width="16" height="16" fill="var(--ink2)" opacity="0.55"/><text x="732" y="68" fill="var(--body)" font-size="14">총지출</text>
+        <!-- DSCR 주석 -->
+        <rect x="150" y="60" width="360" height="70" rx="9" fill="var(--card)" stroke="var(--clay)" stroke-width="1.4"/>
+        <text x="168" y="86" fill="var(--clay)" font-size="14" font-weight="800">DSCR = 영업현금흐름 ÷ 원리금</text>
+        <text x="168" y="108" fill="var(--body)" font-size="13">1.0 미만 = 못 갚음 · 통상 1.2~1.3 이상 요구</text>
+      </svg>
+    </div>
+    <div class="dgm-cap">※ 가상 사업장 「센텀 리버뷰」 예시. <strong style="color:var(--body)">IRR</strong>은 이 현금흐름의 시간가치를 반영한 내부수익률, <strong style="color:var(--body)">DSCR</strong>은 해마다 갚을 수 있는지를 봅니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-sens">
+  <div class="head"><div class="eyebrow">1회차 — 핵심</div><h2 class="s-title"><span class="clay">민감도 분석</span> — 이 과정의 하이라이트</h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:16px;text-align:center">
+      <p class="lead" style="font-size:17.5px">사업성 검토의 결론은 <strong>"된다 / 안 된다"</strong>가 아닙니다.<br>
+      <strong>"어디까지 나빠져도 버티는가"</strong> — 그 <strong>한계선</strong>이 결론입니다.</p>
+    </div>
+    <div class="grid g2" style="margin-bottom:16px">
+      <div>
+        <div class="clabel clay">축 ① 분양률에 따른 민감도</div>
+        <div class="frame panel">
+          <p style="margin-bottom:10px">다른 가정은 그대로 두고 <strong>일반분양률만</strong> 움직입니다. <span style="color:var(--muted)">(조합분 200세대는 기분양 확정)</span></p>
+          <table class="tbl tight">
+            <thead><tr><th>일반분양률</th><th class="num">기말 현금</th><th>PF 상환</th></tr></thead>
+            <tr><td>100%</td><td class="num">+65.9억</td><td style="color:var(--ok)"><strong>전액 상환</strong></td></tr>
+            <tr><td><strong>94.9%</strong></td><td class="num">0</td><td>기말현금 = 0</td></tr>
+            <tr><td>90%</td><td class="num">−62.2억</td><td style="color:var(--ok)">가능 <span style="color:var(--muted)">(공사비 유보)</span></td></tr>
+            <tr><td>85%</td><td class="num">−126.2억</td><td style="color:var(--ok)">가능 <span style="color:var(--muted)">(공사비 유보)</span></td></tr>
+            <tr><td><strong>80.3%</strong></td><td class="num">−186.2억</td><td><strong>상환 한계선</strong></td></tr>
+            <tr><td>80%</td><td class="num">−190.3억</td><td style="color:var(--warn)"><strong>4.1억 미지급</strong></td></tr>
+          </table>
+          <p style="margin-top:9px;font-size:14px;color:var(--muted)">※ 가상 사업장 「센텀 리버뷰」 — 데이터셋 실제 계산값</p>
+        </div>
+      </div>
+      <div>
+        <div class="clabel clay">축 ② 분양가에 따른 민감도</div>
+        <div class="frame panel">
+          <p style="margin-bottom:10px">분양률은 100%로 두고 <strong>평당 분양가만</strong> 낮춰봅니다.</p>
+          <table class="tbl tight">
+            <thead><tr><th>평당 분양가</th><th class="num">기말 현금</th><th>PF 상환</th></tr></thead>
+            <tr><td>1,850만원 <span style="color:var(--muted)">(계획)</span></td><td class="num">+65.9억</td><td style="color:var(--ok)"><strong>전액 상환</strong></td></tr>
+            <tr><td><strong>1,744만원</strong></td><td class="num">0</td><td>기말현금 = 0</td></tr>
+            <tr><td>1,700만원</td><td class="num">−27.4억</td><td style="color:var(--ok)">가능 <span style="color:var(--muted)">(공사비 유보)</span></td></tr>
+            <tr><td>1,600만원</td><td class="num">−89.6억</td><td style="color:var(--ok)">가능 <span style="color:var(--muted)">(공사비 유보)</span></td></tr>
+            <tr><td><strong>1,445만원</strong></td><td class="num">−186.2억</td><td><strong>상환 한계선</strong></td></tr>
+            <tr><td>1,400만원</td><td class="num">−214.2억</td><td style="color:var(--warn)"><strong>28.0억 미지급</strong></td></tr>
+          </table>
+          <p style="margin-top:9px;font-size:14px;color:var(--muted)">※ 가상 사업장 「센텀 리버뷰」 — 데이터셋 실제 계산값</p>
+        </div>
+      </div>
+    </div>
+    <div class="warn" style="margin-bottom:14px"><strong>"손익분기"는 두 가지입니다 — 실무에서 가장 많이 헷갈리는 지점.</strong><br>
+    ① <strong>기말현금 = 0</strong> (모든 비용을 다 지급하고 남는 돈이 0) → 평당 <strong>1,744만원</strong> · 일반분양률 <strong>94.9%</strong><br>
+    ② <strong>PF 원리금 전액 상환 가능한 최저선</strong> (공사비 186억을 미지급으로 유보) → 평당 <strong>1,445만원</strong> · 일반분양률 <strong>80.3%</strong><br>
+    <strong>대주단이 묻는 것은 ②입니다.</strong> ①만 답하면 검토서가 반려됩니다.</div>
+    <div class="note"><strong>이 표 한 장이 보고서의 결론입니다.</strong> "평당 <strong>1,445만원까지는</strong> PF 전액 상환이 가능하다" — 대주단이 알고 싶은 건 정확히 이 한 문장입니다. 그리고 <strong>이 표가 2회차에 만들 웹앱의 화면</strong>이 됩니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-dgm-sens">
+  <div class="head"><div class="eyebrow">도식 · 민감도</div><h2 class="s-title">2축 <span class="clay">민감도 히트맵</span> <small>— 어디까지 버티나</small></h2></div>
+  <div class="body">
+    <div class="dgm">
+      <svg viewBox="0 0 1000 430" role="img" aria-label="분양률과 분양가 2축 민감도 히트맵">
+        <text x="500" y="26" text-anchor="middle" fill="var(--muted)" font-size="14" font-weight="700">평당 분양가 (만원) →</text>
+        <text x="24" y="230" fill="var(--muted)" font-size="14" font-weight="700" transform="rotate(-90 24 230)">← 일반분양률 (%)</text>
+        <!-- col headers -->
+        <g font-size="15" text-anchor="middle" font-weight="700" fill="var(--ink)">
+          <text x="250" y="58">1850</text><text x="380" y="58">1750</text><text x="510" y="58">1650</text><text x="640" y="58">1550</text><text x="770" y="58">1450</text>
+        </g>
+        <!-- row headers -->
+        <g font-size="15" text-anchor="end" font-weight="700" fill="var(--ink)">
+          <text x="170" y="98">100</text><text x="170" y="158">90</text><text x="170" y="218">80</text><text x="170" y="278">70</text><text x="170" y="338">60</text>
+        </g>
+        <!-- cells: staircase (green=상환가능, red=불가) -->
+        <g>
+          <!-- 일반분양률 100% · 기말현금 [66, 4, -58, -121, -183] 억 -->
+          <rect x="190" y="75" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="320" y="75" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="450" y="75" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="580" y="75" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="710" y="75" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <!-- 일반분양률 90% · 기말현금 [-62, -118, -174, -230, -286] 억 -->
+          <rect x="190" y="135" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="320" y="135" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="450" y="135" width="120" height="52" rx="4" fill="#3F7A52" opacity="0.22"/>
+          <rect x="580" y="135" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="710" y="135" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <!-- 일반분양률 80% · 기말현금 [-190, -240, -290, -340, -389] 억 -->
+          <rect x="190" y="195" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="320" y="195" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="450" y="195" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="580" y="195" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="710" y="195" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <!-- 일반분양률 70% · 기말현금 [-318, -362, -405, -449, -492] 억 -->
+          <rect x="190" y="255" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="320" y="255" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="450" y="255" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="580" y="255" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="710" y="255" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <!-- 일반분양률 60% · 기말현금 [-446, -484, -521, -558, -596] 억 -->
+          <rect x="190" y="315" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="320" y="315" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="450" y="315" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="580" y="315" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+          <rect x="710" y="315" width="120" height="52" rx="4" fill="#B25B3C" opacity="0.20"/>
+        </g>
+        <!-- 경계선 -->
+        <polyline points="830,75 830,127 830,135 570,135 570,187 570,195 190,195 190,247 190,255 190,255 190,307 190,315 190,315 190,367" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="6 4"/>
+        <!-- 범례 -->
+        <rect x="380" y="392" width="16" height="16" rx="3" fill="#3F7A52" opacity="0.22"/><text x="402" y="405" fill="var(--body)" font-size="13.5">PF 상환 가능</text>
+        <rect x="520" y="392" width="16" height="16" rx="3" fill="#B25B3C" opacity="0.20"/><text x="542" y="405" fill="var(--body)" font-size="13.5">상환 불가</text>
+        <text x="640" y="405" fill="var(--ink)" font-size="13.5" font-weight="700">─ ─ 경계선</text>
+      </svg>
+    </div>
+    <div class="dgm-cap">보고서의 결론은 "된다/안 된다"가 아니라 <strong style="color:var(--body)">이 경계선</strong>입니다 — "평당 1,445만원 / 분양률 80.3% 이상이면 상환 가능"(예시). 이 표가 곧 2회차 웹앱의 화면이 됩니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-lab3">
+  <div class="head"><div class="eyebrow">1회차 — 1.0h</div><h2 class="s-title"><span class="lab-badge">실습 3</span> &nbsp;민감도 표 생성</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">프롬프트</div>
+      <div class="code" style="font-size:13.5px">앞에서 만든 현금흐름표를 기준으로
+<span class="kw">민감도 분석</span>을 해줘.
+
+<span class="cm">[축 1] 분양률</span>
+60% ~ 100%를 10%p 간격으로.
+각 구간마다: 총 분양수입 / PF 상환 가능 여부 /
+기말 현금 / 미지급 발생액
+
+<span class="cm">[축 2] 평당 분양가</span>
+500만원 ~ 900만원을 50만원 간격으로.
+같은 항목으로 표를 만들고,
+<span class="kw">기말 현금이 0이 되는 분양가</span>를 굵게 표시.
+
+<span class="cm">[교차 표]</span>
+행=분양률, 열=분양가 인 2차원 표를 만들고
+상환 가능 구간과 불가능 구간을 구분해줘.
+
+<span class="cm">[마지막]</span>
+이 사업의 <span class="kw">한 줄 결론</span>을
+"평당 OOO만원 / 분양률 OO% 이상이면
+상환 가능" 형태로.</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="bolt"></span>왜 이게 강력한가</div>
+        <p>엑셀로 2차원 민감도 표를 만들려면 <strong>데이터 표(What-if)</strong>를 걸고 수식을 다시 짜야 합니다. 평소 <strong>반나절</strong> 걸리던 작업입니다.</p>
+        <p style="margin-top:9px">여기서는 <strong>프롬프트 한 번</strong>입니다. 그리고 축을 바꾸고 싶으면 <strong>다시 말하면</strong> 됩니다.</p>
+      </div>
+      <div class="clabel">축을 바꿔가며 더 물어보세요</div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="coin"></span><div><strong>공사비 축</strong> — "공사비가 5% / 10% 상승하면?" 최근 실무에서 가장 자주 묻는 축입니다.</div></li>
+        <li><span class="bic" data-ic="clock"></span><div><strong>일정 축</strong> — "분양 개시가 6개월 지연되면 금융비용이 얼마나 늘어나는가?"</div></li>
+        <li><span class="bic" data-ic="chart"></span><div><strong>금리 축</strong> — "조달금리가 1%p 오르면 DSCR은?"</div></li>
+      </ul>
+      <div class="warn" style="margin-top:14px"><strong>반드시 검증하세요.</strong> 민감도 표는 그럴듯해 보이기 가장 쉬운 출력입니다. <strong>한 셀만 골라 손으로 다시 계산</strong>해 보세요. 그 한 셀이 맞으면 나머지도 대체로 맞습니다. 다음 장에서 검증 절차를 다룹니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-swot">
+  <div class="head"><div class="eyebrow">1회차 — 0.5h</div><h2 class="s-title">사업성 검토 <span class="clay">자동화</span> <small>— SWOT · 리스크 · 투자의견</small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">프롬프트 — 앞의 모든 분석을 이어받습니다</div>
+      <div class="code" style="font-size:13.5px">지금까지의 분석(문서 해석 · 분양가 비교 ·
+수익률 · 민감도)을 근거로
+<span class="kw">투자검토 의견서</span>를 작성해줘.
+
+<span class="cm">[1] SWOT</span>
+각 항목마다 앞 분석의 <span class="kw">근거 숫자</span>를 인용.
+근거 없는 항목은 쓰지 말 것.
+
+<span class="cm">[2] 리스크 매트릭스</span>
+| 리스크 | 발생가능성 | 영향도 | 완화방안 | 근거 |
+발생가능성 × 영향도 순으로 정렬.
+
+<span class="cm">[3] 투자의견</span>
+- 결론: 적격 / 조건부 적격 / 부적격
+- 조건부라면 <span class="kw">충족 조건</span>을 숫자로 명시
+- 반대 의견(이 결론이 틀릴 경우의 논거)도 함께
+
+<span class="cm">[4] 검토 한계</span>
+이 검토에서 확인하지 못한 것 목록</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="shield"></span>[3]의 "반대 의견"이 핵심 장치</div>
+        <p>AI는 <strong>사용자가 원하는 결론 쪽으로 기우는 경향</strong>이 있습니다. 반대 논거를 <strong>같은 답변 안에서</strong> 쓰게 하면 이 편향이 크게 줄어듭니다.</p>
+      </div>
+      <div class="frame panel" style="margin-bottom:14px">
+        <div class="ttl"><span class="ic" data-ic="scroll"></span>[4] 검토 한계 = 실무 방어선</div>
+        <p>보고서에 <strong>"확인하지 못한 것"</strong>이 적혀 있으면 나중에 문제가 생겨도 검토 범위가 명확합니다. 실무자를 지키는 항목입니다.</p>
+      </div>
+      <div class="clabel">이 프롬프트를 Skill로 저장하세요</div>
+      <div class="flow">
+        <div class="item"><div class="n ol">1</div><div class="tx">먼저 <strong>함께 한 번 해봅니다</strong><span>Skill 생성기부터 열지 마세요</span></div></div>
+        <div class="item"><div class="n ol">2</div><div class="tx">결과가 맞을 때까지 <strong>대화로 수정</strong></div></div>
+        <div class="item"><div class="n clay">3</div><div class="tx"><strong>Skill로 저장</strong><span>다음 사업장부터는 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">/사업성검토</code> 한 줄</span></div></div>
+      </div>
+      <div class="note" style="margin-top:14px"><strong>3회차 산출물에 Skill이 포함됩니다.</strong> 오늘 만든 프롬프트를 다듬어 저장해 두세요.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d1-verify">
+  <div class="head"><div class="eyebrow">1회차 — 반드시</div><h2 class="s-title">결과 <span class="clay">검증법</span> <small>— 이걸 안 하면 전부 무의미합니다</small></h2></div>
+  <div class="body">
+    <div class="warn" style="margin-bottom:18px;text-align:center">
+      <strong style="font-size:18px">금액 · 면적 · 날짜 오독은 곧바로 실무 리스크입니다</strong><br>
+      숫자 하나가 틀린 투자보고서는 <strong>안 만든 것보다 위험합니다.</strong>
+    </div>
+    <div class="grid g3" style="gap:16px">
+      <div class="frame clay feat" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="target"></div><div class="lbl">① 표본 검증</div><div class="desc" style="max-width:none">표에서 <strong style="color:var(--ink)">셀 3개를 무작위로</strong> 골라 원문·엑셀과 대조합니다. 3개가 맞으면 나머지도 대체로 맞습니다. <strong style="color:var(--ink)">3개 중 1개라도 틀리면 전부 다시</strong>.</div></div>
+      <div class="frame feat" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="check"></div><div class="lbl">② 합계 검증</div><div class="desc" style="max-width:none">항목의 <strong style="color:var(--ink)">합이 총계와 일치하는지</strong> 확인합니다. AI는 개별 항목은 잘 뽑지만 <strong style="color:var(--ink)">합계에서 어긋나는</strong> 경우가 있습니다.</div></div>
+      <div class="frame feat" style="align-items:flex-start;text-align:left"><div class="ic" data-ic="loop"></div><div class="lbl">③ 역산 검증</div><div class="desc" style="max-width:none">"이 IRR이 나오려면 현금흐름이 어때야 하나"를 <strong style="color:var(--ink)">거꾸로 물어봅니다.</strong> 앞의 답과 어긋나면 둘 중 하나가 틀린 것입니다.</div></div>
+    </div>
+    <div class="grid g2" style="margin-top:18px;gap:16px">
+      <div>
+        <div class="clabel clay">검증을 프롬프트에 내장하는 법</div>
+        <div class="code" style="font-size:13.5px">방금 만든 표를 <span class="kw">스스로 검증</span>해줘.
+1. 각 열의 합계가 총계와 일치하는지 확인
+2. 원문에서 직접 인용하지 않고
+   <span class="kw">추정으로 채운 셀</span>을 모두 표시
+3. 단위(원/만원/억원, ㎡/평)가 섞인 곳이 있는지
+4. 검증 결과를 표 아래에 체크리스트로</div>
+      </div>
+      <div>
+        <div class="clabel">특히 조심할 곳 — 부동산 실무 4대 함정</div>
+        <table class="tbl tight">
+          <tr><td style="width:26%"><strong>단위 혼용</strong></td><td>㎡ ↔ 평 (÷3.3058), 만원 ↔ 억원</td></tr>
+          <tr><td><strong>VAT</strong></td><td>포함가 / 제외가를 섞어 쓰면 10% 오차</td></tr>
+          <tr><td><strong>면적 종류</strong></td><td>전용 / 공급 / 계약 / 연면적 — 전부 다릅니다</td></tr>
+          <tr><td><strong>기간 기준</strong></td><td>계약일 / 준공일 / 입주일 / 등기일</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px"><strong>역할 분담이 결론입니다.</strong> AI는 <strong>초안·안 제시·반복 작업</strong>을, 사람은 <strong>목표 설정·결과 검증·최종 판단</strong>을 맡습니다. 검증까지 마쳐야 비로소 <strong>내 이름으로 나가는 문서</strong>가 됩니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-x-mod2">
+  <div class="head"><div class="eyebrow">실습 B · 2회차 (3시간)</div><h2 class="s-title">Claude Code로 <span class="clay">계산 도구</span> 만들고 배포하기 <small>— 모듈 개요</small></h2></div>
+  <div class="body">
+    <div class="frame panel" style="padding:8px 20px">
+      <table class="tbl">
+        <tr><th style="width:9%">시간</th><th>모듈</th><th style="width:12%">관련 직군</th><th style="width:18%">주 사용 도구</th></tr>
+        <tr><td class="mono">0.5h</td><td>Claude Code 시작 + 스타터 저장소 (GitHub OAuth → Vercel 연동)</td><td>공통</td><td>Claude Code</td></tr>
+        <tr><td class="mono">1.5h</td><td><strong>수익률 계산 웹앱 생성</strong> — 자연어 지시 (IRR·NOI·투자금 회수기간)</td><td><strong>B · D</strong></td><td>Claude Code</td></tr>
+        <tr><td class="mono">0.5h</td><td>GitHub 커밋 → Vercel 배포 → 배포 URL 발급 및 모바일 접속 확인</td><td>공통</td><td>Claude Code</td></tr>
+        <tr><td class="mono">0.5h</td><td><strong>기능 확장(민감도 분석)</strong> → 재배포 · 결과 정리</td><td><strong>A</strong></td><td>Claude Code</td></tr>
+      </table>
+    </div>
+    <div class="grid g2" style="gap:16px;margin-top:16px">
+      <div class="note"><strong>1회차와 2회차가 여기서 만납니다:</strong> 1회차에 프롬프트로 만들던 민감도 표를, 2회차에는 <strong>버튼 한 번으로 나오는 화면</strong>으로 굳힙니다. 엑셀이 못 하던 2축 데이터테이블을 웹앱이 대신합니다.</div>
+      <div class="warn"><strong>목표:</strong> "완벽한 계산기"가 아니라 <strong>"동작하고 배포된 계산기"</strong>. 다듬기는 집에서, 배포까지는 오늘.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-d2-cover">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">오프라인 2회차 · 3시간</div>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">Claude Code로<br><span class="clay">계산 도구</span> 만들고 배포하기</h1>
+    <p class="s-sub" style="max-width:600px;margin:18px auto 0">오늘 끝나면 <strong style="color:var(--ink)">누구나 접속할 수 있는 URL</strong>이 생깁니다</p>
+  </div>
+  <div class="body" style="margin-top:34px;max-width:1100px">
+    <div class="rail">
+      <div class="frame seg on" style="flex:0.5"><div class="h">0.5h</div><div class="l">Claude Code 시작<br>스타터 저장소 · GitHub OAuth</div></div>
+      <div class="frame seg" style="flex:1.5"><div class="h">1.5h</div><div class="l">수익률 계산 웹앱 생성<br>IRR · NOI · 투자금 회수기간</div></div>
+      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">커밋 → 배포<br>URL 발급 · 모바일 확인</div></div>
+      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">기능 확장 → 재배포<br>민감도 분석 · 발표 과제</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d2-why">
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">왜 <span class="clay">도구</span>를 만드나</h2></div>
+  <div class="body">
+    <div class="grid g2" style="margin-bottom:18px">
+      <div>
+        <div class="clabel">1회차까지의 방식</div>
+        <div class="pyr" style="align-items:stretch">
+          <div class="frame row">사업장이 바뀔 때마다</div>
+          <div class="arr">▼</div>
+          <div class="frame row">파일 올리고 · 프롬프트 붙여넣고</div>
+          <div class="arr">▼</div>
+          <div class="frame row">결과를 매번 검증</div>
+          <div class="arr" style="color:var(--warn)">✕ 나만 쓸 수 있음</div>
+        </div>
+      </div>
+      <div>
+        <div class="clabel clay">2회차 이후의 방식</div>
+        <div class="pyr" style="align-items:stretch">
+          <div class="frame row">계산 로직을 <strong>한 번</strong> 코드로 고정</div>
+          <div class="arr">▼</div>
+          <div class="frame row fill">웹앱<span style="color:#D9CFC0">값만 입력 → 즉시 계산</span></div>
+          <div class="arr">▼</div>
+          <div class="frame row clay">URL을 팀에 공유</div>
+          <div class="arr" style="color:var(--ok)">✓ 팀 전체가 씀</div>
+        </div>
+      </div>
+    </div>
+    <div class="frame clay panel" style="text-align:center">
+      <p class="lead" style="font-size:17.5px">AI에게 <strong>계산을 시키는 것</strong>과 <strong>계산기를 만들게 하는 것</strong>은 다릅니다.<br>
+      전자는 매번 검증해야 하지만, <strong>후자는 한 번만 검증하면 계속 정확합니다.</strong></p>
+    </div>
+    <div class="grid g3" style="margin-top:18px;gap:14px">
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="check"></span>재현성</div><p style="font-size:14.5px">같은 입력 → <strong>항상 같은 출력</strong>. 코드는 할루시네이션하지 않습니다.</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="users"></span>공유 가능성</div><p style="font-size:14.5px">AI 계정이 없는 <strong>팀원·고객도</strong> URL만 있으면 씁니다.</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="coin"></span>비용 0</div><p style="font-size:14.5px">계산할 때마다 토큰을 쓰지 않습니다. <strong>배포도 무료 구간</strong>입니다.</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d2-start">
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">시작 <span class="clay">3단계</span> <small>— 스타터 저장소 · GitHub OAuth · Vercel 연동</small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="flow">
+        <div class="item"><div class="n clay">1</div><div class="tx"><strong>스타터 저장소를 작업 폴더로 열기</strong><span>온라인에서 클론해 둔 폴더를 Claude Code의 작업 폴더로 지정합니다.</span></div></div>
+        <div class="item"><div class="n clay">2</div><div class="tx"><strong>GitHub 로그인 (OAuth)</strong><span>브라우저가 열리고 "허용"을 누르면 끝. 비밀번호를 터미널에 입력하지 않습니다.</span></div></div>
+        <div class="item"><div class="n clay">3</div><div class="tx"><strong>Vercel에 저장소 연결</strong><span>vercel.com → Import → 내 저장소 선택. 이후 <strong>push만 하면 자동 재배포</strong>됩니다.</span></div></div>
+      </div>
+      <div class="frame panel" style="margin-top:16px">
+        <div class="ttl"><span class="ic" data-ic="branch"></span>Git &amp; GitHub — 딱 이만큼만</div>
+        <p><strong>Git</strong> — 변경 이력을 자동 기록. "보고서_최종_진짜최종"을 대신합니다.<br>
+        <strong>GitHub</strong> — 그 이력을 인터넷에 올려두는 곳.<br>
+        <strong>저장소(Repo)</strong> — 프로젝트 하나가 담기는 폴더.</p>
+      </div>
+    </div>
+    <div>
+      <div class="clabel clay">첫 명령 — 구조부터 파악시킵니다</div>
+      <div class="code" style="font-size:13.5px"><span class="cm"># 작업 폴더를 연 뒤 첫 프롬프트</span>
+이 프로젝트 구조를 파악하고
+무엇을 하는 프로젝트인지 설명해줘.
+내가 <span class="kw">수익률 계산기</span>를 추가하려면
+어느 파일을 건드려야 하는지도 알려줘.</div>
+      <div class="note" style="margin-top:14px"><strong>왜 이걸 먼저 하나:</strong> Claude Code에게 <strong>지금 어디에 있는지</strong>를 알려주는 과정입니다. 이걸 건너뛰고 바로 "계산기 만들어줘"라고 하면 엉뚱한 위치에 파일이 생깁니다.</div>
+      <div class="clabel clay" style="margin-top:18px">터미널이 처음이신 분께</div>
+      <div class="frame panel">
+        <p><strong>겁내지 않아도 됩니다.</strong> 이 과정에서 직접 칠 명령어는 사실상 <strong>3개</strong>이고, 나머지는 전부 <strong>한국어로 지시</strong>합니다.</p>
+        <div class="code" style="font-size:13.5px;margin-top:10px"><span class="cmd">git add .</span>          <span class="cm"># 변경분 담기</span>
+<span class="cmd">git commit -m "메시지"</span>  <span class="cm"># 기록</span>
+<span class="cmd">git push</span>            <span class="cm"># 올리기</span></div>
+        <p style="margin-top:9px;font-size:14.5px;color:var(--muted)">이것조차 <strong style="color:var(--ink)">"커밋하고 푸시해줘"</strong>라고 말하면 Claude Code가 대신 실행합니다.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d2-build">
+  <div class="head"><div class="eyebrow">2회차 — 1.5h · 핵심 실습</div><h2 class="s-title"><span class="lab-badge">실습 4</span> &nbsp;수익률 계산 웹앱 생성</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">붙여넣을 프롬프트 (전문은 APPENDIX 3)</div>
+      <div class="code" style="font-size:13px">부동산 <span class="kw">수익률 계산 웹앱</span>을 만들어줘.
+비개발자도 쓸 수 있게, 한국어 UI로.
+
+<span class="cm">[입력]</span>
+- 총 투자금 / 자기자본 / 대출금 / 대출금리
+- 연도별 현금흐름 (행 추가·삭제 가능)
+- 임대형 탭: 연 임대수입 / 공실률 / 운영비용
+
+<span class="cm">[계산 · 결과]</span>
+- IRR (내부수익률)
+- NPV (할인율 입력받아서)
+- 투자금 회수기간 (Payback Period)
+- NOI / Cap Rate
+- 각 지표 옆에 <span class="kw">계산에 쓴 수식을 함께 표시</span>
+
+<span class="cm">[UI]</span>
+- 상단 입력, 하단 결과 카드
+- 숫자는 천단위 콤마, 억/만원 단위 자동 표기
+- 모바일에서도 세로로 잘 보이게
+
+<span class="cm">[중요]</span>
+- 프레임워크 없이 <span class="kw">순수 HTML/CSS/JS</span>로
+- 계산 로직은 calc.js 로 분리하고
+  각 함수에 <span class="kw">한국어 주석</span>을 달아줘</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="alert"></span>만든 다음, 반드시 이것부터</div>
+        <div class="code" style="font-size:13.5px;margin-top:6px">1회차에 엑셀로 계산한 값을
+이 계산기에 그대로 넣어봐.
+<span class="kw">결과가 다르면 어디가 다른지</span> 찾아줘.</div>
+        <p style="margin-top:10px"><strong>계산기가 예쁘게 나왔다고 맞는 게 아닙니다.</strong> 1회차 엑셀 결과와 <strong>대조</strong>하는 순간까지가 실습입니다.</p>
+      </div>
+      <div class="clabel">막혔을 때 쓰는 문장</div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="alert"></span><div><strong>에러가 났을 때</strong><br>화면의 에러 메시지를 <strong>그대로 복사해 붙여넣고</strong> "이 에러 고쳐줘"라고 하세요. 가장 빠릅니다.</div></li>
+        <li><span class="bic" data-ic="window"></span><div><strong>화면이 이상할 때</strong><br><strong>스크린샷을 붙여넣고</strong> "이 부분이 이렇게 보이는데 이렇게 바꿔줘"라고 하세요.</div></li>
+        <li><span class="bic" data-ic="loop"></span><div><strong>망가졌을 때</strong><br>"방금 변경을 되돌려줘" — Git이 있으니 <strong>복구됩니다.</strong></div></li>
+        <li><span class="bic" data-ic="target"></span><div><strong>욕심이 날 때</strong><br><strong>하나 만들고 → 확인 → 다음 하나.</strong> 이게 훨씬 빠릅니다.</div></li>
+      </ul>
+      <div class="warn" style="margin-top:14px"><strong>시간 관리:</strong> 1.5시간 안에 <strong>"완벽한 계산기"가 아니라 "동작하는 계산기"</strong>를 만드는 것이 목표입니다. 다듬기는 집에서, <strong>배포까지는 오늘</strong>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d2-deploy">
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">GitHub 커밋 → <span class="clay">Vercel 배포</span> → URL 발급</h2></div>
+  <div class="body">
+    <div class="pipe" style="margin-bottom:18px">
+      <div class="frame step"><div class="si" data-ic="folder"></div><div class="st">로컬 완성</div><div class="sd">내 컴퓨터에서 동작 확인</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="branch"></div><div class="st">커밋</div><div class="sd">변경 이력 기록</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="github"></div><div class="st">푸시</div><div class="sd">GitHub에 업로드</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="rocket"></div><div class="st">자동 배포</div><div class="sd">Vercel이 감지해 빌드</div></div>
+      <div class="sep">›</div>
+      <div class="frame clay step"><div class="si" data-ic="globe"></div><div class="st">URL 발급</div><div class="sd">*.vercel.app</div></div>
+    </div>
+    <div class="grid g2" style="gap:16px">
+      <div>
+        <div class="clabel clay">Claude Code에게 한 줄이면 됩니다</div>
+        <div class="code" style="font-size:13.5px">변경사항을 커밋하고 GitHub에 푸시해줘.
+커밋 메시지는 <span class="st">"feat: 수익률 계산기 추가"</span>로.</div>
+        <p style="margin-top:10px;font-size:15px;color:var(--body)">푸시가 끝나면 Vercel이 <strong>자동으로 감지</strong>해 1분 내에 배포합니다. Vercel 대시보드에서 <strong>Visit</strong>을 누르면 여러분의 URL이 열립니다.</p>
+        <div class="frame clay panel" style="margin-top:14px">
+          <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="pin"></span>지금 바로 하세요</div>
+          <p><strong>휴대폰으로 그 URL에 접속</strong>해 보세요. 내가 만든 계산기가 <strong>내 폰에서 돌아가는 순간</strong>이 이 과정의 클라이맥스입니다. 옆 사람에게도 URL을 보내보세요.</p>
+        </div>
+      </div>
+      <div>
+        <div class="clabel">보안 — 배포 전 필수 확인</div>
+        <table class="tbl tight">
+          <tr><td style="width:34%"><strong>.gitignore 확인</strong></td><td><code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">.env</code> 와 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">node_modules</code> 가 들어있는지</td></tr>
+          <tr><td><strong>키 하드코딩 금지</strong></td><td>코드 안에 API 키를 직접 쓰지 않았는지</td></tr>
+          <tr><td><strong>실제 데이터 금지</strong></td><td>가상 데이터만 들어있는지 — <strong>공개 저장소입니다</strong></td></tr>
+          <tr><td><strong>환경변수 위치</strong></td><td>키가 필요하면 <strong>Vercel 대시보드</strong>에 등록</td></tr>
+        </table>
+        <div class="warn" style="margin-top:14px"><strong>한 번 올라간 것은 지워도 이력에 남습니다.</strong> 커밋 전에 <strong>"이 저장소에 올리면 안 되는 파일이 있는지 검사해줘"</strong>라고 Claude Code에게 시키세요. 습관으로 만드시길 권합니다.</div>
+        <div class="note" style="margin-top:14px"><strong>CI/CD:</strong> 이제부터 코드를 고치고 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">git push</code>만 하면 <strong>자동으로 다시 배포</strong>됩니다. 배포를 따로 신경 쓸 필요가 없습니다.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-d2-extend">
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">기능 확장 <small>— 1회차의 <span class="clay">민감도 분석</span>을 계산기에 넣습니다</span></small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">확장 프롬프트</div>
+      <div class="code" style="font-size:13px">계산기에 <span class="kw">민감도 분석 탭</span>을 추가해줘.
+
+<span class="cm">[입력]</span>
+- 기준 시나리오는 기존 입력값을 그대로 사용
+- 변동 축 2개를 드롭다운으로 선택
+  (분양률 / 평당 분양가 / 공사비 / 금리)
+- 각 축의 범위와 간격을 입력
+
+<span class="cm">[출력]</span>
+- 행=축1, 열=축2 인 <span class="kw">2차원 교차 표</span>
+- 각 셀에 기말 현금(또는 IRR) 표시
+- <span class="kw">상환 가능 구간은 초록, 불가 구간은 빨강</span>
+  배경으로 구분
+- 표 아래에 "OOO 이상이면 상환 가능"
+  한 줄 결론 자동 생성
+
+<span class="cm">[추가]</span>
+- 결과 표를 <span class="kw">CSV로 내려받는 버튼</span></div>
+      <div class="note" style="margin-top:14px"><strong>완성 후 다시 커밋 → 푸시.</strong> 몇 초 뒤 같은 URL에서 <strong>새 기능이 반영</strong>됩니다. 이게 CI/CD의 체감입니다.</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="sparkle"></span>1회차와 2회차가 여기서 만납니다</div>
+        <p>1회차에 <strong>프롬프트로 만들던 민감도 표</strong>를, 2회차에는 <strong>버튼 한 번으로 나오는 화면</strong>으로 바꿨습니다.</p>
+        <p style="margin-top:9px">같은 결과지만 — <strong>이제 매번 검증할 필요가 없고, 팀 누구나 쓸 수 있습니다.</strong></p>
+      </div>
+      <div class="clabel">여유가 있다면 — 선택 확장</div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="doc"></span><div><strong>보고서 출력</strong><br>"현재 입력값과 결과를 <strong>인쇄용 A4 한 장</strong>으로 정리하는 화면을 추가해줘"</div></li>
+        <li><span class="bic" data-ic="chart"></span><div><strong>차트 추가</strong><br>"연도별 누적 현금흐름을 <strong>막대그래프</strong>로 그려줘"</div></li>
+        <li><span class="bic" data-ic="pkg"></span><div><strong>시나리오 저장</strong><br>"입력값 세트를 <strong>이름 붙여 저장·불러오기</strong> 하게 해줘 (브라우저 저장)"</div></li>
+        <li><span class="bic" data-ic="share"></span><div><strong>링크 공유</strong><br>"현재 입력값이 <strong>URL에 담겨</strong> 그대로 공유되게 해줘"</div></li>
+      </ul>
+      <div class="warn" style="margin-top:14px"><strong>3회차 발표 과제:</strong> ① 배포 URL ② 5분 발표 자료 ③ <strong>"내 업무의 어떤 반복을 없앴는가"</strong> 한 문장. 다음 시간까지 준비해 오세요.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-s-wrap">
+  <div class="head"><div class="eyebrow plain">정리</div><h2 class="s-title">분석을 <span class="clay">위임</span>하고, 반복을 <span class="clay">도구화</span>했습니다</h2></div>
+  <div class="body">
+    <div class="frame clay panel" style="margin-bottom:20px;text-align:center">
+      <p class="lead">여러분은 이제 <strong>사업계획서를 읽히고</strong>, <strong>수익률과 민감도를 계산시키고</strong>, <strong>그 계산을 도구로 굳혀 배포</strong>할 수 있습니다.<br>
+      그리고 무엇보다 — <strong>AI가 내놓은 숫자를 검증하는 법</strong>을 압니다.</p>
+    </div>
+    <div class="grid g4" style="gap:14px;margin-bottom:20px">
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="doc"></span>문서 해석</div><p style="font-size:14px">PF 자료 · 사업계획서를 목차 구조로 분해</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="chart"></span>수익률 · 민감도</div><p style="font-size:14px">IRR · DSCR · LTV · NOI · Cap Rate · 2축 교차 표</p></div>
+      <div class="frame panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px"><span class="ic" data-ic="terminal"></span>도구 제작</div><p style="font-size:14px">Claude Code · GitHub · Vercel 배포</p></div>
+      <div class="frame clay panel" style="padding:18px 20px"><div class="ttl" style="font-size:16px;color:var(--clay)"><span class="ic" data-ic="shield"></span>검증 습관</div><p style="font-size:14px">표본 · 합계 · 역산 3중 검증</p></div>
+    </div>
+    <div class="grid g2" style="gap:16px">
+      <div class="note"><strong>다음 주에 할 일:</strong> 회사에서 실제로 쓰는 사업장 하나를 골라, 오늘 만든 Skill로 검토서 초안을 뽑아보세요. <strong>단, 사내 데이터 반출 정책을 먼저 확인</strong>하시고요.</div>
+      <div class="warn"><strong>잊지 말 것:</strong> AI가 준 숫자는 <strong>초안</strong>입니다. 최종 책임은 여전히 <strong>여러분에게</strong> 있습니다. 그래서 이 과정은 계산법이 아니라 <strong>검증법</strong>을 함께 가르쳤습니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-1">
+  <div class="head"><div class="eyebrow">APPENDIX 1</div><h2 class="s-title">전역 지침 <small>— 부동산 실무자용</small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">Claude.ai → 설정 → 프로필 → 전역 지침</div>
+      <div class="code" style="font-size:13px"><span class="cm"># 사용자 프로필</span>
+- 소속: OO개발 / 사업기획팀
+- 직무: 부동산 개발사업 사업성 검토
+- 다루는 자산: 공동주택 · 근린상가
+- 비전공자(코딩 경험 없음)
+
+<span class="cm"># 항상 지킬 것</span>
+- 금액 단위는 <span class="kw">억원</span> 기준, 천단위 콤마
+- 면적은 <span class="kw">㎡와 평을 병기</span> (평 = ㎡ ÷ 3.3058)
+- VAT 포함/제외를 <span class="kw">반드시 명시</span>
+- 계산 결과에는 <span class="kw">사용한 수식</span>을 함께 표시
+- 자료에 없는 값은 추정하지 말고 "자료 없음"
+
+<span class="cm"># 출력 스타일</span>
+- 결론 먼저, 근거는 그 아래 표로
+- 전문용어는 처음 등장할 때 한 줄 설명
+- 불확실한 부분은 <span class="kw">"확인 필요"</span>로 표시</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="bolt"></span>이 다섯 줄이 매번 절약해주는 것</div>
+        <p><strong>단위 규칙</strong>을 한 번 적어두면, 앞으로 모든 대화에서 ㎡/평 혼용이나 VAT 실수가 사라집니다. 1회차에서 배운 <strong>4대 함정</strong> 중 두 개가 자동으로 막힙니다.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="layers"></span>인스트럭션 3계층</div>
+        <div class="flow" style="margin-top:10px">
+          <div class="item"><div class="n ol">1</div><div class="tx"><strong>전역 지침</strong><span>Chat · Cowork 공통 — 내 직무·회사·단위 규칙</span></div></div>
+          <div class="item"><div class="n ol">2</div><div class="tx"><strong>Cowork 글로벌</strong><span>모든 Cowork 세션에 적용되는 작업 규칙</span></div></div>
+          <div class="item"><div class="n clay">3</div><div class="tx"><strong>폴더 CLAUDE.md</strong><span>그 사업장 폴더에서만 적용 — 사업 기본정보·금지사항</span></div></div>
+        </div>
+      </div>
+      <div class="note" style="margin-top:14px"><strong>베스트 프랙티스:</strong> 같은 지시를 반복하지 말고 <strong>Skill로</strong>. 새 작업은 <strong>새 태스크로</strong>. 필요 없는 파일·도구는 <strong>붙이지 않기</strong>.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-2">
+  <div class="head"><div class="eyebrow">APPENDIX 2</div><h2 class="s-title">프로젝트 지침 <small>— 사업성 분석 어시스턴트</small></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">Claude.ai → 프로젝트 → 지침</div>
+      <div class="code" style="font-size:13px"><span class="cm"># 🏗 사업성 검토 어시스턴트</span>
+
+<span class="cm">## 프로젝트 개요</span>
+부동산 개발사업의 사업타당성을 검토한다.
+- 산출물: 검토 의견서 · 민감도 표 · 리스크 매트릭스
+- 판단 기준: <span class="kw">대주단 심사역</span> 관점
+
+<span class="cm">## 검토 표준 목차 (항상 이 순서)</span>
+1 계획사업 개요 · 2 시공사(책임준공) · 3 소요자금·재원조달
+4 사업환경(입지·시장) · 5 산업분석(경쟁물량·미분양)
+6 분양성 검토 · 7 분양수입 추정 · 8 원리금 상환가능성
+9 <span class="kw">민감도 분석</span> (분양률 축 · 분양가 축)
+
+<span class="cm">## 반드시 지킬 것</span>
+- 모든 숫자에 <span class="kw">근거 위치</span>를 병기
+- 자료에 없으면 "자료 없음"
+- 결론에는 반드시 <span class="kw">반대 논거</span>를 함께
+- 마지막에 <span class="kw">"확인하지 못한 것"</span> 목록
+
+<span class="cm">## 금지</span>
+- 업계 평균치로 빈칸을 채우지 말 것
+- 단정적 투자 권유 표현 사용 금지</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:14px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="target"></span>프로젝트 = 워킹 폴더 + 전용 메모리</div>
+        <p>사업장별로 프로젝트를 만들면 <strong>그 사업장의 파일과 대화 이력이 격리</strong>됩니다. A현장 숫자가 B현장 검토서에 섞이는 사고를 막는 가장 확실한 방법입니다.</p>
+      </div>
+      <div class="clabel">Skill로 만들 후보 — 반복되는 것들</div>
+      <ul class="blist">
+        <li><span class="bic" data-ic="scroll"></span><div><strong>/사업성검토</strong> — 자료를 넣으면 9장 구조 검토서 초안</div></li>
+        <li><span class="bic" data-ic="chart"></span><div><strong>/민감도</strong> — 현금흐름표를 넣으면 2축 교차 표</div></li>
+        <li><span class="bic" data-ic="sheet"></span><div><strong>/분양가비교</strong> — 실거래가 CSV와 계획표를 넣으면 적정성 분석</div></li>
+        <li><span class="bic" data-ic="doc"></span><div><strong>/투자보고서</strong> — 분석 결과를 사내 보고서 양식으로 변환</div></li>
+      </ul>
+      <div class="note" style="margin-top:14px"><strong>제작 순서는 1회차와 같습니다:</strong> 함께 한 번 해보고 → 맞을 때까지 대화로 수정 → Skill로 저장 → 새 태스크에서 테스트. <strong>Skill Creator부터 열지 마세요.</strong></div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-3">
+  <div class="head"><div class="eyebrow">APPENDIX 3</div><h2 class="s-title">수익률 계산 웹앱 <span class="clay">생성 프롬프트</span> <small>(전문)</small></h2></div>
+  <div class="body">
+    <div class="note" style="margin-bottom:14px">스타터 저장소를 작업 폴더로 연 뒤, Claude Code에 <strong>그대로 붙여넣으세요.</strong> 2회차 1.5시간 실습의 출발점입니다.</div>
+    <div class="grid g2" style="gap:20px">
+      <div class="code" style="font-size:12.5px"><span class="cm"># 부동산 수익률 계산 웹앱</span>
+
+비개발자도 쓸 수 있는 <span class="kw">한국어 웹 계산기</span>를 만들어줘.
+
+<span class="cm">[기술 제약]</span>
+- 프레임워크 없이 <span class="kw">순수 HTML / CSS / JavaScript</span>
+- 파일 구성: index.html · style.css · calc.js
+- 외부 라이브러리 없이 동작 (오프라인에서도 열림)
+- calc.js 의 모든 함수에 <span class="kw">한국어 주석</span>
+
+<span class="cm">[탭 1 — 개발사업]</span>
+입력: 총사업비 / 자기자본 / 대출금 / 대출금리 /
+      연도별 현금흐름(행 추가·삭제)
+출력: IRR · NPV(할인율 입력) ·
+      투자금 회수기간 · 최저 DSCR 시점
+
+<span class="cm">[탭 2 — 임대형 자산]</span>
+입력: 취득가 / 연 임대수입 / 공실률 / 운영비용
+출력: NOI · Cap Rate · 자기자본수익률</div>
+      <div class="code" style="font-size:12.5px"><span class="cm">[공통 표시 규칙]</span>
+- 각 지표 옆에 <span class="kw">계산에 쓴 수식</span>을 작게 표시
+- 숫자는 천단위 콤마
+- 1억 이상은 <span class="st">"12억 3,400만원"</span> 형태로 병기
+- 면적 입력칸은 <span class="kw">㎡ ↔ 평 자동 변환</span>
+- 결과가 음수면 빨간색
+
+<span class="cm">[UI]</span>
+- 상단 입력 영역 / 하단 결과 카드
+- 모바일에서 세로 1열로 자연스럽게 재배치
+- 폰트는 시스템 기본, 배경은 밝은 회색조
+
+<span class="cm">[검증 기능]</span>
+- <span class="kw">"예시값 채우기"</span> 버튼:
+  검증용 샘플 시나리오를 한 번에 입력
+- 입력값이 비어 있으면 계산 대신 안내 문구
+
+<span class="cm">[하지 말 것]</span>
+- 실제 사업장 데이터를 코드에 하드코딩하지 말 것
+- API 키를 코드에 쓰지 말 것</div>
+    </div>
+    <div class="warn" style="margin-top:16px"><strong>생성 직후 반드시:</strong> "예시값 채우기"로 넣은 값을 <strong>1회차 엑셀 결과와 대조</strong>하세요. 두 값이 일치해야 이 계산기를 믿을 수 있습니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-4">
+  <div class="head"><div class="eyebrow">APPENDIX 4</div><h2 class="s-title">투자보고서 <span class="clay">자동 작성</span> 프롬프트 세트</h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">① 실행 요약 (Executive Summary)</div>
+      <div class="code" style="font-size:12.5px">지금까지의 검토 결과를 <span class="kw">A4 1장</span> 분량의
+실행 요약으로 정리해줘.
+
+구성:
+- 한 줄 결론 (적격 / 조건부 / 부적격)
+- 사업 개요 3줄
+- 핵심 수치 표 (총사업비 · 조달 · IRR ·
+  최저 DSCR · BEP 분양가)
+- 리스크 Top 3와 완화방안
+- 조건부인 경우 <span class="kw">충족 조건을 숫자로</span>
+
+읽는 사람은 <span class="kw">최종 의사결정권자</span>다.
+전문용어는 괄호로 한 줄 설명을 붙여라.</div>
+      <div class="clabel clay" style="margin-top:18px">② 심의자료용 슬라이드 초안</div>
+      <div class="code" style="font-size:12.5px">위 내용을 <span class="kw">발표 슬라이드 8장</span> 구성으로
+바꿔줘. 각 장마다:
+- 제목 (한 문장)
+- 담을 핵심 메시지 1개
+- 넣을 표 또는 차트 종류
+- 말로 설명할 내용 3줄
+
+슬라이드에 <span class="kw">글을 채우지 말고</span>
+무엇을 넣을지만 설계해줘.</div>
+    </div>
+    <div>
+      <div class="clabel clay">③ 질의 대응 준비</div>
+      <div class="code" style="font-size:12.5px">이 검토서에 대해 심의위원이 던질
+<span class="kw">날카로운 질문 10개</span>를 예상해줘.
+각 질문마다:
+- 질문 의도
+- 내가 준비해야 할 근거 자료
+- 답변 초안 3줄
+
+특히 <span class="kw">내가 약한 부분</span>을 우선으로.</div>
+      <div class="frame clay panel" style="margin-top:18px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="shield"></span>③번이 실무에서 가장 유용합니다</div>
+        <p>보고서를 쓰는 것보다 <strong>방어하는 것</strong>이 어렵습니다. AI에게 <strong>반대 심문을 시켜보면</strong> 준비가 안 된 지점이 정확히 드러납니다.</p>
+      </div>
+      <div class="clabel" style="margin-top:18px">④ 사내 양식 변환</div>
+      <div class="code" style="font-size:12.5px">첨부한 <span class="st">우리 회사 검토서 양식</span>에 맞춰
+지금까지의 내용을 재배치해줘.
+- 양식의 항목명과 순서를 그대로 유지
+- 해당 내용이 없는 항목은 "해당 없음"
+- 양식에 없는 내용은 <span class="kw">별첨</span>으로 분리</div>
+      <div class="note" style="margin-top:14px"><strong>이 4개가 최종 산출물 ③</strong>입니다. 3회차 제출물에 포함하세요.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-5">
+  <div class="head"><div class="eyebrow">APPENDIX 5</div><h2 class="s-title">직군별 <span class="clay">응용 프롬프트</span></h2></div>
+  <div class="body">
+    <div class="grid g2" style="gap:18px">
+      <div>
+        <div class="clabel clay">A · 개발 · 상품기획</div>
+        <div class="frame panel" style="margin-bottom:14px">
+          <p style="font-size:15px"><strong>토지비·공사비·분양가 변수 분석</strong></p>
+          <div class="code" style="font-size:12.5px;margin-top:8px">토지비가 총사업비의 몇 %인지 계산하고,
+동일 규모 사업의 <span class="kw">일반적 비중</span>과 비교해줘.
+비중이 높다면 어떤 조건이 충족되어야
+사업이 성립하는지 역산해줘.</div>
+        </div>
+        <div class="clabel clay">B · 금융 · 투자</div>
+        <div class="frame panel">
+          <p style="font-size:15px"><strong>PF 구조 이해 · 지표 해석</strong></p>
+          <div class="code" style="font-size:12.5px;margin-top:8px">이 PF의 <span class="kw">선순위·후순위 구조</span>를 그림처럼
+설명해줘. 각 트랜치의 금리·수수료·상환순위와,
+분양률이 떨어질 때 <span class="kw">누가 먼저 손실을 보는지</span>
+순서대로.</div>
+        </div>
+      </div>
+      <div>
+        <div class="clabel clay">D · 자산 · 운영</div>
+        <div class="frame panel" style="margin-bottom:14px">
+          <p style="font-size:15px"><strong>포트폴리오 성과 비교</strong></p>
+          <div class="code" style="font-size:12.5px;margin-top:8px">첨부한 <span class="st">보유 자산 5건의 운영 실적표</span>에서
+자산별 NOI · Cap Rate · 공실률을 표로 만들고,
+<span class="kw">매각 우선순위</span>를 제안해줘.
+판단 근거를 자산마다 한 줄로.</div>
+        </div>
+        <div class="clabel clay">E · 디지털 · 고객관리 · 마케팅</div>
+        <div class="frame panel">
+          <p style="font-size:15px"><strong>광고비 유입·계약전환율 해석</strong></p>
+          <div class="code" style="font-size:12.5px;margin-top:8px">첨부한 <span class="st">채널별 광고 집행 데이터</span>에서
+채널별 <span class="kw">CPL(리드당 비용)</span>과
+<span class="kw">계약 전환율</span>을 계산하고,
+분양 세대당 마케팅 원가를 산출해줘.
+예산을 20% 줄여야 한다면 어디를 줄일지도.</div>
+        </div>
+      </div>
+    </div>
+    <div class="note" style="margin-top:16px"><strong>본인 직군 것만 하지 마세요.</strong> 옆 직군의 프롬프트를 돌려보면 <strong>상대방이 무엇을 근거로 판단하는지</strong>가 보입니다. 협업이 빨라집니다.</div>
+  </div>
+</div>
+
+<div class="slide t1" id="t1-apx-6">
+  <div class="head"><div class="eyebrow">APPENDIX 6</div><h2 class="s-title">참고 링크 &amp; <span class="clay">데이터 출처</span></h2></div>
+  <div class="body">
+    <div class="grid g3" style="gap:16px">
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="rocket"></span>Claude 다운로드</div>
+        <p><a href="https://claude.com/download" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">claude.com/download</a></p>
+        <p style="margin-top:8px">데스크탑 앱 · Claude Code 설치. <strong>온라인 사전학습 3단계</strong>의 출발점입니다.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="github"></span>GitHub</div>
+        <p><a href="https://github.com" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">github.com</a></p>
+        <p style="margin-top:8px">저장소 · 버전 관리. <strong>2회차 배포</strong>의 시작점입니다.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="globe"></span>Vercel</div>
+        <p><a href="https://vercel.com" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">vercel.com</a></p>
+        <p style="margin-top:8px">배포 · URL 발급. <strong>GitHub 계정으로 가입</strong>하세요.</p>
+      </div>
+      <div class="frame clay panel">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="drive"></span>실거래가 공개시스템</div>
+        <p><a href="https://rt.molit.go.kr" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">rt.molit.go.kr</a></p>
+        <p style="margin-top:8px">국토교통부. <strong>CSV 직접 다운로드</strong> — 인증키 불필요. <strong>실습 2의 데이터원</strong>.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="plug"></span>공공데이터포털</div>
+        <p><a href="https://data.go.kr" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">data.go.kr</a></p>
+        <p style="margin-top:8px">OpenAPI 활용신청 · 인증키 발급. <strong>심화 과제</strong>용. 개발계정 일일 1,000회.</p>
+      </div>
+      <div class="frame panel">
+        <div class="ttl"><span class="ic" data-ic="chart"></span>한국부동산원 부동산통계</div>
+        <p><a href="https://www.reb.or.kr/r-one" target="_blank" style="color:var(--clay);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:14px;word-break:break-all">reb.or.kr/r-one</a></p>
+        <p style="margin-top:8px">가격지수 · 미분양 · 거래량. <strong>시장분석 근거</strong>로 활용합니다.</p>
+      </div>
+    </div>
+    <div class="note" style="margin-top:18px"><strong>실습 데이터는 LMS에서 배포합니다 —</strong> <code style="font-family:'JetBrains Mono',monospace;font-size:14px;color:var(--clay)">data set / 트랙1_파이낸셜 /</code> 폴더에 사업수지표·분양계획표(402세대) · 연도별 현금흐름표·PF 대출조건 · 임대차현황표(상가 20호) · <strong>보유자산 운영실적표(5건)</strong> · <strong>분양마케팅 광고집행</strong> · 실거래가(145건) · <strong>사업계획서 PDF</strong>가 들어 있습니다. 모두 <strong>가상 사업장 「센텀 리버뷰」</strong>의 합성 데이터입니다.</div>
+    <div class="warn" style="margin-top:14px"><strong>데이터 활용 원칙 (재확인):</strong> ① 실제 사업장 재무자료 대신 <strong>가상 또는 마스킹 데이터</strong> ② 실거래가는 <strong>정식 활용신청 자료 또는 공개 다운로드 자료</strong>만 ③ <strong>크롤링 차단 우회 및 로그인 필요 사이트 자동화는 다루지 않음</strong> ④ API 키 등 인증정보는 <strong>.env로 관리하고 공개 저장소에 올리지 않음</strong></div>
+  </div>
+</div>
+
+<div class="slide center t1" id="t1-s-eod">
+  <div class="head" style="margin-bottom:0">
+    <div class="eyebrow">2026 재직자 AI·D 30+ 집중캠프 · R.E.VIBE</div>
+    <p class="eod-mark">E<span>.</span>O<span>.</span>D</p>
+    <div class="eod-full">End of Document</div>
+    <div class="eod-line"></div>
+    <p class="s-sub" style="max-width:640px;margin:26px auto 0;font-size:17px">
+      트랙 1 · AI 파이낸셜 인텔리전스<br>
+      <span style="font-size:15px;color:var(--muted)">1·2회차 수업 자료가 여기서 끝납니다. 수고하셨습니다.</span></p>
+  </div>
+  <p style="margin-top:22px;font-size:13px;color:var(--muted);text-align:center;max-width:780px;line-height:1.6">
+    명지대학교 미래융합대학 AID 30+ 사업단 주관 · 한국프롭테크포럼 · 한국부동산마케팅협회 협력 · 강사 진용성 (AI BRIDGE)</p>
+  <div class="cover-logos" data-clone-logos></div>
+</div>
 </div><!-- /deck -->
 
 <button id="menu-btn" onclick="toggleSidebar()"><span class="bars"><i></i><i></i><i></i></span>목차</button>
@@ -2836,6 +5093,39 @@ const PARTS=[
   {n:'A5', t:'직군별 응용',          id:'apx-5'},
   {n:'A6', t:'참고 링크·데이터',      id:'apx-6'},
   {n:'EOD', t:'End of Document',    id:'s-eod'},
+  {n:'트랙 1', t:'AI 파이낸셜 인텔리전스 (표지)', id:'t1-s-cover', sec:'━━ 트랙 1 · AI 파이낸셜 인텔리전스 ━━'},
+  {n:'시작',   t:'최종 결과물',            id:'t1-s-goal',    sec:'T1 · 오리엔테이션'},
+  {n:'준비',   t:'실습 준비물',            id:'t1-s-ready'},
+  {n:'직군',   t:'연계 직군 5분류',        id:'t1-x-roles'},
+  {n:'사례',   t:'국외 사례 (AIG·JLL·CBRE)', id:'t1-x-case-global', sec:'T1 · 왜 지금인가 · 국내외 사례'},
+  {n:'사례',   t:'국내 사례 (밸류맵·직방)',  id:'t1-x-case-korea'},
+  {n:'교훈',   t:'사례가 주는 교훈',        id:'t1-x-case-lesson'},
+  {n:'PART 1', t:'AI & Claude 이해',       id:'t1-p1-cover',  sec:'T1 · 개념 — AI·Claude 심화'},
+  {n:'도구',   t:'도구 분업 · Excel/Cowork', id:'t1-x-tools1'},
+  {n:'도식',   t:'도구 선택 흐름도',        id:'t1-dgm-tools'},
+  {n:'PART 2', t:'컨텍스트 엔지니어링',     id:'t1-p2-cover'},
+  {n:'PART 3', t:'컴퓨터 & 웹개발 기초',    id:'t1-p3-cover'},
+  {n:'워크플로우', t:'프로젝트·자동화·스킬', id:'t1-w-cover',  sec:'T1 · 실전 워크플로우 · 자동화'},
+  {n:'통합',   t:'한 태스크에 전부 (대사)',  id:'t1-w-oneshot'},
+  {n:'원칙',   t:'보고 표준·없는 숫자 금지', id:'t1-w-report'},
+  {n:'1회차',  t:'재무분석 모듈 개요',      id:'t1-x-mod1',    sec:'T1 · 실습 A · 재무분석'},
+  {n:'실습1',  t:'PF 자료 해석',           id:'t1-d1-lab1'},
+  {n:'실습2',  t:'분양가 적정성',           id:'t1-d1-lab2'},
+  {n:'도식',   t:'PF 구조·상환 워터폴',     id:'t1-dgm-pf'},
+  {n:'핵심',   t:'민감도 분석',            id:'t1-d1-sens'},
+  {n:'도식',   t:'민감도 히트맵',          id:'t1-dgm-sens'},
+  {n:'필수',   t:'결과 검증법',            id:'t1-d1-verify'},
+  {n:'2회차',  t:'도구 제작 모듈 개요',      id:'t1-x-mod2',    sec:'T1 · 실습 B · 도구 제작·배포'},
+  {n:'실습4',  t:'수익률 계산 웹앱',        id:'t1-d2-build'},
+  {n:'배포',   t:'커밋 → Vercel 배포',      id:'t1-d2-deploy'},
+  {n:'정리',   t:'과정 마무리',            id:'t1-s-wrap',    sec:'T1 · 마무리'},
+  {n:'A1', t:'전역 지침',            id:'t1-apx-1',  sec:'T1 · APPENDIX'},
+  {n:'A2', t:'프로젝트 지침·Skill',   id:'t1-apx-2'},
+  {n:'A3', t:'웹앱 생성 프롬프트',    id:'t1-apx-3'},
+  {n:'A4', t:'투자보고서 프롬프트',   id:'t1-apx-4'},
+  {n:'A5', t:'직군별 응용',          id:'t1-apx-5'},
+  {n:'A6', t:'참고 링크·데이터',      id:'t1-apx-6'},
+  {n:'EOD', t:'End of Document',    id:'t1-s-eod'},
 ];
 const sbList=document.getElementById('sb-list');
 let sbItems=[];
