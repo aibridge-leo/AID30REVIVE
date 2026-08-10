@@ -418,13 +418,14 @@
     padding:13px 14px;word-break:break-all}
   .linkrow .url .sch{color:var(--muted);font-weight:400}
   #s-links .cover-logos{margin-top:14px}
-  .linkrow .url.long{font-size:clamp(15px,1.6vw,21px)}
+  /* 자료 링크는 길어서 — 한 줄에 떨어지는 크기로 고정 (클릭용) */
+  .linkrow .url.long{font-size:clamp(12.5px,1.4vw,18.5px)}
   .slide.dense .linkrow{padding:16px 20px;gap:10px}
   .slide.dense .linkrow .ic{width:30px;height:30px}
   .slide.dense .linkrow .lbl{font-size:18px}
   .slide.dense .linkrow .desc{font-size:13.5px}
   .slide.dense .linkrow .url{font-size:clamp(16px,1.75vw,23px);padding:11px 12px}
-  .slide.dense .linkrow .url.long{font-size:clamp(13.5px,1.4vw,18px)}
+  .slide.dense .linkrow .url.long{font-size:clamp(12px,1.28vw,17px)}
 
   /* ── E.O.D 마감 장표 ── */
   #s-eod .eod-mark{font-family:'JetBrains Mono',monospace;font-weight:700;
