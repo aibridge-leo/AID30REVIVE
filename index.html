@@ -555,8 +555,8 @@
       <div class="frame it on"><div class="num">PART 2</div><div class="lab">컨텍스트 엔지니어링</div><div class="sub">토큰 · 컨텍스트 윈도우 · 5가지 레버 · 좋은 프롬프트</div></div>
       <div class="frame it on"><div class="num">PART 3</div><div class="lab">컴퓨터 &amp; 웹개발 기초</div><div class="sub">CLI · 경로 · 런타임 · 프론트/백 · API · DB · Git</div></div>
       <div class="frame it" style="background:#fff"><div class="num" style="color:var(--clay)">실습 A · 1회차</div><div class="lab">Claude로 데이터 정리·분석</div><div class="sub">엑셀 자동 정리 · 문서 판독 · CRM 분석·시각화</div></div>
-      <div class="frame it" style="background:#fff"><div class="num" style="color:var(--clay)">실습 B · 2회차</div><div class="lab">Claude Code로 CRM·대시보드</div><div class="sub">Supabase 연동 · 고객관리 · 대시보드 · 배포</div></div>
-      <div class="frame it" style="background:var(--clay-tint)"><div class="num" style="color:var(--clay)">부록</div><div class="lab">프롬프트·스키마</div><div class="sub">데이터 프롬프트 · CRM 프롬프트 · Supabase 스키마 SQL</div></div>
+      <div class="frame it" style="background:#fff"><div class="num" style="color:var(--clay)">실습 B · 2회차</div><div class="lab">홈페이지 + CRM·대시보드</div><div class="sub">소개서·홈페이지 제작 · Supabase 커넥터 · 문의 적재 · /admin · 배포</div></div>
+      <div class="frame it" style="background:var(--clay-tint)"><div class="num" style="color:var(--clay)">부록</div><div class="lab">프롬프트·스키마</div><div class="sub">데이터 프롬프트 · 2회차 프롬프트 세트 · Supabase 스키마(참고)</div></div>
     </div>
     <p style="text-align:center;font-size:13px;color:var(--muted);margin-top:14px">PART 1~3은 <strong style="color:var(--clay)">AI·Claude 심화(메인)</strong> · 실습 A·B는 <strong style="color:var(--clay)">부동산 데이터 실무 적용</strong>입니다. 부록에 프롬프트·스키마 SQL이 있습니다.</p>
   </div>
@@ -572,6 +572,7 @@
         <li><strong>GitHub</strong> — github.com</li>
         <li><strong>Vercel</strong> — "Continue with GitHub"</li>
         <li><strong>Supabase</strong> — 무료 티어. GitHub로 로그인</li>
+        <li><strong>ChatGPT</strong> — 홈페이지 이미지 생성용</li>
       </ul>
     </div>
     <div class="frame panel">
@@ -581,13 +582,14 @@
         <li><strong>Node.js LTS</strong> — nodejs.org</li>
         <li><strong>Git</strong> — Windows는 별도 설치</li>
       </ul>
-      <div class="note" style="margin-top:12px;font-size:14.5px">Supabase <strong>프로젝트 생성</strong>은 2회차 현장에서 함께 합니다.</div>
+      <div class="note" style="margin-top:12px;font-size:14.5px">Supabase <strong>프로젝트 생성 · 커넥터 연결</strong>은 2회차 현장에서 함께 합니다.</div>
     </div>
     <div class="frame panel">
       <div class="ttl"><span class="ic" data-ic="drive"></span>실습 데이터</div>
       <ul class="chk">
         <li>LMS에서 배포하는 <strong>data set / 트랙2</strong> 폴더</li>
-        <li>고객명단(정리 전) · 상담·계약·광고 · 문서 샘플 · <strong>seed_supabase.sql</strong></li>
+        <li>고객명단(정리 전) · 상담·계약·광고 · 문서 샘플</li>
+        <li>2회차 <strong>더미 데이터</strong>는 현장에서 <strong>커넥터로 생성</strong>합니다</li>
         <li>인물·연락처는 전부 <strong>합성 데이터</strong></li>
       </ul>
       <div class="warn" style="margin-top:12px"><strong>원칙:</strong> 실제 고객 개인정보는 반입 금지. 가상·마스킹 데이터로만 실습합니다.</div>
@@ -1969,20 +1971,20 @@ calendar.csv         <span class="cm"># 기간 기준 통일</span></div>
 </div>
 
 <div class="slide" id="x-mod2">
-  <div class="head"><div class="eyebrow">실습 B · 2회차 (3시간)</div><h2 class="s-title">Claude Code로 <span class="clay">CRM·대시보드</span> 만들고 배포하기 <small>— 모듈 개요</small></h2></div>
+  <div class="head"><div class="eyebrow">실습 B · 2회차 (3시간)</div><h2 class="s-title">회사 홈페이지에 <span class="clay">CRM·대시보드</span>를 붙여 배포하기 <small>— 모듈 개요</small></h2></div>
   <div class="body">
     <div class="frame panel" style="padding:8px 20px">
       <table class="tbl">
-        <tr><th style="width:9%">시간</th><th>모듈</th><th style="width:13%">관련 직군</th><th style="width:18%">주 사용 도구</th></tr>
-        <tr><td class="mono">0.5h</td><td>스타터 저장소 + Supabase 프로젝트 현장 생성</td><td>공통</td><td>Claude Code</td></tr>
-        <tr><td class="mono">1.5h</td><td><strong>고객관리 웹앱 생성 + Supabase 연동</strong> — 등록·검색·계약여부, 새로고침 후 데이터 유지 확인</td><td><strong>C · E</strong></td><td>Claude Code</td></tr>
-        <tr><td class="mono">0.5h</td><td><strong>AI 대시보드 생성</strong> — 고객현황·계약현황·분양현황·광고성과</td><td><strong>E · D</strong></td><td>Claude Code</td></tr>
-        <tr><td class="mono">0.5h</td><td>Vercel 배포 + 공개/비공개 접근권한 개념 안내</td><td>공통</td><td>Claude Code</td></tr>
+        <tr><th style="width:9%">시간</th><th>모듈</th><th style="width:12%">관련 직군</th><th style="width:23%">주 사용 도구</th></tr>
+        <tr><td class="mono">0.5h</td><td><strong>STEP 1–3</strong> 가상 회사 소개서 → 홈페이지 디자인 → Export</td><td>공통</td><td>Claude Chat · Claude Design · ChatGPT</td></tr>
+        <tr><td class="mono">1.0h</td><td><strong>STEP 4–5 Claude Code로 열기 · Supabase 커넥터 연결</strong> — CRM 테이블 5개 생성, 홈페이지 문의가 DB에 쌓이게 연결</td><td><strong>C · E</strong></td><td>Claude Code · Supabase 커넥터</td></tr>
+        <tr><td class="mono">0.5h</td><td><strong>STEP 6–7 더미 데이터 · /admin 대시보드</strong> — 고객현황·계약현황·분양현황·광고성과</td><td><strong>E · D</strong></td><td>Claude Code</td></tr>
+        <tr><td class="mono">0.5h</td><td><strong>STEP 8–9</strong> 배포 최적화 · GitHub 레포 생성·업로드 · Vercel Import</td><td>공통</td><td>Claude Code · GitHub · Vercel</td></tr>
       </table>
     </div>
     <div class="grid g2" style="gap:16px;margin-top:16px">
-      <div class="note"><strong>1회차와 2회차가 여기서 만납니다:</strong> 1회차에 프롬프트로 만들던 차트를, 2회차에는 <strong>데이터가 쌓이면 자동 갱신되는 대시보드</strong>로 굳힙니다. "새로고침 후 데이터 유지"가 진짜 시스템의 증거입니다.</div>
-      <div class="warn"><strong>보안:</strong> 실습 DB는 공개 접근 설정이므로 <strong>가상 데이터만</strong> 넣습니다. service_role 키는 브라우저에 두지 않습니다.</div>
+      <div class="note"><strong>1회차와 2회차가 여기서 만납니다:</strong> 1회차에 프롬프트로 만들던 차트를, 2회차에는 <strong>문의가 들어오면 자동으로 갱신되는 /admin 대시보드</strong>로 굳힙니다. 남는 0.5h는 <strong>트러블슈팅·질의</strong>에 씁니다.</div>
+      <div class="warn"><strong>보안:</strong> 회사·단지·고객이 전부 <strong>가상</strong>입니다. 실존 회사명·로고를 쓰지 않고, service_role 키는 브라우저에 두지 않습니다.</div>
     </div>
   </div>
 </div>
@@ -1990,15 +1992,15 @@ calendar.csv         <span class="cm"># 기간 기준 통일</span></div>
 <div class="slide center" id="d2-cover">
   <div class="head" style="margin-bottom:0">
     <div class="eyebrow">오프라인 2회차 · 3시간</div>
-    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">Claude Code로<br><span class="clay">CRM·대시보드</span> 만들고 배포하기</h1>
-    <p class="s-sub" style="max-width:620px;margin:18px auto 0">오늘 끝나면 <strong style="color:var(--ink)">새로고침해도 데이터가 남아 있는</strong> 시스템이 생깁니다</p>
+    <h1 class="s-title" style="font-size:clamp(38px,5.4vw,66px)">내 회사 홈페이지에<br><span class="clay">CRM·대시보드</span> 붙여 배포하기</h1>
+    <p class="s-sub" style="max-width:680px;margin:18px auto 0">오늘 끝나면 <strong style="color:var(--ink)">문의가 들어오면 DB에 쌓이고, /admin에서 바로 보이는</strong> 사이트가 생깁니다</p>
   </div>
   <div class="body" style="margin-top:34px;max-width:1100px">
     <div class="rail">
-      <div class="frame seg on" style="flex:0.5"><div class="h">0.5h</div><div class="l">스타터 저장소<br>Supabase 프로젝트 현장 생성</div></div>
-      <div class="frame seg" style="flex:1.5"><div class="h">1.5h</div><div class="l">고객관리 웹앱 + Supabase 연동<br>등록 · 검색 · 계약여부</div></div>
-      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">AI 대시보드 생성<br>고객·계약·분양·광고성과</div></div>
-      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">Vercel 배포<br>공개/비공개 접근권한</div></div>
+      <div class="frame seg on" style="flex:0.5"><div class="h">0.5h</div><div class="l">STEP 1–3<br>소개서 · 홈페이지 디자인 · Export</div></div>
+      <div class="frame seg" style="flex:1"><div class="h">1.0h</div><div class="l">STEP 4–5<br>Supabase 커넥터 · 문의 적재</div></div>
+      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">STEP 6–7<br>더미 데이터 · /admin 대시보드</div></div>
+      <div class="frame seg" style="flex:0.5"><div class="h">0.5h</div><div class="l">STEP 8–9<br>GitHub 업로드 · Vercel 배포</div></div>
     </div>
   </div>
 </div>
@@ -2042,49 +2044,93 @@ calendar.csv         <span class="cm"># 기간 기준 통일</span></div>
   </div>
 </div>
 
-<div class="slide" id="d2-start">
-  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">Supabase 프로젝트 <span class="clay">현장 생성</span></h2></div>
+<div class="slide" id="d2-plan">
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title"><span class="lab-badge">STEP 1–3</span> &nbsp;회사 소개서 → 홈페이지 → <span class="clay">Export</span></h2></div>
   <div class="body grid g2">
     <div>
-      <div class="clabel clay">함께 따라합니다 — 대시보드에서 (수동)</div>
-      <div class="flow">
-        <div class="item"><div class="n clay">1</div><div class="tx"><strong>New project</strong><span>Region은 <strong>Northeast Asia (Seoul)</strong> 선택. 비밀번호는 <strong>메모장에 적어두세요</strong> — 다시 볼 수 없습니다.</span></div></div>
-        <div class="item"><div class="n clay">2</div><div class="tx"><strong>SQL Editor에서 스키마 실행</strong><span>APPENDIX 4의 SQL을 <strong>복사 → 붙여넣기 → Run</strong>. 테이블 5개가 한 번에 생깁니다.</span></div></div>
-        <div class="item"><div class="n clay">3</div><div class="tx"><strong>Settings → API에서 두 값 복사</strong><span><strong>Project URL</strong> 과 <strong>anon public key</strong></span></div></div>
-        <div class="item"><div class="n clay">4</div><div class="tx"><strong>.env 파일에 붙여넣기</strong><span>로컬 <code style="font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--clay)">.env</code> + 나중에 <strong>Vercel 대시보드</strong>에도 동일하게 등록</span></div></div>
+      <div class="clabel clay">STEP 1 · Claude Chat에 붙여넣을 프롬프트</div>
+      <div class="code" style="font-size:12.5px">가상의 <span class="kw">부동산 분양 회사</span>를 하나 설정하고,
+<span class="kw">회사 소개서</span>를 만들어줘.
+- 회사명 · 슬로건 · 사업영역 · 연혁 · 담당자
+- 진행 중인 분양 단지 1곳
+  (단지명 · 세대수 · 타입 · 가격대)
+
+이어서 이 회사의 <span class="kw">홈페이지 구성안</span>을 짜줘.
+<span class="cm">- 섹션: 히어로 / 회사소개 / 분양단지 / 문의</span>
+- 문의 폼 항목: 이름 · 연락처 · 관심타입 ·
+  유입경로 · 문의내용
+
+마지막으로 홈페이지에 넣을 <span class="kw">이미지 3장</span>의
+생성 프롬프트를 각각 영문으로 만들어줘.</div>
+      <div class="note" style="margin-top:14px"><strong>문의 폼 항목이 곧 DB 컬럼이 됩니다.</strong> 여기서 정한 다섯 항목이 STEP 5에서 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">customers</code>·<code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">consultations</code> 테이블과 그대로 이어집니다. 대충 정하면 뒤에서 다시 고쳐야 합니다.</div>
+    </div>
+    <div>
+      <div class="frame clay panel" style="margin-bottom:13px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="palette"></span>STEP 2 · Claude Design에서 홈페이지 제작</div>
+        <p><strong>①</strong> 앞에서 만든 <strong>회사 소개서 + 홈페이지 구성안</strong>을 Claude Design에 첨부합니다.</p>
+        <p style="margin-top:8px"><strong>②</strong> 이미지 프롬프트는 <strong>ChatGPT에 넣어 이미지를 생성</strong>하고, 받은 이미지를 Design에 올려 배치합니다.</p>
+        <p style="margin-top:8px"><strong>③</strong> 섹션 순서·문구·색을 <strong>화면에서 직접</strong> 다듬습니다.</p>
       </div>
-      <div class="code" style="font-size:13px;margin-top:14px"><span class="cm"># .env</span>
+      <div class="frame panel" style="margin-bottom:13px">
+        <div class="ttl"><span class="ic" data-ic="pkg"></span>STEP 3 · Export → 내 PC에 저장</div>
+        <p>완성된 작업물을 <strong>Export</strong> 해서 폴더로 내려받습니다. <strong>이 폴더가 다음 단계의 작업 폴더</strong>가 됩니다.</p>
+        <p style="margin-top:8px;color:var(--muted)">바탕화면처럼 <strong style="color:var(--ink)">경로가 짧고 한글·공백이 없는 위치</strong>에 두면 뒤에서 덜 헤맵니다.</p>
+      </div>
+      <div class="warn"><strong>가상 회사입니다.</strong> 실존 회사명·로고·실제 분양 정보를 쓰지 마세요. 이후 DB에 넣는 데이터도 전부 <strong>합성 데이터</strong>입니다.</div>
+    </div>
+  </div>
+</div>
+
+<div class="slide" id="d2-start">
+  <div class="head"><div class="eyebrow">2회차 — 1.0h</div><h2 class="s-title"><span class="lab-badge">STEP 4–5</span> &nbsp;Claude Code로 열고 <span class="clay">Supabase 연결</span></h2></div>
+  <div class="body grid g2">
+    <div>
+      <div class="clabel clay">함께 따라합니다</div>
+      <div class="flow">
+        <div class="item"><div class="n clay">1</div><div class="tx"><strong>Export 폴더를 Claude Code 앱으로 열기</strong><span>STEP 3에서 내려받은 폴더를 그대로 <strong>작업 폴더</strong>로 엽니다.</span></div></div>
+        <div class="item"><div class="n clay">2</div><div class="tx"><strong>Supabase — New project</strong><span>Region은 <strong>Northeast Asia (Seoul)</strong>. 비밀번호는 <strong>메모장에 적어두세요</strong> — 다시 볼 수 없습니다.</span></div></div>
+        <div class="item"><div class="n clay">3</div><div class="tx"><strong>Claude 앱에서 Supabase 커넥터 연결</strong><span><strong>사용자 지정</strong> 탭 → <strong>커넥터</strong> → 우측 상단 <strong>추가</strong> → <strong>커넥터 둘러보기</strong> → <strong>Supabase</strong> 검색 → 연결 → <strong>브라우저에서 인증</strong></span></div></div>
+        <div class="item"><div class="n clay">4</div><div class="tx"><strong>Settings → API에서 두 값 복사</strong><span><strong>Project URL</strong> 과 <strong>anon public key</strong></span></div></div>
+        <div class="item"><div class="n clay">5</div><div class="tx"><strong>.env 파일에 붙여넣기</strong><span>로컬 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">.env</code> + 나중에 <strong>Vercel</strong>에도 동일하게 등록</span></div></div>
+      </div>
+      <div class="code" style="font-size:13px;margin-top:13px"><span class="cm"># .env</span>
 VITE_SUPABASE_URL=<span class="st">https://xxxxx.supabase.co</span>
 VITE_SUPABASE_ANON_KEY=<span class="st">eyJhbGci...</span></div>
     </div>
     <div>
-      <div class="frame clay panel" style="margin-bottom:14px">
-        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="lock"></span>키 두 종류를 구분하세요</div>
+      <div class="frame clay panel" style="margin-bottom:13px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="split"></span>커넥터와 .env는 용도가 다릅니다</div>
         <table class="tbl tight" style="margin-top:6px">
-          <tr><td style="width:34%"><strong>anon (public)</strong></td><td>브라우저에 노출되어도 되는 키. <strong>RLS 규칙이 지켜줍니다.</strong></td></tr>
+          <tr><td style="width:30%"><strong>커넥터 (MCP)</strong></td><td><strong>Claude ↔ Supabase.</strong> 대화로 테이블을 만들고 데이터를 넣는 통로입니다.</td></tr>
+          <tr><td><strong>.env 키</strong></td><td><strong>내 홈페이지 ↔ Supabase.</strong> 방문자가 문의를 남길 때 브라우저에서 쓰는 키입니다.</td></tr>
+        </table>
+        <p style="margin-top:9px;color:var(--muted)">둘 다 필요합니다 — <strong style="color:var(--ink)">커넥터를 연결했다고 내 홈페이지가 저절로 붙지는 않습니다.</strong></p>
+      </div>
+      <div class="frame panel" style="margin-bottom:13px">
+        <div class="ttl"><span class="ic" data-ic="lock"></span>키 두 종류 · RLS</div>
+        <table class="tbl tight" style="margin-top:6px">
+          <tr><td style="width:34%"><strong>anon (public)</strong></td><td>브라우저에 노출되어도 되는 키. <strong>RLS가 지켜줍니다.</strong></td></tr>
           <tr><td><strong>service_role</strong></td><td style="color:var(--warn)"><strong>모든 권한. 절대 브라우저·공개 저장소에 두지 않습니다.</strong></td></tr>
         </table>
-      </div>
-      <div class="frame panel" style="margin-bottom:14px">
-        <div class="ttl"><span class="ic" data-ic="shield"></span>RLS (Row Level Security)</div>
-        <p><strong>"어떤 행을 누가 볼 수 있는가"</strong>를 정하는 규칙입니다. 이걸 켜지 않으면 <strong>키를 아는 누구나 전체 데이터를 볼 수 있습니다.</strong></p>
-        <p style="margin-top:8px;color:var(--muted)">실습 스키마에는 <strong style="color:var(--ink)">기본 RLS가 포함</strong>되어 있습니다. 개념만 이해하고 넘어가세요.</p>
+        <p style="margin-top:9px"><strong>RLS</strong>는 <strong>"어떤 행을 누가 볼 수 있는가"</strong>를 정하는 규칙입니다. 켜지 않으면 <strong>키를 아는 누구나 전체 데이터를 봅니다.</strong></p>
       </div>
       <div class="clabel">Claude Code 첫 명령</div>
-      <div class="code" style="font-size:13px">이 프로젝트 구조를 파악하고,
-Supabase 연동이 어디에 설정되어 있는지 알려줘.
+      <div class="code" style="font-size:13px">이 폴더 구조를 파악하고,
+<span class="kw">문의 폼이 어느 파일</span>에 있는지 알려줘.
 <span class="kw">.env가 .gitignore에 들어있는지</span>도 확인해줘.</div>
     </div>
   </div>
 </div>
 
 <div class="slide" id="d2-schema">
-  <div class="head"><div class="eyebrow">2회차 — 설계</div><h2 class="s-title">테이블 <span class="clay">5개</span>와 그 연결</h2></div>
+  <div class="head"><div class="eyebrow">2회차 — STEP 5 · 설계</div><h2 class="s-title">테이블 <span class="clay">5개</span>와 그 연결</h2></div>
   <div class="body">
-    <div class="frame clay panel" style="margin-bottom:16px;text-align:center">
-      <p class="lead" style="font-size:17px">온라인에서 본 <strong>다섯 갈래 데이터</strong>가 그대로 테이블이 됩니다.<br>
-      <strong>고객ID</strong> 하나가 전체를 꿰뚫는 축입니다.</p>
+    <div class="frame clay panel" style="margin-bottom:13px;text-align:center">
+      <p class="lead" style="font-size:16.5px">홈페이지 <strong>문의 폼</strong>이 <strong>customers · consultations</strong>로 들어가고,<br>
+      나머지 세 표가 <strong>/admin 대시보드</strong>를 채웁니다. <strong>고객ID</strong>가 전체를 꿰뚫는 축입니다.</p>
     </div>
+    <div class="clabel clay">Supabase 커넥터에게 — SQL을 직접 실행하지 않습니다</div>
+    <div class="code" style="font-size:12px;margin-bottom:12px">커넥터로 아래 <span class="kw">5개 테이블</span>을 만들어줘. 컬럼·<span class="kw">외래키</span>는 표 그대로, <span class="kw">RLS를 켜고</span> 실습용 정책까지. 만든 뒤 <span class="kw">목록과 컬럼을 보여줘.</span></div>
     <table class="tbl">
       <thead><tr><th style="width:14%">테이블</th><th style="width:13%">기본키</th><th>주요 컬럼</th><th style="width:20%">연결</th></tr></thead>
       <tr><td><strong>customers</strong><br><span style="color:var(--muted);font-size:14px">고객</span></td><td class="mono">id</td><td class="mono" style="font-size:14px">name · phone · <b>region</b> · source · interest_type · budget · grade · <b>contract_status</b></td><td>—</td></tr>
@@ -2104,153 +2150,146 @@ Supabase 연동이 어디에 설정되어 있는지 알려줘.
 </div>
 
 <div class="slide" id="d2-build">
-  <div class="head"><div class="eyebrow">2회차 — 1.5h · 핵심 실습</div><h2 class="s-title"><span class="lab-badge">실습 4</span> &nbsp;고객관리 웹앱 + Supabase 연동</h2></div>
+  <div class="head"><div class="eyebrow">2회차 — STEP 5 · 핵심 실습</div><h2 class="s-title"><span class="lab-badge">실습 4</span> &nbsp;문의 폼 → <span class="clay">Supabase 적재</span></h2></div>
   <div class="body grid g2">
     <div>
       <div class="clabel clay">붙여넣을 프롬프트 (전문은 APPENDIX 3)</div>
-      <div class="code" style="font-size:12.5px"><span class="kw">부동산 고객관리(CRM) 웹앱</span>을 만들어줘.
-비개발자도 쓸 수 있게, 한국어 UI로.
-데이터는 <span class="kw">Supabase</span>에 저장한다.
+      <div class="code" style="font-size:12.5px">이 홈페이지의 <span class="kw">문의 폼</span>이
+<span class="kw">Supabase</span>에 실제로 저장되게 만들어줘.
 
-<span class="cm">[화면 1 — 고객 목록]</span>
-- 표: 이름 / 연락처 / 유입경로 / 관심타입 /
-      등급 / 최근상담일 / <span class="kw">계약여부</span>
-- 상단에 <span class="kw">검색창</span> (이름·연락처 부분일치)
-- <span class="kw">필터</span>: 등급 / 계약여부 / 유입경로
-- 정렬: 최근상담일 순 (기본)
-
-<span class="cm">[화면 2 — 고객 등록·수정]</span>
-- 신규 등록 / 기존 고객 클릭 시 수정
-- 필수값이 비면 저장 대신 안내 문구
+<span class="cm">[저장 규칙]</span>
+- 이름·연락처·관심타입·유입경로 → <span class="kw">customers</span>
+- 문의내용 → <span class="kw">consultations</span>
+  (channel = '홈페이지')
+- 같은 연락처가 이미 있으면 <span class="kw">새로 만들지 말고</span>
+  상담만 추가
 - 연락처는 <span class="kw">숫자만 저장</span>, 표시할 때 하이픈
 
-<span class="cm">[화면 3 — 상담 이력]</span>
-- 고객 상세에서 상담 이력 목록 + 추가
-- 상담 추가 시 고객의 최근상담일 자동 갱신
+<span class="cm">[사용자 경험]</span>
+- 필수값이 비면 저장 대신 <span class="kw">안내 문구</span>
+- 저장 성공 시 "접수되었습니다" 표시
+- 저장 실패 시 에러를 <span class="kw">숨기지 말 것</span>
 
-<span class="cm">[중요]</span>
+<span class="cm">[보안]</span>
 - Supabase 키는 <span class="kw">.env에서 읽어올 것</span>
 - 코드에 키를 직접 쓰지 말 것
-- 저장·삭제 시 <span class="kw">확인 창</span>을 띄울 것
 - 각 함수에 <span class="kw">한국어 주석</span></div>
     </div>
     <div>
-      <div class="frame clay panel" style="margin-bottom:14px">
-        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="loop"></span>만든 다음, 반드시 이 테스트</div>
-        <div class="code" style="font-size:13px;margin-top:6px"><span class="cm">① 고객 3명을 등록한다</span>
-<span class="cm">② 브라우저를 새로고침(F5)한다</span>
-<span class="cm">③ 3명이 그대로 있는가?</span></div>
-        <p style="margin-top:10px"><strong>있으면 → 진짜 데이터베이스에 저장된 것입니다.</strong><br>
-        <strong style="color:var(--warn)">사라지면 → 화면에만 있었던 것</strong>입니다. Claude Code에게 "새로고침하면 데이터가 사라진다, Supabase에 실제로 저장되게 고쳐줘"라고 하세요.</p>
+      <div class="frame clay panel" style="margin-bottom:13px">
+        <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="check"></span>만든 다음, 반드시 이 테스트</div>
+        <p><strong>①</strong> 홈페이지 문의 폼으로 <strong>3건을 접수</strong>한다<br>
+        <strong>②</strong> 브라우저를 <strong>새로고침(F5)</strong>한다<br>
+        <strong>③</strong> Claude에게 <strong>"커넥터로 customers 테이블을 보여줘"</strong></p>
+        <p style="margin-top:9px">3건이 보이면 → <strong>진짜 데이터베이스에 저장된 것</strong>입니다.<br>
+        비어 있으면 → <strong>화면에만 있었던 것</strong>입니다.</p>
       </div>
       <div class="clabel">막혔을 때 쓰는 문장</div>
       <ul class="blist">
-        <li><span class="bic" data-ic="alert"></span><div><strong>에러가 났을 때</strong><br>화면·콘솔의 에러 메시지를 <strong>그대로 복사해 붙여넣으세요.</strong> 가장 빠릅니다.</div></li>
-        <li><span class="bic" data-ic="database"></span><div><strong>저장이 안 될 때</strong><br>"Supabase 테이블 구조와 코드가 맞는지 확인해줘" — <strong>컬럼명 불일치</strong>가 가장 흔한 원인입니다.</div></li>
-        <li><span class="bic" data-ic="window"></span><div><strong>화면이 이상할 때</strong><br><strong>스크린샷을 붙여넣고</strong> "이렇게 바꿔줘"라고 하세요.</div></li>
-        <li><span class="bic" data-ic="target"></span><div><strong>욕심이 날 때</strong><br><strong>화면 1 완성 → 확인 → 화면 2.</strong> 한꺼번에 요구하면 오히려 느립니다.</div></li>
+        <li><span class="bic" data-ic="alert"></span><div><strong>에러가 났을 때</strong><br>화면·콘솔의 <strong>에러 메시지를 그대로 복사해</strong> 붙여넣으세요. 가장 빠릅니다.</div></li>
+        <li><span class="bic" data-ic="database"></span><div><strong>저장이 안 될 때</strong><br>"커넥터로 <strong>테이블 구조와 코드가 맞는지</strong> 확인해줘" — <strong>컬럼명 불일치</strong>가 가장 흔한 원인입니다.</div></li>
+        <li><span class="bic" data-ic="image"></span><div><strong>화면이 이상할 때</strong><br>스크린샷을 붙여넣고 <strong>"이렇게 바꿔줘"</strong>라고 하세요.</div></li>
       </ul>
-      <div class="warn" style="margin-top:14px"><strong>시간 관리:</strong> 1.5시간 안에 <strong>"완벽한 CRM"이 아니라 "저장되고 검색되는 CRM"</strong>이 목표입니다. 화면 3은 시간이 남으면 하세요. <strong>배포까지는 오늘</strong>.</div>
+      <div class="note" style="margin-top:13px"><strong>시간 관리:</strong> "완벽한 폼"이 아니라 <strong>"저장되는 폼"</strong>이 목표입니다. 중복 처리·문구 다듬기는 시간이 남으면 하세요.</div>
     </div>
   </div>
 </div>
 
 <div class="slide" id="d2-dash">
-  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title"><span class="lab-badge">실습 5</span> &nbsp;AI <span class="clay">대시보드</span> 생성</h2></div>
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title"><span class="lab-badge">실습 5</span> &nbsp;더미 데이터 + <span class="clay">/admin 대시보드</span></h2></div>
   <div class="body grid g2">
     <div>
-      <div class="clabel clay">프롬프트</div>
-      <div class="code" style="font-size:12.5px">CRM에 <span class="kw">대시보드 화면</span>을 추가해줘.
-Supabase 데이터를 실시간으로 읽어서 표시한다.
+      <div class="clabel clay">STEP 6 · 커넥터로 표 채우기</div>
+      <div class="code" style="font-size:12.5px">Supabase 커넥터로 <span class="kw">더미 데이터</span>를 넣어줘.
+- customers 40건 (등급·유입경로·관심타입 고루)
+- units 30세대 (동·호·타입·가격·상태)
+- consultations 60건 · contracts 12건
+- ad_spend 3개월치 (채널 4개)
+<span class="cm">전부 합성 데이터. 실제 인물·연락처 금지.</span>
+넣은 뒤 <span class="kw">각 테이블 건수를 보여줘.</span></div>
+      <div class="clabel clay" style="margin-top:13px">STEP 7 · /admin 대시보드 프롬프트</div>
+      <div class="code" style="font-size:12.5px"><span class="kw">/admin</span> 경로에 관리자 대시보드를 추가해줘.
+Supabase 데이터를 <span class="kw">실시간으로 읽어서</span> 표시한다.
 
-<span class="cm">[상단 — 요약 카드 4개]</span>
-- 총 고객 수 (이번 달 신규 N명)
-- 상담 건수 (이번 달)
-- 계약 건수 · 계약 금액 합계
-- <span class="kw">계약 전환율</span> (계약수 ÷ 고객수)
-
-<span class="cm">[고객 현황]</span>
-- 등급별 인원 (도넛)
-- 유입경로별 인원 (가로 막대)
-
-<span class="cm">[계약 현황]</span>
-- 월별 계약 건수·금액 (이중 축)
-- 타입별 계약 비중
-
-<span class="cm">[분양 현황]</span>
-- 전체 세대 대비 <span class="kw">계약/미계약</span> 비율
-- 동·타입별 잔여 세대 표
-
-<span class="cm">[광고 성과]</span>
-- 채널별 집행비 · 리드 수 · <span class="kw">계약 1건당 비용</span>
-- 비용 효율 낮은 순 정렬
+<span class="cm">[요약 카드 4개]</span> 총 고객 · 이번 달 문의 ·
+계약 건수/금액 · 계약 전환율
+<span class="cm">[고객]</span> 등급별(도넛) · 유입경로별(가로 막대)
+<span class="cm">[계약]</span> 월별 건수·금액(이중 축) · 타입별 비중
+<span class="cm">[분양]</span> 계약/미계약 비율 · 동·타입별 잔여
+<span class="cm">[광고]</span> 채널별 집행비 · 리드 · <span class="kw">계약 1건당 비용</span>
 
 <span class="cm">[공통]</span>
-- 기간 선택 필터 (이번 달 / 분기 / 전체)
+- 기간 필터 (이번 달 / 분기 / 전체)
 - 데이터가 없으면 "데이터 없음" 표시
 - 차트 라이브러리는 <span class="kw">가벼운 것</span>으로</div>
     </div>
     <div>
-      <div class="frame clay panel" style="margin-bottom:14px">
+      <div class="frame clay panel" style="margin-bottom:13px">
         <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="sparkle"></span>1회차와 2회차가 여기서 만납니다</div>
-        <p>1회차에 <strong>프롬프트로 만들던 차트</strong>가, 이제는 <strong>데이터가 쌓이면 자동으로 갱신되는 화면</strong>이 되었습니다.</p>
+        <p>1회차에 <strong>프롬프트로 만들던 차트</strong>가, 이제는 <strong>문의가 들어오면 자동으로 갱신되는 화면</strong>이 되었습니다.</p>
         <p style="margin-top:9px">같은 그래프지만 — <strong>이제 매번 파일을 올릴 필요가 없고, 팀 누구나 URL로 봅니다.</strong></p>
       </div>
       <div class="clabel">검증 — 대시보드도 틀립니다</div>
       <ul class="blist">
-        <li><span class="bic" data-ic="check"></span><div><strong>합계 대조</strong><br>"총 고객 수"가 고객 목록 화면의 행 수와 <strong>같은지</strong> 확인하세요.</div></li>
+        <li><span class="bic" data-ic="check"></span><div><strong>합계 대조</strong><br>"총 고객 수"가 <strong>커넥터로 조회한 customers 건수</strong>와 같은지 확인하세요.</div></li>
         <li><span class="bic" data-ic="target"></span><div><strong>필터 교차 검증</strong><br>기간을 "전체"로 놓았을 때와 각 월의 합이 <strong>일치하는지</strong>.</div></li>
         <li><span class="bic" data-ic="alert"></span><div><strong>0건 처리</strong><br>데이터가 없는 채널에서 <strong>계약 1건당 비용이 무한대·오류</strong>로 나오지 않는지.</div></li>
       </ul>
-      <div class="note" style="margin-top:14px"><strong>시간이 부족하면</strong> 요약 카드 4개와 광고 성과만 완성하세요. <strong>이 둘이 가장 자주 쓰이는 화면</strong>입니다.</div>
+      <div class="warn" style="margin-top:13px"><strong>/admin은 공개 URL입니다.</strong> 다음 장의 접근권한을 반드시 적용하세요. 지금 괜찮은 건 <strong>가상 데이터이기 때문</strong>일 뿐입니다.</div>
     </div>
   </div>
 </div>
 
 <div class="slide" id="d2-deploy">
-  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title">Vercel 배포 + <span class="clay">접근권한</span></h2></div>
+  <div class="head"><div class="eyebrow">2회차 — 0.5h</div><h2 class="s-title"><span class="lab-badge">STEP 8–9</span> &nbsp;GitHub 업로드 → <span class="clay">Vercel 배포</span></h2></div>
   <div class="body">
-    <div class="pipe" style="margin-bottom:18px">
-      <div class="frame step"><div class="si" data-ic="folder"></div><div class="st">로컬 확인</div><div class="sd">저장·검색 동작</div></div>
+    <div class="pipe" style="margin-bottom:16px">
+      <div class="frame step"><div class="si" data-ic="tools"></div><div class="st">배포 최적화</div><div class="sd">빌드·경로 점검</div></div>
       <div class="sep">›</div>
-      <div class="frame step"><div class="si" data-ic="branch"></div><div class="st">커밋 · 푸시</div><div class="sd">GitHub 업로드</div></div>
+      <div class="frame step"><div class="si" data-ic="github"></div><div class="st">레포 생성</div><div class="sd">GitHub 새 저장소</div></div>
       <div class="sep">›</div>
-      <div class="frame step"><div class="si" data-ic="key"></div><div class="st">환경변수 등록</div><div class="sd">Vercel 대시보드</div></div>
+      <div class="frame step"><div class="si" data-ic="branch"></div><div class="st">코드 업로드</div><div class="sd">커밋 · 푸시</div></div>
       <div class="sep">›</div>
-      <div class="frame step"><div class="si" data-ic="rocket"></div><div class="st">자동 배포</div><div class="sd">1분 내</div></div>
+      <div class="frame step"><div class="si" data-ic="pkg"></div><div class="st">Vercel Import</div><div class="sd">레포 선택</div></div>
+      <div class="sep">›</div>
+      <div class="frame step"><div class="si" data-ic="key"></div><div class="st">환경변수</div><div class="sd">.env 값 등록</div></div>
       <div class="sep">›</div>
       <div class="frame clay step"><div class="si" data-ic="globe"></div><div class="st">URL 발급</div><div class="sd">*.vercel.app</div></div>
     </div>
     <div class="grid g2" style="gap:20px">
       <div>
-        <div class="clabel clay">Claude Code에게 한 줄</div>
-        <div class="code" style="font-size:13px">변경사항을 커밋하고 GitHub에 푸시해줘.
+        <div class="clabel clay">STEP 8 · Claude Code에게 — 배포 최적화</div>
+        <div class="code" style="font-size:12.5px">이 프로젝트를 <span class="kw">Vercel에 배포할 수 있게</span> 정리해줘.
+- 빌드 설정 · 이미지·자산 경로 점검
+- <span class="kw">.env.example</span> 만들어두기
+- .gitignore에 <span class="kw">.env</span>가 있는지 확인
+- <span class="kw">빌드가 실제로 통과하는지</span> 확인해줘</div>
+        <div class="clabel clay" style="margin-top:12px">STEP 9 · GitHub → Vercel</div>
+        <div class="code" style="font-size:12.5px">GitHub에 <span class="kw">새 저장소를 만들고</span> 이 코드를 올려줘.
 그 전에 <span class="kw">.env가 커밋에 포함되지 않는지</span>
 반드시 확인해줘.</div>
-        <div class="warn" style="margin-top:14px"><strong>환경변수를 잊지 마세요.</strong> 로컬 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--warn)">.env</code>는 GitHub에 올라가지 <strong>않습니다</strong>(올라가면 안 됩니다). 따라서 <strong>Vercel 대시보드 → Settings → Environment Variables</strong>에 <strong>같은 값을 직접 등록</strong>해야 합니다. 이걸 빠뜨리면 배포된 페이지에서 데이터가 안 보입니다.</div>
-        <div class="frame clay panel" style="margin-top:14px">
-          <div class="ttl" style="color:var(--clay)"><span class="ic" data-ic="pin"></span>지금 바로 하세요</div>
-          <p><strong>휴대폰으로 URL에 접속</strong>해 고객을 한 명 등록해 보세요. 그리고 <strong>노트북에서 새로고침</strong>하면 그 고객이 보입니다. <strong>이게 "시스템"입니다.</strong></p>
-        </div>
+        <div class="warn" style="margin-top:12px"><strong>환경변수를 잊지 마세요.</strong> 로컬 <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--warn)">.env</code>는 GitHub에 올라가지 <strong>않습니다</strong>(올라가면 안 됩니다). Vercel에서 레포를 <strong>Import</strong> 한 뒤 <strong>Settings → Environment Variables</strong>에 <strong>같은 값을 직접 등록</strong>해야 합니다. 빠뜨리면 배포된 페이지에서 문의가 저장되지 않습니다.</div>
+        <div class="note" style="margin-top:12px"><strong>지금 바로 하세요:</strong> <strong>휴대폰으로 배포 URL에 접속</strong>해 문의를 하나 남기고, 노트북 <strong>/admin</strong>에서 그 문의가 보이는지 확인하세요. <strong>이게 "시스템"입니다.</strong></div>
       </div>
       <div>
         <div class="clabel">공개 / 비공개 — 반드시 이해하고 가세요</div>
         <table class="tbl tight">
           <thead><tr><th style="width:24%">수준</th><th>의미</th></tr></thead>
-          <tr><td><strong>완전 공개</strong></td><td>URL을 아는 <strong>누구나</strong> 데이터를 봅니다. <span style="color:var(--warn)"><strong>고객 정보에는 절대 부적합</strong></span></td></tr>
+          <tr><td><strong>완전 공개</strong></td><td>URL을 아는 <strong>누구나</strong> 데이터를 봅니다. <span style="color:var(--warn)"><strong>/admin에는 절대 부적합</strong></span></td></tr>
           <tr><td><strong>비밀번호 게이트</strong></td><td>간단한 공용 비밀번호. <strong>실습 수준에 적합</strong></td></tr>
           <tr><td><strong>로그인 + RLS</strong></td><td>계정별로 볼 수 있는 행을 제한. <strong>실무 최소 기준</strong></td></tr>
           <tr><td><strong>Vercel 보호</strong></td><td>배포 자체를 팀 멤버만 접근 가능하게</td></tr>
         </table>
-        <div class="frame panel" style="margin-top:14px">
+        <div class="frame panel" style="margin-top:13px">
           <div class="ttl"><span class="ic" data-ic="lock"></span>배포 전 최종 체크</div>
           <p style="font-size:15px">☐ <code style="font-family:'JetBrains Mono',monospace;font-size:13.5px;color:var(--clay)">.gitignore</code>에 <strong>.env</strong>가 있는가<br>
           ☐ 코드에 키를 <strong>하드코딩</strong>하지 않았는가<br>
           ☐ DB에 <strong>가상 데이터만</strong> 들어있는가<br>
           ☐ <strong>service_role 키</strong>가 브라우저 코드에 없는가<br>
+          ☐ <strong>/admin</strong>에 접근 제한을 걸었는가<br>
           ☐ RLS가 <strong>켜져 있는가</strong></p>
         </div>
-        <div class="note" style="margin-top:14px"><strong>3회차 발표 과제:</strong> ① 배포 URL ② 5분 발표 자료 ③ <strong>"어떤 데이터가 어떻게 흐르게 되었는가"</strong> 한 문장.</div>
+        <div class="note" style="margin-top:13px"><strong>3회차 발표 과제:</strong> ① 배포 URL ② 5분 발표 자료 ③ <strong>"어떤 데이터가 어떻게 흐르게 되었는가"</strong> 한 문장.</div>
       </div>
     </div>
   </div>
@@ -2390,70 +2429,96 @@ Supabase 데이터를 실시간으로 읽어서 표시한다.
 </div>
 
 <div class="slide" id="apx-3">
-  <div class="head"><div class="eyebrow">APPENDIX 3</div><h2 class="s-title">CRM 웹앱 <span class="clay">생성 프롬프트</span> <small>(전문)</small></h2></div>
+  <div class="head"><div class="eyebrow">APPENDIX 3 <small style="font-size:.8em">(1/2)</small></div><h2 class="s-title">2회차 <span class="clay">프롬프트 세트</span> <small>— ① 기획 · ② 테이블</small></h2></div>
   <div class="body">
-    <div class="note" style="margin-bottom:14px">Supabase 스키마(APPENDIX 4)를 먼저 실행한 뒤, Claude Code에 <strong>그대로 붙여넣으세요.</strong> 2회차 1.5시간 실습의 출발점입니다.</div>
+    <div class="note" style="margin-bottom:12px"><strong>STEP 순서대로 붙여넣으면 됩니다.</strong> 회사·단지·고객은 <strong>전부 가상 데이터</strong>입니다.</div>
     <div class="grid g2" style="gap:20px">
-      <div class="code" style="font-size:12px"><span class="cm"># 부동산 고객관리(CRM) 웹앱</span>
+      <div>
+        <div class="clabel clay"><span class="kbadge">프롬프트 1</span> &nbsp;회사 소개서 · 홈페이지 구성 &nbsp;<span style="color:var(--muted);font-weight:600">— Claude Chat</span></div>
+        <div class="code" style="font-size:11.5px">가상의 <span class="kw">부동산 분양 회사</span>를 하나 설정하고,
+회사 소개서를 만들어줘.
+- 회사명 · 슬로건 · 사업영역 · 연혁 · 담당자
+- 진행 중인 분양 단지 1곳
+  (단지명 · 세대수 · 타입 · 가격대)
 
-비개발자용 <span class="kw">한국어 CRM</span>을 만들어줘.
-데이터 저장은 <span class="kw">Supabase</span>.
+이어서 홈페이지 구성안을 짜줘.
+- 섹션: 히어로 / 회사소개 / 분양단지 / 문의
+- 문의 폼 항목: 이름 · 연락처 · 관심타입 ·
+  유입경로 · 문의내용
 
-<span class="cm">[기술 제약]</span>
-- Vite + 순수 JavaScript (React 없이)
-- @supabase/supabase-js 만 사용
-- Supabase URL·KEY는 <span class="kw">.env에서 읽어올 것</span>
-  (VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY)
-- 모든 함수에 <span class="kw">한국어 주석</span>
+마지막으로 홈페이지에 넣을 이미지 3장의
+생성 프롬프트를 각각 <span class="kw">영문</span>으로 만들어줘.</div>
+      </div>
+      <div>
+        <div class="clabel clay"><span class="kbadge">프롬프트 2</span> &nbsp;CRM 테이블 생성 &nbsp;<span style="color:var(--muted);font-weight:600">— Supabase 커넥터</span></div>
+        <div class="code" style="font-size:11.5px">Supabase 커넥터로 아래 <span class="kw">5개 테이블</span>을 만들어줘.
+- customers : name, phone, region, source,
+    interest_type, budget, grade, contract_status
+- units : dong, ho, unit_type, area_exclusive,
+    area_supply, floor, direction, price, status
+- consultations : customer_id → customers.id,
+    consulted_at, channel, staff, content, next_action
+- contracts : customer_id → customers.id,
+    unit_id → units.id, contracted_at, amount, status
+- ad_spend : channel, spend_date, cost,
+    impressions, clicks, leads
 
-<span class="cm">[화면 1 · 고객 목록]</span>
-- 표: 이름 / 연락처 / 유입경로 / 관심타입 /
-      등급 / 최근상담일 / 계약여부
-- 검색창: 이름·연락처 <span class="kw">부분일치</span>
-- 필터: 등급 · 계약여부 · 유입경로
-- 기본 정렬: 최근상담일 내림차순
-- 행 클릭 → 상세 화면
-
-<span class="cm">[화면 2 · 고객 등록·수정]</span>
-- 신규 등록 / 기존 수정 겸용 폼
-- 필수: 이름, 연락처
-- 연락처는 <span class="kw">숫자만 저장</span>, 화면엔 하이픈
-- 필수값 누락 시 <span class="kw">저장 대신 안내 문구</span>
-- 저장·삭제 전 <span class="kw">확인 창</span></div>
-      <div class="code" style="font-size:12px"><span class="cm">[화면 3 · 상담 이력]</span>
-- 고객 상세 하단에 상담 목록 (최신순)
-- 상담 추가 폼: 일시 · 채널 · 담당자 ·
-  내용 · 다음액션
-- 상담 추가 시 고객의 <span class="kw">최근상담일 자동 갱신</span>
-
-<span class="cm">[공통 UI]</span>
-- 상단 탭: 고객 / 대시보드
-- 로딩 중 · 데이터 없음 상태를 <span class="kw">명확히 표시</span>
-- 에러 발생 시 사용자에게 <span class="kw">한국어 메시지</span>
-- 모바일에서 표가 가로 스크롤되게
-
-<span class="cm">[보안]</span>
-- <span class="kw">service_role 키를 사용하지 말 것</span>
-- 코드에 키를 하드코딩하지 말 것
-- 삭제는 <span class="kw">soft delete</span>(deleted_at 표시)로
-
-<span class="cm">[검증 편의]</span>
-- <span class="kw">"샘플 데이터 넣기"</span> 버튼:
-  가상 고객 10명 + 상담 20건을 한 번에 생성
-- <span class="kw">"전체 삭제"</span> 버튼 (확인 2번)
-
-<span class="cm">[하지 말 것]</span>
-- 실제 개인정보를 샘플로 생성하지 말 것
-  (이름은 "고객A", 연락처는 010-0000-0001 형태)</div>
+각 테이블에 <span class="kw">RLS를 켜고</span> 실습용 정책을 넣어줘.
+만든 뒤 <span class="kw">테이블 목록과 컬럼을 보여줘</span> — 내가 확인할게.</div>
+      </div>
     </div>
-    <div class="warn" style="margin-top:16px"><strong>생성 직후 반드시:</strong> "샘플 데이터 넣기" → <strong>새로고침(F5)</strong> → 데이터가 남아 있는지 확인. 사라지면 Supabase에 실제로 저장되지 않은 것입니다.</div>
+  </div>
+</div>
+
+<div class="slide" id="apx-3b">
+  <div class="head"><div class="eyebrow">APPENDIX 3 <small style="font-size:.8em">(2/2)</small></div><h2 class="s-title">2회차 <span class="clay">프롬프트 세트</span> <small>— ③ 적재 · ④ 대시보드 · ⑤ 배포</small></h2></div>
+  <div class="body">
+    <div class="note" style="margin-bottom:12px">③~⑤는 <strong>Claude Code</strong>에서 씁니다. ③은 폴더를 연 뒤, ④는 <strong>테이블이 만들어진 뒤</strong>에 실행하세요.</div>
+    <div class="grid g2" style="gap:20px">
+      <div>
+        <div class="clabel clay"><span class="kbadge">프롬프트 3</span> &nbsp;문의 폼 → Supabase 적재</div>
+        <div class="code" style="font-size:11.5px">이 홈페이지의 문의 폼이 Supabase에
+실제로 저장되게 만들어줘.
+- 이름·연락처·관심타입·유입경로 → customers
+- 문의내용 → consultations (channel='홈페이지')
+- 같은 연락처가 있으면 <span class="kw">새로 만들지 말고</span>
+  상담만 추가
+- 연락처는 숫자만 저장, 표시할 때 하이픈
+- 필수값이 비면 저장 대신 안내 문구
+- 저장 성공 시 "접수되었습니다" 표시
+- Supabase 키는 <span class="kw">.env에서 읽어올 것</span>
+- 각 함수에 한국어 주석</div>
+        <div class="clabel clay" style="margin-top:13px"><span class="kbadge">프롬프트 5</span> &nbsp;배포 최적화</div>
+        <div class="code" style="font-size:11.5px">이 프로젝트를 Vercel에 배포할 수 있게 정리해줘.
+빌드 설정·자산 경로 점검, <span class="kw">.env.example</span> 생성,
+.gitignore에 .env 확인, <span class="kw">빌드 통과</span> 확인.</div>
+      </div>
+      <div>
+        <div class="clabel clay"><span class="kbadge">프롬프트 4</span> &nbsp;더미 데이터 + /admin 대시보드</div>
+        <div class="code" style="font-size:11.5px">Supabase 커넥터로 더미 데이터를 넣어줘.
+- customers 40 · units 30 · consultations 60
+- contracts 12 · ad_spend 3개월치(채널 4개)
+전부 합성 데이터. 넣은 뒤 건수를 보여줘.
+
+<span class="kw">/admin</span> 경로에 관리자 대시보드를 추가해줘.
+- 요약 카드: 총 고객 · 이번 달 문의 ·
+  계약 건수/금액 · 전환율
+- 고객: 등급별(도넛) · 유입경로별(가로 막대)
+- 계약: 월별 건수·금액(이중 축) · 타입별 비중
+- 분양: 계약/미계약 비율 · 동·타입별 잔여
+- 광고: 채널별 집행비 · 리드 · 계약 1건당 비용
+- 기간 필터(이번 달/분기/전체)
+- 데이터가 없으면 "데이터 없음" 표시
+- 차트 라이브러리는 <span class="kw">가벼운 것</span>으로</div>
+      </div>
+    </div>
   </div>
 </div>
 
 <div class="slide" id="apx-4">
   <div class="head"><div class="eyebrow">APPENDIX 4</div><h2 class="s-title">Supabase <span class="clay">스키마 SQL</span></h2></div>
   <div class="body">
-    <div class="note" style="margin-bottom:14px">Supabase → <strong>SQL Editor</strong> → 새 쿼리 → 아래를 붙여넣고 <strong>Run</strong>. 테이블 5개 · 대시보드용 뷰 4개 · 보안 규칙이 한 번에 생성됩니다. <strong>LMS의 <code>01_schema.sql</code> 전문을 그대로 붙여넣으세요</strong> — 아래는 요약입니다.</div>
+    <div class="note" style="margin-bottom:14px">실습에서는 <strong>Supabase 커넥터로 대화하며 테이블을 만듭니다</strong> — 이 SQL을 직접 실행하지 않습니다. 아래는 <strong>커넥터가 만든 테이블이 의도대로인지 대조</strong>하고 컬럼명을 확인할 때 쓰는 <strong>참고용 정의</strong>입니다. (전문: LMS의 <code>01_schema.sql</code>)</div>
     <div class="grid g2" style="gap:20px">
       <div class="code" style="font-size:11.5px"><span class="cm">-- 1. 고객</span>
 <span class="kw">create table</span> customers (
@@ -2512,7 +2577,7 @@ Supabase 데이터를 실시간으로 읽어서 표시한다.
   <div class="head"><div class="eyebrow">APPENDIX 4 <small style="font-size:.8em">(계속)</small></div><h2 class="s-title">계약 · 광고 테이블 &amp; <span class="clay">보안 설정</span></h2></div>
   <div class="body grid g2">
     <div>
-      <div class="clabel clay">앞의 SQL에 이어서 실행</div>
+      <div class="clabel clay">앞 정의에서 이어집니다 (참고용)</div>
       <div class="code" style="font-size:11.5px"><span class="cm">-- 4. 계약</span>
 <span class="kw">create table</span> contracts (
   id            bigserial <span class="kw">primary key</span>,
@@ -5080,14 +5145,18 @@ const PARTS=[
   {n:'실습2',  t:'문서 자동 판독',          id:'d1-vision'},
   {n:'필수',   t:'판독 결과 검증',          id:'d1-verify'},
   {n:'실습3',  t:'CRM 분석·시각화',         id:'d1-crm'},
-  {n:'2회차',  t:'CRM·대시보드 모듈 개요',    id:'x-mod2', sec:'실습 B · CRM·대시보드'},
+  {n:'2회차',  t:'홈페이지+CRM 모듈 개요',   id:'x-mod2', sec:'실습 B · 홈페이지 + CRM·대시보드'},
+  {n:'기획',   t:'소개서·홈페이지·Export',   id:'d2-plan'},
+  {n:'연결',   t:'Claude Code · 커넥터 연결', id:'d2-start'},
   {n:'설계',   t:'테이블 5개 설계',         id:'d2-schema'},
-  {n:'실습4',  t:'CRM 웹앱 + DB 연동',      id:'d2-build'},
-  {n:'배포',   t:'배포 · 접근권한',         id:'d2-deploy'},
+  {n:'실습4',  t:'문의 폼 → Supabase 적재',  id:'d2-build'},
+  {n:'실습5',  t:'더미 데이터 · /admin',     id:'d2-dash'},
+  {n:'배포',   t:'GitHub · Vercel 배포',    id:'d2-deploy'},
   {n:'정리',   t:'과정 마무리',            id:'s-wrap',    sec:'마무리'},
   {n:'A1', t:'전역·프로젝트 지침',    id:'apx-1',  sec:'APPENDIX'},
   {n:'A2', t:'데이터 프롬프트 세트',   id:'apx-2'},
-  {n:'A3', t:'CRM 웹앱 프롬프트',     id:'apx-3'},
+  {n:'A3', t:'2회차 프롬프트 세트',    id:'apx-3'},
+  {n:'A3-2', t:'적재·대시보드 프롬프트', id:'apx-3b'},
   {n:'A4', t:'Supabase 스키마 SQL',   id:'apx-4'},
   {n:'A4-2', t:'인덱스·보안 설정',     id:'apx-4b'},
   {n:'A5', t:'직군별 응용',          id:'apx-5'},
